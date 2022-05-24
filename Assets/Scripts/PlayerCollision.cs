@@ -15,12 +15,6 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         //assign other object tag to variable in order to create switch statement

@@ -6,7 +6,7 @@ namespace PathCreation
 {
     public class Movement : MonoBehaviour
     {
-        
+
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
@@ -26,11 +26,13 @@ namespace PathCreation
         {
             if (pathCreator != null)
             {
-                if (Input.GetKey("up")){
+                if (Input.GetKey("up"))
+                {
                     print("up arrow key is held down");
                     yValue += speed * Time.deltaTime;
                 }
-                if (Input.GetKey("down")){
+                if (Input.GetKey("down"))
+                {
                     print("move down");
                     yValue -= speed * Time.deltaTime;
                 }
@@ -61,29 +63,37 @@ namespace PathCreation
         }
         private void OnCollisionEnter(Collision other)
         {
+            // the following two lines calculate if the other object is in front or behind the player
             Vector3 heading = transform.position - other.transform.position;
             float dot = Vector3.Dot(heading, other.transform.forward);
+            // ensures that the other object is a hazard
             tag = other.gameObject.tag;
-            HurtPlayer(heading, dot, tag);
-        }
-
-        private void HurtPlayer(Vector3 heading, float dot, string tag)
-        {
-            Debug.Log("Collision detected");
             if (tag == "Hazard")
             {
-                if (dot > 0)
-                {
-                    distanceTravelled -= speed * .3f;
-                }
-                else
-                {
-                    distanceTravelled += speed * .3f;
-                }
+                HurtPlayer(heading, dot);
             }
+
+        }
+
+
+        private void HurtPlayer(Vector3 heading, float dot)
+        {
+            Debug.Log("Collision detected");
+            //if dot is greater than 0, that means the object is facing the player, so head-on collision
+            if (dot > 0)
+            {
+                //this will move the player a set distance on the path away from current location
+                distanceTravelled -= speed * .3f;
+            }
+            //if dot is less than 0, that means the object is facing away from the player, so collision from behind
+            else
+            {
+                distanceTravelled += speed * .3f;
+            }
+
             //add interaction with score component when available
         }
-        
+
 
     }
 }
