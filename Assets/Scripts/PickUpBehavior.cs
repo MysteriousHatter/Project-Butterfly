@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using PathCreation;
 public class PickUpBehavior : MonoBehaviour
 {
 
@@ -43,9 +43,13 @@ public class PickUpBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collected");
-        Collected = true;
-        player = other.gameObject;
+        if (other.GetComponentInParent<Movement>() != null)
+        {
+            Debug.Log("Collected");
+            Collected = true;
+            player = other.gameObject;
+            GameState.Instance.OnOrbCollected();
+        }
     }
 
     private void OnCollisionEnter(Collision other)

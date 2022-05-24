@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using PathCreation;
 public class GameState : MonoBehaviour
 {
     public static new GameState Instance
     {
         get
         {
+            instance = GameObject.FindObjectOfType<GameState>();
             if (instance == null)
             {
-                instance = new GameState();
+                
+                GameObject a = new GameObject("a");
+                a.AddComponent<GameState>();
+                instance = a.GetComponent<GameState>();
+
             }
             return instance;
         }
     }
 
+    public PathCreation.PathCreator[] paths;
     private static GameState instance;
 
     private int m_currentCollectedOrb = 0;
@@ -61,6 +67,7 @@ public class GameState : MonoBehaviour
 
         //TODO: START STATUE UNLCOKED SEQUENCE HERE
         m_unlockedStates++;
+        GameObject.FindObjectOfType<Movement>().pathCreator = paths[1];
         if (m_unlockedStates >=3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
