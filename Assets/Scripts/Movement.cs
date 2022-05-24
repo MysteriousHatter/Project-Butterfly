@@ -10,7 +10,6 @@ namespace PathCreation
         public PathCreator pathCreator;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
-
         float distanceTravelled;
         float yValue = 0;
 
@@ -60,6 +59,31 @@ namespace PathCreation
         {
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
-    
+        private void OnCollisionEnter(Collision other)
+        {
+            Vector3 heading = transform.position - other.transform.position;
+            float dot = Vector3.Dot(heading, other.transform.forward);
+            tag = other.gameObject.tag;
+            HurtPlayer(heading, dot, tag);
+        }
+
+        private void HurtPlayer(Vector3 heading, float dot, string tag)
+        {
+            Debug.Log("Collision detected");
+            if (tag == "Hazard")
+            {
+                if (dot > 0)
+                {
+                    distanceTravelled -= speed * .3f;
+                }
+                else
+                {
+                    distanceTravelled += speed * .3f;
+                }
+            }
+            //add interaction with score component when available
+        }
+        
+
     }
 }
