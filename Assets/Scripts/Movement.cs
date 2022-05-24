@@ -12,13 +12,15 @@ namespace PathCreation
         public float speed = 5;
         float distanceTravelled;
         float yValue = 0;
-
+        // isVulnerable can be referenced by skill component to make player immune to damage and instead destroy other object
+        public bool isInvulnerable;
         void Start()
         {
             if (pathCreator != null)
             {
                 // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
                 pathCreator.pathUpdated += OnPathChanged;
+                isInvulnerable = false;
             }
         }
 
@@ -70,28 +72,35 @@ namespace PathCreation
             tag = other.gameObject.tag;
             if (tag == "Hazard")
             {
-                HurtPlayer(heading, dot);
+                HurtPlayer(other, heading, dot);
             }
 
         }
 
 
-        private void HurtPlayer(Vector3 heading, float dot)
+        private void HurtPlayer(Collision other, Vector3 heading, float dot)
         {
-            Debug.Log("Collision detected");
-            //if dot is greater than 0, that means the object is facing the player, so head-on collision
-            if (dot > 0)
+            Debug.Log("Collision detected, hazard hit");
+            if (isInvulnerable)
             {
-                //this will move the player a set distance on the path away from current location
-                distanceTravelled -= speed * .3f;
-            }
-            //if dot is less than 0, that means the object is facing away from the player, so collision from behind
-            else
-            {
-                distanceTravelled += speed * .3f;
+                Destroy(other.gameObject);
             }
 
-            //add interaction with score component when available
+            else
+            {
+                //if dot is greater than 0, that means the object is facing the player, so head-on collision
+                if (dot > 0)
+                {
+                    //this will move the player a set distance on the path away from current location
+                    distanceTravelled -= speed * .3f;
+                }
+                //if dot is less than 0, that means the object is facing away from the player, so collision from behind
+                else
+                {
+                    distanceTravelled += speed * .3f;
+                }
+            }
+            //add interaction with score and time component when available
         }
 
 
