@@ -69,8 +69,8 @@ namespace PathCreation
             Vector3 heading = transform.position - other.transform.position;
             float dot = Vector3.Dot(heading, other.transform.forward);
             // ensures that the other object is a hazard
-            tag = other.gameObject.tag;
-            if (tag == "Hazard")
+            var playerTag = other.gameObject.tag;
+            if (playerTag == "Hazard")
             {
                 HurtPlayer(other, heading, dot);
             }
@@ -84,6 +84,7 @@ namespace PathCreation
             if (isInvulnerable)
             {
                 Destroy(other.gameObject);
+                //TODO: add positive interaction when available
             }
 
             else
@@ -100,7 +101,7 @@ namespace PathCreation
                     distanceTravelled += speed * .3f;
                 }
             }
-            //add interaction with score and time component when available
+            //TODO: add negative interaction with score and time component when available
         }
 
 
