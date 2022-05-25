@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f710ab8ff3e32478362c7bd1a73289, type: 3}
+  m_Name: 3215AFE2-5506-44D7-A8C1-953AE22E947B
+  m_EditorClassIdentifier: 
+  objectName: Stop_TestBeep_Loop_3D
+  id: 304008745
+  guid: 3215AFE2-5506-44D7-A8C1-953AE22E947B

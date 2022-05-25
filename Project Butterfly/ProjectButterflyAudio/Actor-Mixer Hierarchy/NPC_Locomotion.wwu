@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{79842AFD-5408-4636-AF75-58A56A55E1DE}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="NPC_Locomotion" ID="{79842AFD-5408-4636-AF75-58A56A55E1DE}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="6"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<WorkUnit Name="Enemy_Patrol" ID="{3C8C4D1F-8F49-4388-8B29-569C82018BFB}" PersistMode="Reference"/>
+				<WorkUnit Name="Enemy_Attack" ID="{50151D0C-653B-46DF-AFAC-E40779A7750D}" PersistMode="Reference"/>
+				<WorkUnit Name="Enemy_Retreat" ID="{862AC03A-539A-4748-95AF-C877A7ABB94C}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
