@@ -67,7 +67,7 @@ public class GameState : MonoBehaviour
 
         //TODO: START STATUE UNLCOKED SEQUENCE HERE
         m_unlockedStates++;
-        GameObject.FindObjectOfType<Movement>().pathCreator = paths[1];
+        GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
         if (m_unlockedStates >=3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
