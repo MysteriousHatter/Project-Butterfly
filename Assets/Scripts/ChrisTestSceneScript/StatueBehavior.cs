@@ -20,7 +20,7 @@ public class StatueBehavior : MonoBehaviour
     {
         if (other.GetComponentInParent<Movement>() != null)
         {
-            GameState.Instance.OnLoopCompleted();
+            GameplayManager.Instance.OnLoopCompleted();
         }
     }
 }

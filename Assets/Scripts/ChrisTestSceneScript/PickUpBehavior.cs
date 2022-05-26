@@ -48,7 +48,7 @@ public class PickUpBehavior : MonoBehaviour
             Debug.Log("Collected");
             Collected = true;
             player = other.gameObject;
-            GameState.Instance.OnOrbCollected();
+            GameplayManager.Instance.OnOrbCollected();
         }
     }
 

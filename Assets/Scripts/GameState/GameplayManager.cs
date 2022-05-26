@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
-public class GameState : MonoBehaviour
+public class GameplayManager : MonoBehaviour
 {
-    public static new GameState Instance
+    public static new GameplayManager Instance
     {
         get
         {
-            instance = GameObject.FindObjectOfType<GameState>();
+            instance = GameObject.FindObjectOfType<GameplayManager>();
             if (instance == null)
             {
                 
                 GameObject a = new GameObject("a");
-                a.AddComponent<GameState>();
-                instance = a.GetComponent<GameState>();
+                a.AddComponent<GameplayManager>();
+                instance = a.GetComponent<GameplayManager>();
 
             }
             return instance;
@@ -22,7 +22,7 @@ public class GameState : MonoBehaviour
     }
 
     public PathCreation.PathCreator[] paths;
-    private static GameState instance;
+    private static GameplayManager instance;
 
     private int m_currentCollectedOrb = 0;
 
