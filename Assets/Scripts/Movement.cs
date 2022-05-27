@@ -26,6 +26,15 @@ namespace PathCreation
 
         void Update()
         {
+            if (this.gameObject.tag == "Drill")
+            {
+                isInvulnerable = true;
+            }
+            else
+            {
+                isInvulnerable = false;
+            }
+
             if (pathCreator != null)
             {
                 if (Input.GetKey("up"))
