@@ -48,6 +48,7 @@ public class PlayerMovementFinal : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
+            this.gameObject.tag = "Drill";
             if(Speed < 20f)
             {
                 Speed += _shiftSpeedBoost;
@@ -61,6 +62,7 @@ public class PlayerMovementFinal : MonoBehaviour
         else if(Input.GetMouseButtonUp(0))
         {
             Speed = startSpeedValue;
+            this.gameObject.tag = "Player";
         }
     }
 

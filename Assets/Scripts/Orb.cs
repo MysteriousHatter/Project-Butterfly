@@ -9,7 +9,7 @@ public class Orb : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var playerTag = other.gameObject.tag;
-        if (playerTag == "Player")
+        if (playerTag == "Player" || playerTag == "Drill")
         {
             Debug.Log("Collected Orb");
             //TODO: insert Orb functionality here
