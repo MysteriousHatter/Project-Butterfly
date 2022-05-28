@@ -4,7 +4,7 @@ using UnityEngine;
 using PathCreation;
 public class GameplayManager : MonoBehaviour
 {
-    public static new GameplayManager Instance
+    public static  GameplayManager Instance
     {
         get
         {
@@ -61,6 +61,7 @@ public class GameplayManager : MonoBehaviour
         {
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
+
         }
         else
         {
@@ -78,9 +79,10 @@ public class GameplayManager : MonoBehaviour
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
 
-        if (m_unlockedStates >=3)
+        if (m_unlockedStates >3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
+            GameplayUIBehavior.Instance.YouWin();
             //Game completed 
         }
     }
