@@ -55,9 +55,17 @@ public class GameplayManager : MonoBehaviour
 
     public void OnLoopCompleted()
     {
+        var spawn = FindObjectOfType<SpawnManager>();
+
         if (CanUnlockStatue())
         {
             OnStatuesUnlocked();
+            spawn.HandleNewLap(true);
+        }
+        else
+        {
+            spawn.HandleNewLap(false);
+
         }
         m_currentCollectedOrb = 0;
     }
