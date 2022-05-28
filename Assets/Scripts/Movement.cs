@@ -26,6 +26,7 @@ namespace PathCreation
         [SerializeField][Range(1.0f, 5.0f)] private float _shiftSpeedBoost = 3.5f;
         private float startSpeedValue;
         private bool isSpeedBoostActive = false;
+        [SerializeField] private float speedGauge;
         void Start()
         {
             if (pathCreator != null)
@@ -44,6 +45,7 @@ namespace PathCreation
 
             if (pathCreator != null)
             {
+                //TODO: Add Kaya VFX trail
                 PlayerMovementInput = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
                 PlayerRotation = new Vector2(PlayerMovementInput.x, PlayerMovementInput.y).normalized;
 
@@ -107,8 +109,9 @@ namespace PathCreation
 
         private void PlayerSpeedUp()
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && speedGauge > 0)
             {
+                speedGauge--;
                 this.gameObject.tag = "Drill";
                 if (Speed < 20f)
                 {
@@ -121,6 +124,11 @@ namespace PathCreation
                 }
             }
             else if (Input.GetMouseButtonUp(0))
+            {
+                Speed = startSpeedValue;
+                this.gameObject.tag = "Player";
+            }
+            else
             {
                 Speed = startSpeedValue;
                 this.gameObject.tag = "Player";

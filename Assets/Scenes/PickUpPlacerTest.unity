@@ -3659,6 +3659,7 @@ MonoBehaviour:
   endOfPathInstruction: 0
   isInvulnerable: 0
   _shiftSpeedBoost: 3.5
+  speedGauge: 90
 --- !u!1 &246356516
 GameObject:
   m_ObjectHideFlags: 0
