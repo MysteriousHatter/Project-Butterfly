@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
-
+    [SerializeField] int scoreValue;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +13,8 @@ public class Orb : MonoBehaviour
         {
             Debug.Log("Collected Orb");
             //TODO: insert Orb functionality here
+            //TODO: Upate Score and UI Manager to update the score
+            //TODO: Update statue count in UI and gameManager look at chris' code
             Destroy(this.gameObject);
         }
     }
