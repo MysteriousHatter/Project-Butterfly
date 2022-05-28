@@ -5,11 +5,6 @@ public class TriggerForNext : MonoBehaviour
 {
     [Tooltip("Next Scene is a debug tool to see scenes progressing")]
     bool nextScene;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     /// <summary>
     /// Debug Purposes
@@ -26,8 +21,12 @@ public class TriggerForNext : MonoBehaviour
     /// Used as a sample on how to have whatever trigger resets the laps reset it.
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
+        if(other.tag != "Player")
+        {
+            return;
+        }
         var spawn = FindObjectOfType<SpawnManager>();
         spawn.HandleNewLap(nextScene);
     }
