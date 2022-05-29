@@ -21,6 +21,7 @@ public class StatueBehavior : MonoBehaviour
         if (other.GetComponentInParent<Movement>() != null)
         {
             GameplayManager.Instance.OnLoopCompleted();
+            GameplayUIBehavior.Instance.StartTheGame();
         }
     }
 }
