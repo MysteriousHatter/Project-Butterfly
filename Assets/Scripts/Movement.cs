@@ -18,6 +18,10 @@ public class Movement : MonoBehaviour
     public PathCreator pathCreator;
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
+
+    // User this to lerp later
+    private float currentRotationAngle = 0;
+
     public float TraveledDistance
     {
         get { return distanceTravelled; }
@@ -39,6 +43,7 @@ public class Movement : MonoBehaviour
             startSpeedValue = Speed;
             playerBody = GetComponentInChildren<Rigidbody>();
             isInvulnerable = false;
+            OnPathChanged();
         }
     }
 
@@ -95,6 +100,12 @@ public class Movement : MonoBehaviour
     void OnPathChanged()
     {
         distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+
+        Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
+        Vector3 angle = rotation.eulerAngles;
+        angle.z = 0;
+        rotation.eulerAngles = angle;
+        playerBody.transform.rotation = rotation;
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -142,9 +153,20 @@ public class Movement : MonoBehaviour
     {
         if (PlayerRotation.sqrMagnitude != 0)
         {
-            float joypos = Mathf.Atan2(PlayerRotation.x, PlayerRotation.y) * Mathf.Rad2Deg;
+            float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
+ 
+            // Set player rotation along with the path rotation
+            Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
+            Vector3 angle = rotation.eulerAngles;
+            // clear z to 0 since we don't need roll angles 
+            angle.z = 0;
+            rotation.eulerAngles = angle;
+            playerBody.transform.rotation = rotation;
 
-            playerBody.rotation = Quaternion.Euler(0, 0, -joypos);
+            // Use this to update angle around player models x (right) axis
+            Vector3 right = playerBody.transform.right;
+            right.y = 0;
+            playerBody.transform.Rotate(new Vector3(-1, 0, 0), playerInputAngle - 90);
         }
     }
 
@@ -177,22 +199,10 @@ public class Movement : MonoBehaviour
 
     private void MovePlayer()
     {
-        playerBody.useGravity = PlayerMovementInput != Vector3.zero ? false : true;
-
-
+  
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
-        //playerBody.velocity = playerBody.useGravity ? -MoveVector.y : 0f;
-        //playerBody.velocity = new Vector3(MoveVector.x, MoveVector.y, playerBody.velocity.z);
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
         playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
-        //playerBody.velocity = new Vector3(playerBody.velocity.x, MoveVector.y, playerBody.velocity.z);
-
-
-        if (playerBody.useGravity)
-        {
-            playerBody.AddForce(-Vector3.up * Sensitvity, ForceMode.Impulse);
-            playerBody.rotation = Quaternion.Euler(0, 0, 0);
-        }
 
     }
 
