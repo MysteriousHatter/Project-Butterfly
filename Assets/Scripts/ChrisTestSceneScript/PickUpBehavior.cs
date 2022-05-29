@@ -11,6 +11,7 @@ public class PickUpBehavior : MonoBehaviour
     bool Collected = false;
     float lerpValue = 0;
     float activeObjects;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,8 @@ public class PickUpBehavior : MonoBehaviour
             Collected = true;
             player = other.gameObject;
             GameplayManager.Instance.OnOrbCollected();
+
+
         }
     }
 }

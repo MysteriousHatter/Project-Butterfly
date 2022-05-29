@@ -30,10 +30,14 @@ public class GameplayManager : MonoBehaviour
 
     private int m_unlockedStates = 0;
 
+
+    public GameplayUIBehavior guib;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        guib = FindObjectOfType<GameplayUIBehavior>();
     }
 
     // Update is called once per frame
@@ -46,6 +50,8 @@ public class GameplayManager : MonoBehaviour
     public void OnOrbCollected(int orbsCollected = 1)
     {
         m_currentCollectedOrb += orbsCollected;
+        guib.score += 10;
+        guib.UpdateScore();
     }
 
     public bool CanUnlockStatue()

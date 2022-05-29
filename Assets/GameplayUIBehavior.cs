@@ -41,7 +41,8 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The total spped of adding score.")]
     [SerializeField] private float scoreSpeed;
 
-    private float score;
+    [Tooltip("The score.")]
+    public float score;
 
     private string timeText;
 
@@ -143,6 +144,13 @@ public class GameplayUIBehavior : MonoBehaviour
         finalTime = timeLeft;
 
         score += finalTime;
+
+        UpdateScore();
+
+    }
+
+    public void UpdateScore()
+    {
 
         scoreText = "Score: " + (float)Math.Round((score), 0);
 
