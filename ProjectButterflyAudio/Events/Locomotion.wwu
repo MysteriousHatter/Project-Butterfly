@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B6317847-B0C7-4C3A-AA97-F406EB6D9F16}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Locomotion" ID="{B6317847-B0C7-4C3A-AA97-F406EB6D9F16}" PersistMode="Standalone"/>
+	</Events>
+</WwiseDocument>
