@@ -41,7 +41,7 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The total spped of adding score.")]
     [SerializeField] private float scoreSpeed;
 
-    private float score;
+    [SerializeField] private float score;
 
     private string timeText;
 
@@ -147,5 +147,15 @@ public class GameplayUIBehavior : MonoBehaviour
         scoreText = "Score: " + (float)Math.Round((score), 0);
 
         scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+    }
+
+    public float getScore()
+    {
+        return score;
+    }
+
+    public void setScore(float point)
+    {
+        this.score += point;
     }
 }

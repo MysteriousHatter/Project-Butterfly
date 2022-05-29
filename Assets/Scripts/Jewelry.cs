@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jewelry : MonoBehaviour
 {
 
-    [SerializeField] int scoreValue;
+    [SerializeField] float scoreValue;
     private void OnTriggerEnter(Collider other)
     {
         var playerTag = other.gameObject.tag;
@@ -13,7 +13,7 @@ public class Jewelry : MonoBehaviour
         {
             Debug.Log("Collected Jewelry");
             //TODO: insert Jewelry functionality here
-            //TODO: Upate Score and UI Manager to update the score
+            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
             Destroy(this.gameObject);
         }
     }

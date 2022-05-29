@@ -26,6 +26,10 @@ public class Movement : MonoBehaviour
     {
         get { return distanceTravelled; }
     }
+    public float setTraveledDistance
+    {
+        set { distanceTravelled = value; }
+    }
     [Space]
     // isVulnerable can be referenced by skill component to make player immune to damage and instead destroy other object
     public bool isInvulnerable;
@@ -44,6 +48,7 @@ public class Movement : MonoBehaviour
             playerBody = GetComponentInChildren<Rigidbody>();
             isInvulnerable = false;
             OnPathChanged();
+            setBoostRefill(90f);
         }
     }
 
@@ -107,19 +112,7 @@ public class Movement : MonoBehaviour
         rotation.eulerAngles = angle;
         playerBody.transform.rotation = rotation;
     }
-    private void OnCollisionEnter(Collision other)
-    {
-        // the following two lines calculate if the other object is in front or behind the player
-        Vector3 heading = transform.position - other.transform.position;
-        float dot = Vector3.Dot(heading, other.transform.forward);
-        // ensures that the other object is a hazard
-        var playerTag = other.gameObject.tag;
-        if (playerTag == "Hazard")
-        {
-            HurtPlayer(other, heading, dot);
-        }
 
-    }
 
     private void PlayerSpeedUp()
     {
@@ -171,31 +164,7 @@ public class Movement : MonoBehaviour
     }
 
 
-    private void HurtPlayer(Collision other, Vector3 heading, float dot)
-    {
-        Debug.Log("Collision detected, hazard hit");
-        if (isInvulnerable)
-        {
-            Destroy(other.gameObject);
-            //TODO: add positive interaction when available
-        }
 
-        else
-        {
-            //if dot is greater than 0, that means the object is facing the player, so head-on collision
-            if (dot > 0)
-            {
-                //this will move the player a set distance on the path away from current location
-                distanceTravelled -= Speed * .3f;
-            }
-            //if dot is less than 0, that means the object is facing away from the player, so collision from behind
-            else
-            {
-                distanceTravelled += Speed * .3f;
-            }
-        }
-        //TODO: add negative interaction with score and time component when available
-    }
 
     private void MovePlayer()
     {
@@ -205,6 +174,20 @@ public class Movement : MonoBehaviour
         playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
 
     }
+
+    public float getBoostRefill() { return speedGauge; }
+    public void setBoostRefill(float boostRefill) 
+    {
+        if(speedGauge < 90)
+        {
+            speedGauge += boostRefill;
+        }
+        else
+        {
+            speedGauge = 90f;
+        }
+
+    } 
 
     
 }

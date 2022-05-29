@@ -5,6 +5,7 @@ using UnityEngine;
 public class BobaTea : MonoBehaviour
 {
     public float boostRefill;
+    [SerializeField] private float scoreValue = 50f;
  
     private void OnTriggerEnter(Collider other)
     {
@@ -13,8 +14,8 @@ public class BobaTea : MonoBehaviour
         {
             Debug.Log("Collected Boba Tea");
             //TODO: insert Boba functionality here
-            //TODO: Upate Score and UI Manager to update the score
-            //TODO: Update boost metter in Movement script
+            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
+            FindObjectOfType<Movement>().setBoostRefill(boostRefill);
             Destroy(this.gameObject);
         }
     }
