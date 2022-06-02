@@ -1,23 +1,20 @@
-//This Behaviour Tree controls the 'Patroller' unit.
+//This Behaviour Tree controls the 'shooter' unit.
 
-tree("BeAlive")
+tree("Root")
 	//This unit attacks when possible,
-	//otherwise it patrols a predefined path.
+	//otherwise it waits.
 	fallback
 		tree("Idle")
 		tree("Attack")
 		
 
-
 tree("Idle")
 	//While no enemy is spotted,
 	//follow the assigned waypoints.
 	while
-		not hasEnemy
-		Wait(0.5)
+		not IsPlayerClose
+		Wait(0.2)
 				
-
-
 
 tree("Attack")
 	//When the enemy is visible, attack it,
@@ -27,11 +24,11 @@ tree("Attack")
 		//Attack the enemy if visible.
 		repeat
 			sequence
-				IsVisible_Enemy
-				AimAt_Target
+				IsPlayerClose
+				AimAt_Player
 				Wait(0.5)
 				Fire
-
+				Wait(1.0)
 
 		//Otherwise forget about it.
 		sequence

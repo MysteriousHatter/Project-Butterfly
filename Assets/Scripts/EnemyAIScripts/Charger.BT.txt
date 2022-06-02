@@ -12,18 +12,14 @@ tree("Patroll")
 	//While no enemy is spotted,
 	//follow the assigned waypoints.
 	while
+		not IsVisible_Enemy
 		sequence
-			not HasEnemy
-			not Acquire_Enemy
-
-		repeat
-			sequence
-				SetDestination_Waypoint
-				SetTarget_Destination
-				AimAt_Target
-				MoveTo_Destination
-				Wait(0.3)
-				NextWaypoint
+			SetDestination_Waypoint
+			SetTarget_Destination
+			AimAt_Target
+			MoveTo_Destination
+			Wait(0.3)
+			NextWaypoint
 
 
 
