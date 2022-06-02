@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayUIBehavior : MonoBehaviour
 {
@@ -34,7 +35,11 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The total amount of time.")]
     [SerializeField] private float timeTotal;
 
+    public float TimeTotal { get { return timeTotal; } set { } }
+
     private float timeLeft;
+
+    public float TimeLeft { get { return timeLeft; } set { } }
 
     private float finalTime;
 
@@ -46,6 +51,12 @@ public class GameplayUIBehavior : MonoBehaviour
     private string timeText;
 
     private string scoreText;
+
+    [Tooltip("The amount of time the checkpoint display is up")]
+    [SerializeField]private float displayTime;
+
+    [Tooltip("The text object for displaying checkpoint time")]
+    [SerializeField]private GameObject previousCheckpointTime;
 
     public static GameplayUIBehavior Instance
     {
@@ -81,6 +92,7 @@ public class GameplayUIBehavior : MonoBehaviour
         {
             PauseUnpause();
         }
+
 
 
         if (!paused && gameStarted)
@@ -157,5 +169,72 @@ public class GameplayUIBehavior : MonoBehaviour
     public void setScore(float point)
     {
         this.score += point;
+    }
+
+    public void UpdateTime(double timeToDisplay)
+    {
+        int hours = (int)(timeToDisplay / 6000);
+        timeToDisplay -= hours * 6000;
+        int min = (int)(timeToDisplay / 60);
+        timeToDisplay -= min * 60;
+        int seconds = (int)(timeToDisplay / 1);
+        timeToDisplay -= seconds;
+        string display = "";
+        string next = "";
+        if(hours >= 10)
+        {
+            next = hours.ToString();
+        }
+        else
+        {
+            next = "0" + hours.ToString();
+        }
+        display += next + ":";
+        if(min >= 10)
+        {
+            next = min.ToString();
+        }
+        else
+        {
+            next = "0" + min.ToString();
+        }
+        display += next + ":";
+        if(seconds >= 10)
+        {
+            next = seconds.ToString();
+        }
+        else
+        {
+            next = "0" + seconds.ToString();
+        }
+        display += next + ":";
+        int check = (int)(timeToDisplay * 1000);
+        next = "";
+        if(check < 100)
+        {
+            next = "0";
+        }
+        if(check < 10)
+        {
+            next += "0";
+        }
+        if(check == 0)
+        {
+            next += "0";
+        }
+        else
+        {
+            next += check;
+        }
+        display += next;
+        Debug.Log(display);
+        previousCheckpointTime.GetComponent<Text>().text = display;
+        previousCheckpointTime.SetActive(true);
+        Invoke("TurnOffCheckPoint", displayTime);
+    }
+
+    void TurnOffCheckPoint()
+    {
+        previousCheckpointTime.gameObject.SetActive(false);
     }
 }
