@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneScript : MonoBehaviour
 {
+    [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject instructionsPanel;
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -36,6 +38,13 @@ public class SceneScript : MonoBehaviour
 
     public void HowToPlay()
     {
+        menuPanel.SetActive(false);
+        instructionsPanel.SetActive(true);
+    }
 
+    public void MenuPanel()
+    {
+        menuPanel.SetActive(true);
+        instructionsPanel.SetActive(false);
     }
 }
