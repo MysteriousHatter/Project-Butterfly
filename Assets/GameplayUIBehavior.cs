@@ -171,15 +171,22 @@ public class GameplayUIBehavior : MonoBehaviour
         this.score += point;
     }
 
+    /// <summary>
+    /// Breaks up the time passed through to display hours, minutes, seconds, and milliseconds since the last checkpoint.
+    /// </summary>
+    /// <param name="timeToDisplay">The time passed through between the previous and current time</param>
     public void UpdateTime(double timeToDisplay)
     {
+        // Breaks down the time
         int hours = (int)(timeToDisplay / 6000);
         timeToDisplay -= hours * 6000;
         int min = (int)(timeToDisplay / 60);
         timeToDisplay -= min * 60;
         int seconds = (int)(timeToDisplay / 1);
         timeToDisplay -= seconds;
+        // Final display that keeps being built
         string display = "";
+        // The sections that get the time places 
         string next = "";
         if(hours >= 10)
         {
@@ -227,12 +234,14 @@ public class GameplayUIBehavior : MonoBehaviour
             next += check;
         }
         display += next;
-        Debug.Log(display);
         previousCheckpointTime.GetComponent<Text>().text = display;
         previousCheckpointTime.SetActive(true);
         Invoke("TurnOffCheckPoint", displayTime);
     }
 
+    /// <summary>
+    /// After the display time has passed, turns it off.
+    /// </summary>
     void TurnOffCheckPoint()
     {
         previousCheckpointTime.gameObject.SetActive(false);
