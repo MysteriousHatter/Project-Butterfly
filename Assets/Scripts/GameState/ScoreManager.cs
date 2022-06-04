@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
         public int ringCollected  ;
         public int purpleOrbsCollected  ;
         public int jewelryCollected ;
-        public bool StateUnlocked ;
+        public int StateUnlocked ;
 
         public int Score()
         {
@@ -72,10 +72,14 @@ public class ScoreManager : MonoBehaviour
     private static ScoreManager instance;
 
     private PathCompletionRecord currentRunRecord;
-    List<PathCompletionRecord> allRunRecords;
+    List<PathCompletionRecord> allRunRecords = new List<PathCompletionRecord>();
 
 
+    void Start()
+    {
+        currentRunRecord = new PathCompletionRecord();
 
+    }
 
 
     public void Fail()
@@ -116,9 +120,32 @@ public class ScoreManager : MonoBehaviour
                 currentRunRecord.jewelryCollected++;
                 break;
             case COLLECTIBLE_TYPE.STATUE:
-                currentRunRecord.StateUnlocked = true;
+                currentRunRecord.StateUnlocked = 1;
                 break;
 
         }
+    }
+
+    public PathCompletionRecord GetSumary()
+    {
+        PathCompletionRecord record = new PathCompletionRecord();
+
+
+        for(int i = 0; i < allRunRecords.Count; i++)
+        {
+            record.jewelryCollected += allRunRecords[i].jewelryCollected;
+            record.orbsCollected += allRunRecords[i].orbsCollected;
+            record.purpleOrbsCollected += allRunRecords[i].purpleOrbsCollected;
+            record.ringCollected += allRunRecords[i].ringCollected;
+            record.jewelryCollected += allRunRecords[i].jewelryCollected;
+            record.StateUnlocked += allRunRecords[i].StateUnlocked;
+            record.bobaTeaCollected += allRunRecords[i].bobaTeaCollected;
+
+            if (i == allRunRecords.Count - 1)
+            {
+                record.remainingTime = allRunRecords[i].remainingTime;
+            }
+        }
+        return record;
     }
 }
