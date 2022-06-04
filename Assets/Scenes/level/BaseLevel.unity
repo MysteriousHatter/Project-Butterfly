@@ -6941,6 +6941,11 @@ Transform:
   m_Father: {fileID: 1951453594}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &671608143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4519453801283683211, guid: de87beba3706801428b53f437c907155, type: 3}
+  m_PrefabInstance: {fileID: 9141112435833653353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &674184622
 GameObject:
   m_ObjectHideFlags: 0
@@ -16310,6 +16315,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1620318155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8823571916972251660, guid: de87beba3706801428b53f437c907155, type: 3}
+  m_PrefabInstance: {fileID: 9141112435833653353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1627092241
 GameObject:
   m_ObjectHideFlags: 0
@@ -21973,6 +21983,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1413256418877543436, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413256418877543436, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413256418877543436, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413256418877543436, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359484943120438836, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359484943120438836, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359484943120438836, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359484943120438836, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519453801283683211, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_Name
+      value: Fraction Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656108338822516216, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547947125618050971, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5547947125618050971, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141112436531847666, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: fractionText
+      value: 
+      objectReference: {fileID: 671608143}
+    - target: {fileID: 9141112436531847666, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: fractionSlider
+      value: 
+      objectReference: {fileID: 1620318155}
     - target: {fileID: 9141112436531847667, guid: de87beba3706801428b53f437c907155, type: 3}
       propertyPath: m_Name
       value: Canvas
