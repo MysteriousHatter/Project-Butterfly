@@ -26,13 +26,13 @@ public class ScoreManager : MonoBehaviour
     };
     public struct PathCompletionRecord
     {
-        public int orbsCollected;
-        public int remainingTime;
-        public int bobaTeaCollected;
-        public int ringCollected;
-        public int purpleOrbsCollected;
-        public int jewelryCollected;
-        public bool StateUnlocked;
+        public int orbsCollected ;
+        public int remainingTime  ;
+        public int bobaTeaCollected ;
+        public int ringCollected  ;
+        public int purpleOrbsCollected  ;
+        public int jewelryCollected ;
+        public bool StateUnlocked ;
 
         public int Score()
         {
@@ -73,40 +73,28 @@ public class ScoreManager : MonoBehaviour
 
     private PathCompletionRecord currentRunRecord;
     List<PathCompletionRecord> allRunRecords;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
-    public void OnStatueUnlocked()
-    {
 
-    }
 
 
     public void Fail()
     {
+        // erase all record since player failed
 
+        currentRunRecord = new PathCompletionRecord();
+        allRunRecords.Clear();
     }
 
 
-    public void PathCompleted()
+    public void PathCompleted(int timeLeft)
     {
-
+        // add current record, and new record for next path
+        currentRunRecord.remainingTime = timeLeft;
+        allRunRecords.Add(currentRunRecord);
+        currentRunRecord = new PathCompletionRecord();
     }
 
-    public void RestartPath()
-    {
-
-    }
 
     public void OnCollectibleCollected(COLLECTIBLE_TYPE type)
     {
