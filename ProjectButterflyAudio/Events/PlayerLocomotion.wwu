@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{84ACC067-E7B1-4FF0-BC47-A087306849D4}" SchemaVersion="103" RootDocumentID="{A7F43BFD-69E3-4AFF-A476-48F777D97B6F}" ParentDocumentID="{A7F43BFD-69E3-4AFF-A476-48F777D97B6F}">
+	<Events>
+		<WorkUnit Name="PlayerLocomotion" ID="{84ACC067-E7B1-4FF0-BC47-A087306849D4}" OwnerID="{A7F43BFD-69E3-4AFF-A476-48F777D97B6F}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_Player_WingFlaps" ID="{A254B21B-5897-4C57-ADFC-2435B1B2FBA4}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="9"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{90BEB9A9-6303-4010-8370-3FCE08BA26C5}" ShortID="544818149">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Flap_Wing" ID="{0879BFE7-42EA-42DC-B28C-B64B8A19EF0F}" WorkUnitID="{1F7C202A-E603-4F56-AA01-BC4FC5D3338B}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

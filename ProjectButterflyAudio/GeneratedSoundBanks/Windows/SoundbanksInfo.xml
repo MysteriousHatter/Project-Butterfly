@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="534561221" Language="SFX" Hash="3859360833">
+			<ObjectPath>\SoundBanks\Default Work Unit\MainSoundbank</ObjectPath>
+			<ShortName>MainSoundbank</ShortName>
+			<Path>MainSoundbank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2332797262" Name="Play_MusicTheme" ObjectPath="\Events\Soundtrack\Play_MusicTheme" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="266905303" Language="SFX">
+							<ShortName>Soundtrack\miniGame.wav</ShortName>
+							<Path>SFX\Soundtrack\miniGame_3D1D1BA5.wem</Path>
+						</File>
+						<File Id="326003378" Language="SFX">
+							<ShortName>Soundtrack\building.wav</ShortName>
+							<Path>SFX\Soundtrack\building_3D1D1BA5.wem</Path>
+						</File>
+						<File Id="623375128" Language="SFX">
+							<ShortName>Soundtrack\liftOff.wav</ShortName>
+							<Path>SFX\Soundtrack\liftOff_3D1D1BA5.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{D6AB2E38-3313-45F0-AF10-6EB5F8746C6C}">
+							<Media>
+								<File Id="326003378"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{0079DB3A-90EF-4C00-A7BB-82BA8E3EF731}">
+							<Media>
+								<File Id="623375128"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{4430D9E0-99EF-4094-9728-242D2A148C64}">
+							<Media>
+								<File Id="266905303"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1955951874" Name="Play_TestBeep" ObjectPath="\Events\TestEvents\Play_TestBeep" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="297380057" Language="SFX">
+							<ShortName>TestFiles\TestBeep.wav</ShortName>
+							<Path>SFX\TestFiles\TestBeep_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1681067324" Name="Play_TestBeep_3D" ObjectPath="\Events\TestEvents\Play_TestBeep_3D" MaxAttenuation="50." DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="297380057" Language="SFX">
+							<ShortName>TestFiles\TestBeep.wav</ShortName>
+							<Path>SFX\TestFiles\TestBeep_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="523232931" Name="Play_TestBeep_Loop" ObjectPath="\Events\TestEvents\Play_TestBeep_Loop" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1030837220" Language="SFX">
+							<ShortName>TestFiles\TestBeepLoop.wav</ShortName>
+							<Path>SFX\TestFiles\TestBeepLoop_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3475882615" Name="Play_TestBeep_Loop_3D" ObjectPath="\Events\TestEvents\Play_TestBeep_Loop_3D" MaxAttenuation="50." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1030837220" Language="SFX">
+							<ShortName>TestFiles\TestBeepLoop.wav</ShortName>
+							<Path>SFX\TestFiles\TestBeepLoop_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1688769292" Name="Stop_MusicTheme" ObjectPath="\Events\Soundtrack\Stop_MusicTheme" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="2989390457" Name="Stop_TestBeep_Loop" ObjectPath="\Events\TestEvents\Stop_TestBeep_Loop" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="304008745" Name="Stop_TestBeep_Loop_3D" ObjectPath="\Events\TestEvents\Stop_TestBeep_Loop_3D" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+			<StateGroups>
+				<StateGroup Id="4091656514" Name="GameState" ObjectPath="\States\Default Work Unit\GameState" GUID="{827A139D-8792-4C54-AE14-E61E5FF35043}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\GameState\None" GUID="{3D0DEA82-4AB5-42CF-81AB-718E4F4C8ADF}"/>
+						<State Id="984691642" Name="InGame" ObjectPath="\States\Default Work Unit\GameState\InGame" GUID="{4430D9E0-99EF-4094-9728-242D2A148C64}"/>
+						<State Id="3374585465" Name="InMenu" ObjectPath="\States\Default Work Unit\GameState\InMenu" GUID="{0079DB3A-90EF-4C00-A7BB-82BA8E3EF731}"/>
+						<State Id="3820324306" Name="InCredits" ObjectPath="\States\Default Work Unit\GameState\InCredits" GUID="{D6AB2E38-3313-45F0-AF10-6EB5F8746C6C}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="1108234476">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="144697359" Name="Outdoor" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Outdoor"/>
+				<AuxBus Id="889096775" Name="Digital" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Digital"/>
+				<AuxBus Id="1380965534" Name="Glitch" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Digital\Glitch"/>
+				<AuxBus Id="3375396131" Name="AncientStoneRuins" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Outdoor\AncientStoneRuins"/>
+				<AuxBus Id="3545700988" Name="Reverbs" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs"/>
+				<AuxBus Id="3738767749" Name="Woodland" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Outdoor\Woodland"/>
+				<AuxBus Id="4075332698" Name="Beach" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Outdoor\Beach"/>
+			</IncludedAuxBusses>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

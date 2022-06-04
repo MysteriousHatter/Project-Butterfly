@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1EE8E4A8-1D64-4038-90D2-EB7D6E8DB8DD}" SchemaVersion="103" RootDocumentID="{49D6126A-0F01-411D-82C4-A6C54DE9E40F}" ParentDocumentID="{49D6126A-0F01-411D-82C4-A6C54DE9E40F}">
+	<AudioObjects>
+		<WorkUnit Name="Jewelry" ID="{1EE8E4A8-1D64-4038-90D2-EB7D6E8DB8DD}" OwnerID="{49D6126A-0F01-411D-82C4-A6C54DE9E40F}" PersistMode="Nested"/>
+	</AudioObjects>
+</WwiseDocument>
