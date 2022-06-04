@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     public PathCreator pathCreator;
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
+    [SerializeField] Paraloop_Mechanic paraloop;
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -49,6 +50,7 @@ public class Movement : MonoBehaviour
             isInvulnerable = false;
             OnPathChanged();
             setBoostRefill(90f);
+            paraloop = GetComponentInChildren<Paraloop_Mechanic>();
         }
     }
 
@@ -168,8 +170,18 @@ public class Movement : MonoBehaviour
 
     private void MovePlayer()
     {
-  
+        //TODO: Stop delay with spawning points
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
+
+        if(MoveVector.sqrMagnitude != 0)
+        {
+            paraloop.InstantiateTransformations();
+        }
+        else
+        {
+            paraloop.ClearNeighbors();
+        }
+
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
         playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
 
