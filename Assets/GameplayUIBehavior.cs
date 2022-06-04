@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayUIBehavior : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class GameplayUIBehavior : MonoBehaviour
 
     [Tooltip("The temp text that pops up when the player wins. Will change later")]
     [SerializeField] private GameObject winText;
+
+    [SerializeField]
+    private GameObject fractionSlider;
+
+    [SerializeField]
+    private GameObject fractionText;
 
 
     [Tooltip("Is the game pause?")]
@@ -74,6 +81,7 @@ public class GameplayUIBehavior : MonoBehaviour
         timeLeft = timeTotal;
         timeText = "Time: " + timeTotal;
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
+        fractionSlider.GetComponent<Slider>().value = 0;
     }
 
     // Update is called once per frame
@@ -88,14 +96,6 @@ public class GameplayUIBehavior : MonoBehaviour
         if (!paused && gameStarted)
         {
             UpdateTheTimer();
-        }
-
-        if (gameWon)
-        {
-            if (timeLeft > 0)
-            {
-                YouWin();
-            }
         }
     }
 
@@ -139,8 +139,18 @@ public class GameplayUIBehavior : MonoBehaviour
 
     private void UpdateOrbUI()
     {
-        string text = "Orbs collected = " + orb + "/20";
-        print(text);
+        string textTemp = "Orbs collected = " + orb + "/20";
+        fractionText.GetComponent<TMP_Text>().text = textTemp;
+        if (orb == 0)
+        {
+            fractionSlider.GetComponent<Slider>().value = 0;
+        }
+        else if(orb <= 20)
+        {
+            fractionSlider.GetComponent<Slider>().value += 0.05f;
+        }
+        
+        
     }
 
     public void YouWin()
@@ -149,10 +159,11 @@ public class GameplayUIBehavior : MonoBehaviour
         gameWon = true;
         winText.SetActive(true);
         finalTime = timeLeft;
-
+        //timeLeft = 0;
+        finalTime = (float)Math.Round((finalTime), 0);
         score += finalTime;
 
-        scoreText = "Score: " + (float)Math.Round((score), 0);
+        scoreText = "Score: " + 0;
 
         scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
     }
