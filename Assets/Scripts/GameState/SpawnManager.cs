@@ -31,6 +31,8 @@ public class SpawnManager : MonoBehaviour
     /// <param name="progress">If true, goes to the next lap, otherwise repeats the lap</param>
     public void HandleNewLap(bool progress)
     {
+        FindObjectOfType<GameplayUIBehavior>().SetOrb(0);
+
         List<Scene> unload = new List<Scene>();
         for(int i = 0; i < SceneManager.sceneCount; i++)
         {

@@ -177,7 +177,15 @@ public class GameplayUIBehavior : MonoBehaviour
 
     public void SetOrb(int orbTotal)
     {
-        orb = orbTotal;
+        if(orbTotal == 0)
+        {
+            orb = orbTotal;
+        }
+        else
+        {
+            orb++;
+        }
+        
         UpdateOrbUI();
     }
 }
