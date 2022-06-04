@@ -156,15 +156,72 @@ public class Movement : MonoBehaviour
             rotation.eulerAngles = angle;
             playerBody.transform.rotation = rotation;
 
+             float rotateSpeed = 360f;
+            float angleSnapAtDegree = rotateSpeed * Time.deltaTime;
+
+            float AngleDifference = 0f;
+            if (playerInputAngle * currentRotationAngle < 0 && Mathf.Abs(playerInputAngle - currentRotationAngle) != 180f)
+            {
+                if (Mathf.Abs(playerInputAngle - currentRotationAngle) > 180f)
+                {
+                    if (180f - Mathf.Abs(playerInputAngle) + 180f - Mathf.Abs(currentRotationAngle) < 90f)
+                    {
+                        AngleDifference = 180f - Mathf.Abs(playerInputAngle) + 180f - Mathf.Abs(currentRotationAngle);
+                    }
+                    else
+                    {
+                        AngleDifference = playerInputAngle + currentRotationAngle + 90f;
+                    }
+                }
+            }
+            else
+            {
+                AngleDifference = playerInputAngle - currentRotationAngle;
+            }
+            if(Mathf.Abs(AngleDifference) <= angleSnapAtDegree * 1.1F)
+            {
+                currentRotationAngle = playerInputAngle;
+            }else
+            if (ShouldTurnLeft(playerInputAngle, currentRotationAngle))
+            {
+                currentRotationAngle += rotateSpeed * Time.deltaTime;
+
+            }
+            else
+            {
+                currentRotationAngle -= rotateSpeed * Time.deltaTime;
+            }
+            if(currentRotationAngle > 180F)
+            {
+                currentRotationAngle =  currentRotationAngle - 360F;
+            }
+            if(currentRotationAngle < -180F)
+            {
+                currentRotationAngle = currentRotationAngle + 360F;
+            }
             // Use this to update angle around player models x (right) axis
             Vector3 right = playerBody.transform.right;
             right.y = 0;
-            playerBody.transform.Rotate(new Vector3(-1, 0, 0), playerInputAngle - 90);
+            playerBody.transform.Rotate(new Vector3(-1, 0, 0), currentRotationAngle - 90);
         }
     }
 
 
+    private bool ShouldTurnLeft(float targetAngle, float currentAngle)
+    {
+        bool result = false;
 
+        Vector2 currentAngleVecetor = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad));
+        Vector2 leftOfCurrentAngleVector = new Vector2(-currentAngleVecetor.y, currentAngleVecetor.x);
+
+        Vector2 currentTargetvector = new Vector2(Mathf.Cos(targetAngle * Mathf.Deg2Rad), Mathf.Sin(targetAngle * Mathf.Deg2Rad));
+
+        if (Vector2.Dot(currentTargetvector,leftOfCurrentAngleVector) > 0)
+        {
+            result = true;
+        }
+        return result;
+    }
 
     private void MovePlayer()
     {
