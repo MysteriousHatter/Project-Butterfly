@@ -27,7 +27,7 @@ public class TriggerForNext : MonoBehaviour
         {
             return;
         }
-        var spawn = FindObjectOfType<SpawnManager>();
-        spawn.HandleNewLap(nextScene);
+      //  var spawn = FindObjectOfType<SpawnManager>();
+       // spawn.HandleNewLap(nextScene);
     }
 }

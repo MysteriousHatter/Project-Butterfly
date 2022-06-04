@@ -54,6 +54,12 @@ public class PickUpBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collected");
+        if (other.collider.GetComponentInParent<Movement>() != null)
+        {
+            Debug.Log("Collected");
+            Collected = true;
+            player = other.gameObject;
+            GameplayManager.Instance.OnOrbCollected();
+        }
     }
 }

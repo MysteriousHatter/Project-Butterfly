@@ -41,11 +41,30 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The total spped of adding score.")]
     [SerializeField] private float scoreSpeed;
 
-    private float score;
+    [SerializeField] private float score;
 
     private string timeText;
 
     private string scoreText;
+
+    public static GameplayUIBehavior Instance
+    {
+        get
+        {
+            instance = GameObject.FindObjectOfType<GameplayUIBehavior>();
+            if (instance == null)
+            {
+
+                GameObject a = new GameObject("UIBehaviorManager");
+                a.AddComponent<GameplayUIBehavior>();
+                instance = a.GetComponent<GameplayUIBehavior>();
+
+            }
+            return instance;
+        }
+    }
+
+    static GameplayUIBehavior instance;
 
     // Start is called before the first frame update
     void Start()
@@ -63,20 +82,6 @@ public class GameplayUIBehavior : MonoBehaviour
             PauseUnpause();
         }
 
-        // testing win condition
-        if (Input.GetKey("w") && !gameWon)
-        {
-            gameStarted = false;
-            gameWon = true;
-            winText.SetActive(true);
-            finalTime = timeLeft;
-
-            score += finalTime;
-
-            scoreText = "Score: " + (float)Math.Round((score), 0);
-
-            scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
-        }
 
         if (!paused && gameStarted)
         {
@@ -85,17 +90,10 @@ public class GameplayUIBehavior : MonoBehaviour
 
         if (gameWon)
         {
-            //if (timeLeft > 0)
-            //{
-            //    score += (scoreSpeed/ finalTime)/scoreSpeed;
-            //    timeLeft -= Time.deltaTime;
-
-            //    float x = (float)Math.Round((score), 0);
-            //    scoreText = "Score: " + x;
-
-            //    scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
-            //    Debug.Log(score);
-            //}
+            if (timeLeft > 0)
+            {
+                YouWin();
+            }
         }
     }
 
@@ -135,5 +133,29 @@ public class GameplayUIBehavior : MonoBehaviour
         }
 
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
+    }
+
+    public  void YouWin()
+    {
+        gameStarted = false;
+        gameWon = true;
+        winText.SetActive(true);
+        finalTime = timeLeft;
+
+        score += finalTime;
+
+        scoreText = "Score: " + (float)Math.Round((score), 0);
+
+        scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+    }
+
+    public float getScore()
+    {
+        return score;
+    }
+
+    public void setScore(float point)
+    {
+        this.score += point;
     }
 }
