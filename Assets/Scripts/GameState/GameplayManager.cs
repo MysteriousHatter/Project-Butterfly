@@ -46,6 +46,8 @@ public class GameplayManager : MonoBehaviour
     public void OnOrbCollected(int orbsCollected = 1)
     {
         m_currentCollectedOrb += orbsCollected;
+
+        FindObjectOfType<GameplayUIBehavior>().SetOrb(m_currentCollectedOrb);
     }
 
     public bool CanUnlockStatue()

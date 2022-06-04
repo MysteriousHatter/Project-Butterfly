@@ -47,6 +47,8 @@ public class GameplayUIBehavior : MonoBehaviour
 
     private string scoreText;
 
+    private int orb;
+
     public static GameplayUIBehavior Instance
     {
         get
@@ -135,7 +137,13 @@ public class GameplayUIBehavior : MonoBehaviour
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
     }
 
-    public  void YouWin()
+    private void UpdateOrbUI()
+    {
+        string text = "Orbs collected = " + orb + "/20";
+        print(text);
+    }
+
+    public void YouWin()
     {
         gameStarted = false;
         gameWon = true;
@@ -156,6 +164,20 @@ public class GameplayUIBehavior : MonoBehaviour
 
     public void setScore(float point)
     {
-        this.score += point;
+        scoreText = "Score: " + (this.score += point);
+
+        scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+
+    }
+
+    public int GetOrb()
+    {
+        return orb;
+    }
+
+    public void SetOrb(int orbTotal)
+    {
+        orb = orbTotal;
+        UpdateOrbUI();
     }
 }
