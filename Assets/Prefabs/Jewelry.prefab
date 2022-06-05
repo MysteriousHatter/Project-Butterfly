@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8732876460382644669}
   - component: {fileID: 8732876460382644666}
   - component: {fileID: 8732876460382644667}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jewelry
   m_TagString: Collectible
   m_Icon: {fileID: 0}
