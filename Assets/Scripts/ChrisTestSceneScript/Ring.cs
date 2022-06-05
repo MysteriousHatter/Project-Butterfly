@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
-public class PickUpBehavior : MonoBehaviour
+public class Ring : MonoBehaviour
 {
-
+    [SerializeField]
+    float boostValue = 1.5f;
     public GameObject[] subParticles;
     public GameObject parent;
     GameObject player;
@@ -48,7 +49,8 @@ public class PickUpBehavior : MonoBehaviour
             Debug.Log("Collected");
             Collected = true;
             player = other.gameObject;
-            GameplayManager.Instance.OnOrbCollected();
+            ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
+            IncreaseBoostGauge(boostValue);
         }
     }
 
@@ -60,6 +62,15 @@ public class PickUpBehavior : MonoBehaviour
             Collected = true;
             player = other.gameObject;
             GameplayManager.Instance.OnOrbCollected();
+            ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
+            IncreaseBoostGauge(boostValue);
         }
+    }
+
+
+    private void IncreaseBoostGauge(float value)
+    {
+        //TODO: 
+        GameObject.FindObjectOfType<Movement>()?.setBoostRefill(GameObject.FindObjectOfType<Movement>().getBoostRefill() + value);
     }
 }
