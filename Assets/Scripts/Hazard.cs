@@ -6,7 +6,7 @@ public class Hazard : MonoBehaviour
 {
     public GameObject collider;
     public GameObject player;
-    [SerializeField] float scoreValue;
+    [SerializeField] float timePenalty;
 
     void Start()
     {
@@ -25,12 +25,7 @@ public class Hazard : MonoBehaviour
         { 
             Debug.Log("Hit Hazard");
             player.GetComponent<Movement>().HurtPlayer(heading, dot);
-            FindObjectOfType<GameplayUIBehavior>().setScore(-scoreValue);
-        }
-        if (playerTag == "Drill")
-        {
-            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
-            Destroy(this.gameObject);
+            FindObjectOfType<GameplayUIBehavior>().setTime(timePenalty);
         }
     }
 }

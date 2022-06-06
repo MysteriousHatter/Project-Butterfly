@@ -129,4 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 0}
   player: {fileID: 0}
-  scoreValue: 200
+  timePenalty: -2

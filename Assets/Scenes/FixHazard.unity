@@ -7821,6 +7821,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: knockback
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 643757595}

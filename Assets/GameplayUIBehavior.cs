@@ -174,6 +174,16 @@ public class GameplayUIBehavior : MonoBehaviour
         this.score += point;
     }
 
+    public float getTime()
+    {
+        return timeLeft;
+    }
+
+    public void setTime(float time)
+    {
+        this.timeLeft += time;
+    }
+
     /// <summary>
     /// Breaks up the time passed through to display hours, minutes, seconds, and milliseconds since the last checkpoint.
     /// </summary>

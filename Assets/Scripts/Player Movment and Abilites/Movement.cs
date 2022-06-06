@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
+    [SerializeField] float knockback;
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -266,12 +267,12 @@ public class Movement : MonoBehaviour
         if (dot > 0)
         {
          //this will move the player a set distance on the path away from current location
-         distanceTravelled -= Speed * .3f;
+         distanceTravelled -= Speed * knockback;
         }
         //if dot is less than 0, that means the object is facing away from the player, so collision from behind
         else
         {
-            distanceTravelled += Speed * .3f;
+            distanceTravelled += Speed * knockback;
         }
     }
 }
