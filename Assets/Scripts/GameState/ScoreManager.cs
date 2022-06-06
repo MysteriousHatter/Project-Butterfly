@@ -9,7 +9,6 @@ public class ScoreManager : MonoBehaviour
         BOBA,
         ORBS,
         RING,
-        PURPLEORB,
         JEWELRY,
         STATUE
     }
@@ -17,9 +16,8 @@ public class ScoreManager : MonoBehaviour
     static Dictionary<COLLECTIBLE_TYPE, int> SCORE_VALUE = new Dictionary<COLLECTIBLE_TYPE, int>()
     {
         [COLLECTIBLE_TYPE.BOBA] = 50,
-        [COLLECTIBLE_TYPE.ORBS] = 10,
         [COLLECTIBLE_TYPE.RING] = 10,
-        [COLLECTIBLE_TYPE.PURPLEORB] = 100,
+        [COLLECTIBLE_TYPE.ORBS] = 100,
         [COLLECTIBLE_TYPE.JEWELRY] = 200,
         [COLLECTIBLE_TYPE.STATUE] = 500,
 
@@ -40,7 +38,6 @@ public class ScoreManager : MonoBehaviour
             result += orbsCollected * SCORE_VALUE[COLLECTIBLE_TYPE.ORBS];
             result += bobaTeaCollected * SCORE_VALUE[COLLECTIBLE_TYPE.BOBA];
             result += ringCollected * SCORE_VALUE[COLLECTIBLE_TYPE.RING];
-            result += purpleOrbsCollected * SCORE_VALUE[COLLECTIBLE_TYPE.PURPLEORB];
             result += jewelryCollected * SCORE_VALUE[COLLECTIBLE_TYPE.JEWELRY];
             result += GetTimeBonus();
             return result;
@@ -112,9 +109,6 @@ public class ScoreManager : MonoBehaviour
                 break;
             case COLLECTIBLE_TYPE.RING:
                 currentRunRecord.ringCollected++;
-                break;
-            case COLLECTIBLE_TYPE.PURPLEORB:
-                currentRunRecord.purpleOrbsCollected++;
                 break;
             case COLLECTIBLE_TYPE.JEWELRY:
                 currentRunRecord.jewelryCollected++;
