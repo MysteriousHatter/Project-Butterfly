@@ -258,5 +258,23 @@ public class Movement : MonoBehaviour
 
     } 
 
-    
+
+    public void HurtPlayer(Vector3 heading, float dot)
+    {
+        Debug.Log("Collision detected, hazard hit");
+        //dot is greater than 0, that means the object is facing the player, so head-on collision
+        if (dot > 0)
+        {
+         //this will move the player a set distance on the path away from current location
+         distanceTravelled -= Speed * .3f;
+        }
+        //if dot is less than 0, that means the object is facing away from the player, so collision from behind
+        else
+        {
+            distanceTravelled += Speed * .3f;
+        }
+    }
 }
+
+    
+

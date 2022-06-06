@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5804515646184401030}
   - component: {fileID: 5804515646184401031}
   - component: {fileID: 5804515646184401083}
+  - component: {fileID: -5335385018824904521}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Hazard
@@ -114,3 +115,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5335385018824904521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804515646184401028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19348ce167de7eb41a782168d271bea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+  player: {fileID: 0}
+  scoreValue: 200
