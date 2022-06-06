@@ -98,6 +98,9 @@ public class GameplayUIBehavior : MonoBehaviour
         if (!paused && gameStarted)
         {
             UpdateTheTimer();
+            scoreText = "Score: " + ScoreManager.Instance.GetCurrentScore();
+            scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+
         }
 
         if (gameWon)

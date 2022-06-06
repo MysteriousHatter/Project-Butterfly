@@ -42,6 +42,16 @@ public class ScoreManager : MonoBehaviour
             return result;
         }
 
+        public int GetInLoopScore()
+        {
+            int result = 0;
+            result += orbsCollected * SCORE_VALUE[COLLECTIBLE_TYPE.ORBS];
+            result += bobaTeaCollected * SCORE_VALUE[COLLECTIBLE_TYPE.BOBA];
+            result += ringCollected * SCORE_VALUE[COLLECTIBLE_TYPE.RING];
+            result += jewelryCollected * SCORE_VALUE[COLLECTIBLE_TYPE.JEWELRY];
+            return result;
+        }
+
         private int GetTimeBonus()
         {
             //TODO: time value calculation need clarify
@@ -139,5 +149,10 @@ public class ScoreManager : MonoBehaviour
             }
         }
         return record;
+    }
+
+    public int GetCurrentScore()
+    {
+        return currentRunRecord.GetInLoopScore();
     }
 }
