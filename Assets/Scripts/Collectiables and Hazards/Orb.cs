@@ -15,7 +15,7 @@ public class Orb : MonoBehaviour
             //TODO: insert Orb functionality here
             FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
             GameplayManager.Instance.OnOrbCollected();
-            ScoreManager.Instance.OnCollectibleCollected( ScoreManager.COLLECTIBLE_TYPE.PURPLEORB)
+            ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.ORBS);
             Destroy(this.gameObject);
         }
     }

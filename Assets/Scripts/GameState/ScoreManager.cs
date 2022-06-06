@@ -28,7 +28,6 @@ public class ScoreManager : MonoBehaviour
         public int remainingTime  ;
         public int bobaTeaCollected ;
         public int ringCollected  ;
-        public int purpleOrbsCollected  ;
         public int jewelryCollected ;
         public int StateUnlocked ;
 
@@ -129,7 +128,6 @@ public class ScoreManager : MonoBehaviour
         {
             record.jewelryCollected += allRunRecords[i].jewelryCollected;
             record.orbsCollected += allRunRecords[i].orbsCollected;
-            record.purpleOrbsCollected += allRunRecords[i].purpleOrbsCollected;
             record.ringCollected += allRunRecords[i].ringCollected;
             record.jewelryCollected += allRunRecords[i].jewelryCollected;
             record.StateUnlocked += allRunRecords[i].StateUnlocked;
