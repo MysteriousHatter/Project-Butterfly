@@ -17,14 +17,13 @@ public class Hazard : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // the following two lines calculate if the other object is in front or behind the player
-        Vector3 heading = transform.position - other.transform.position;
-        float dot = Vector3.Dot(heading, other.transform.forward);
         // ensures that the other object is a hazard
         var playerTag = other.gameObject.tag;
         if (playerTag == "Player")
         { 
             Debug.Log("Hit Hazard");
-            player.GetComponent<Movement>().HurtPlayer(heading, dot);
+            Vector3 pushDirection =  other.transform.position - transform.position;
+            player.GetComponent<Movement>().MoveBack(pushDirection.normalized);
             FindObjectOfType<GameplayUIBehavior>().setTime(timePenalty);
         }
     }
