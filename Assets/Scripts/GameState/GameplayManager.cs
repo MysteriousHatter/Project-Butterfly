@@ -30,6 +30,8 @@ public class GameplayManager : MonoBehaviour
 
     private int m_unlockedStates = 0;
 
+    private bool nextPath;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,19 +50,29 @@ public class GameplayManager : MonoBehaviour
         m_currentCollectedOrb += orbsCollected;
     }
 
-    public bool CanUnlockStatue()
+    public int getOrbCollected()
     {
-        return m_currentCollectedOrb > m_orbsNeedToUnlockStatue;
+        return m_currentCollectedOrb;
     }
+
+    public void resetOrbCount()
+    {
+        m_currentCollectedOrb = 0;
+    }
+
+    public bool getStatueIsFree() { return nextPath; }
+    public void setStatueIsFree(bool progress) { nextPath = progress; }
 
     public void OnLoopCompleted()
     {
         var spawn = FindObjectOfType<SpawnManager>();
 
-        if (CanUnlockStatue())
+        if (getStatueIsFree())
         {
+            Debug.Log("Handle New lap");
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
+
 
         }
         else
@@ -68,7 +80,7 @@ public class GameplayManager : MonoBehaviour
             spawn.HandleNewLap(false);
 
         }
-        m_currentCollectedOrb = 0;
+        resetOrbCount();
     }
 
     public void OnStatuesUnlocked()

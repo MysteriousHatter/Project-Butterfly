@@ -14,6 +14,7 @@ public class Orb : MonoBehaviour
             Debug.Log("Collected Orb");
             //TODO: insert Orb functionality here
             FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
+            GameplayManager.Instance.OnOrbCollected();
             //TODO: Update statue count in UI and gameManager look at chris' code
             Destroy(this.gameObject);
         }

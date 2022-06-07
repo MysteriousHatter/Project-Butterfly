@@ -122,6 +122,7 @@ public class Movement : MonoBehaviour
         {
             speedGauge--;
             this.gameObject.tag = "Drill";
+            paraloop.InstantiateTransformations(false);
             if (Speed < 20f)
             {
                 Speed += _shiftSpeedBoost;
@@ -136,11 +137,13 @@ public class Movement : MonoBehaviour
         {
             Speed = startSpeedValue;
             this.gameObject.tag = "Player";
+            paraloop.InstantiateTransformations(true);
         }
         else
         {
             Speed = startSpeedValue;
             this.gameObject.tag = "Player";
+            paraloop.InstantiateTransformations(true);
         }
     }
 
@@ -229,10 +232,11 @@ public class Movement : MonoBehaviour
     {
         //TODO: Stop delay with spawning points
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
-
-        if(MoveVector.sqrMagnitude != 0)
+        //paraloop.InstantiateTransformations();
+        if (MoveVector.sqrMagnitude != 0)
         {
-            paraloop.InstantiateTransformations();
+            Debug.Log("Start points");
+            
         }
         else
         {
