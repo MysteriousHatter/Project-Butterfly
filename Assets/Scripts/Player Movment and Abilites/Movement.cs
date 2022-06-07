@@ -53,6 +53,12 @@ public class Movement : MonoBehaviour
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
         }
+
+        if(knockback == 0)
+        {
+            //Since default knock back value should never be 0
+            knockback = 0.3f;
+        }
     }
 
     void Update()
