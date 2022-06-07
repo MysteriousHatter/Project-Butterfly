@@ -22,21 +22,10 @@ public class CheckpointHandler : MonoBehaviour
     }
 
     /// <summary>
-    /// Debugging Tool for non Checkpoint objects
-    /// </summary>
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            CheckPointPassed(this.gameObject);
-        }
-    }
-
-    /// <summary>
     /// Call this when a checkpoint has been passed.
     /// </summary>
     /// <param name="checkpointObject">The Gameobject which is the checkpoint.  Used to ensure it doesn't double trigger</param>
-    public void CheckPointPassed(GameObject checkpointObject)
+    public void CheckPointPassed(GameObject checkpointObject = null)
     {
         // Uncomment this when checkpoint gameobjects are in and don't want to double check it.
         /*if(completedCheckpoints.Contains(checkpointObject))
