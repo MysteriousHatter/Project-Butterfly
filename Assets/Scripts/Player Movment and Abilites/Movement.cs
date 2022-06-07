@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
-    [SerializeField] float knockback;
+    [SerializeField] float knockback = 1;
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -259,20 +259,21 @@ public class Movement : MonoBehaviour
 
     } 
 
-
-    public void HurtPlayer(Vector3 heading, float dot)
+    public void MoveBack(Vector3 moveDirection)
     {
-        Debug.Log("Collision detected, hazard hit");
-        //dot is greater than 0, that means the object is facing the player, so head-on collision
-        if (dot > 0)
+        float pushedBackDistance =Vector3.Dot( pathCreator.path.GetDirectionAtDistance(distanceTravelled), moveDirection);
+        if (pushedBackDistance < 0)
         {
-         //this will move the player a set distance on the path away from current location
-         distanceTravelled -= Speed * knockback;
+            distanceTravelled -= Speed * knockback;
         }
-        //if dot is less than 0, that means the object is facing away from the player, so collision from behind
-        else
+        else if(pushedBackDistance > 0)
         {
             distanceTravelled += Speed * knockback;
+        }
+        if(pushedBackDistance != 0)
+        {
+            playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+            playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
         }
     }
 }
