@@ -41,7 +41,11 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The total amount of time.")]
     [SerializeField] private float timeTotal;
 
+    public float TimeTotal { get { return timeTotal; } set { } }
+
     private float timeLeft;
+
+    public float TimeLeft { get { return timeLeft; } set { } }
 
     private float finalTime;
 
@@ -55,6 +59,11 @@ public class GameplayUIBehavior : MonoBehaviour
     private string scoreText;
 
     private int orb;
+    [Tooltip("The amount of time the checkpoint display is up")]
+    [SerializeField]private float displayTime;
+
+    [Tooltip("The text object for displaying checkpoint time")]
+    [SerializeField]private GameObject previousCheckpointTime;
 
     public static GameplayUIBehavior Instance
     {
@@ -93,9 +102,13 @@ public class GameplayUIBehavior : MonoBehaviour
         }
 
 
+
         if (!paused && gameStarted)
         {
             UpdateTheTimer();
+            scoreText = "Score: " + ScoreManager.Instance.GetCurrentScore();
+            scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+
         }
     }
 
@@ -198,5 +211,91 @@ public class GameplayUIBehavior : MonoBehaviour
         }
         
         UpdateOrbUI();
+    }
+
+    public float getTime()
+    {
+        return timeLeft;
+    }
+
+    public void setTime(float time)
+    {
+        this.timeLeft += time;
+    }
+
+    /// <summary>
+    /// Breaks up the time passed through to display hours, minutes, seconds, and milliseconds since the last checkpoint.
+    /// </summary>
+    /// <param name="timeToDisplay">The time passed through between the previous and current time</param>
+    public void UpdateTime(double timeToDisplay)
+    {
+        // Breaks down the time
+        int hours = (int)(timeToDisplay / 6000);
+        timeToDisplay -= hours * 6000;
+        int min = (int)(timeToDisplay / 60);
+        timeToDisplay -= min * 60;
+        int seconds = (int)(timeToDisplay / 1);
+        timeToDisplay -= seconds;
+        // Final display that keeps being built
+        string display = "";
+        // The sections that get the time places 
+        string next = "";
+        if(hours >= 10)
+        {
+            next = hours.ToString();
+        }
+        else
+        {
+            next = "0" + hours.ToString();
+        }
+        display += next + ":";
+        if(min >= 10)
+        {
+            next = min.ToString();
+        }
+        else
+        {
+            next = "0" + min.ToString();
+        }
+        display += next + ":";
+        if(seconds >= 10)
+        {
+            next = seconds.ToString();
+        }
+        else
+        {
+            next = "0" + seconds.ToString();
+        }
+        display += next + ":";
+        int check = (int)(timeToDisplay * 1000);
+        next = "";
+        if(check < 100)
+        {
+            next = "0";
+        }
+        if(check < 10)
+        {
+            next += "0";
+        }
+        if(check == 0)
+        {
+            next += "0";
+        }
+        else
+        {
+            next += check;
+        }
+        display += next;
+        previousCheckpointTime.GetComponent<Text>().text = display;
+        previousCheckpointTime.SetActive(true);
+        Invoke("TurnOffCheckPoint", displayTime);
+    }
+
+    /// <summary>
+    /// After the display time has passed, turns it off.
+    /// </summary>
+    void TurnOffCheckPoint()
+    {
+        previousCheckpointTime.gameObject.SetActive(false);
     }
 }

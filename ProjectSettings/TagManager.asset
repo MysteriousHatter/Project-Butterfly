@@ -7,11 +7,12 @@ TagManager:
   - Collectible
   - Hazard
   - Drill
+  - HideWhenHowToPlay
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Collectiable
   - Water
   - UI
   - 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A498015A-7227-4C89-B9C0-6A137C5A2693}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Soundtrack" ID="{A498015A-7227-4C89-B9C0-6A137C5A2693}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Stop_MusicTheme" ID="{0DFBD9C1-FAA7-4E13-84BD-7C05F7E4E0D1}">
+					<ChildrenList>
+						<Action Name="" ID="{479865BD-8B55-434F-AF0A-1F5051AAC837}" ShortID="384465374">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SoundtrackSwitch" ID="{A495938A-B282-45D8-AA1F-17409641B3E7}" WorkUnitID="{EF971E9B-A9C5-4B91-AA8F-9FE2D15CFCEC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MusicTheme" ID="{477ACAE2-E423-4141-9D3E-552941C18705}">
+					<ChildrenList>
+						<Action Name="" ID="{C39F8389-BBC0-4CBF-8844-E5ED0F81B174}" ShortID="349117483">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SoundtrackSwitch" ID="{A495938A-B282-45D8-AA1F-17409641B3E7}" WorkUnitID="{EF971E9B-A9C5-4B91-AA8F-9FE2D15CFCEC}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
