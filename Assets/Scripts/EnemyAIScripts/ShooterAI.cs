@@ -35,8 +35,9 @@ public class ShooterAI : MonoBehaviour
         }
     }
     [Task]
-    void AimAt_Player()
+    void AimAt_Player(string direction)
     {
+        Debug.Log("input direction" + direction);
         directionToShoot = player.transform.position - transform.position;
         Task.current.Succeed();
     }

@@ -7,15 +7,13 @@ tree("Root")
 		tree("Idle")
 		tree("Attack")
 		
-
 tree("Idle")
 	//While no enemy is spotted,
 	//follow the assigned waypoints.
 	while
 		not IsPlayerClose
-		Wait(0.2)
+		Wait(0.1)
 				
-
 tree("Attack")
 	//When the enemy is visible, attack it,
 	//Otherwise forget about it.
@@ -25,12 +23,10 @@ tree("Attack")
 		repeat
 			sequence
 				IsPlayerClose
-				AimAt_Player
+				AimAt_Player("Up")
 				Wait(0.5)
 				Fire
 				Wait(1.0)
 
-		//Otherwise forget about it.
-		sequence
-			Fail
+		
 
