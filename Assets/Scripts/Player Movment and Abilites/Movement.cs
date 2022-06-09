@@ -46,6 +46,7 @@ public class Movement : MonoBehaviour
     public bool ActivateBoostBall { get; set; }
     [SerializeField] private float boostBallSpeed;
     [SerializeField] private float boostBallTime;
+    private Vector3 velocity = Vector3.zero;
     void Start()
     {
         if (pathCreator != null)
@@ -292,12 +293,14 @@ public class Movement : MonoBehaviour
         }
     }
 
+    //TODO: Fix Roation to face right when dashing
     public void MoveForward()
     {
         if (ActivateBoostBall)
         {
-            distanceTravelled += boostBallSpeed * Time.deltaTime;
-            playerBody.transform.position = Vector3.Lerp(playerBody.transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled), boostBallTime * Time.deltaTime);
+            StartCoroutine(FindObjectOfType<CameraMovement>().SpeedUpCamera(0.8f));
+            distanceTravelled += boostBallSpeed * 0.3f;
+            playerBody.transform.position = Vector3.SmoothDamp(playerBody.transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled), ref velocity, boostBallTime);
             ActivateBoostBall = false;
         }
         //playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
