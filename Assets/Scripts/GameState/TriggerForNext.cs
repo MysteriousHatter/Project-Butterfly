@@ -7,17 +7,6 @@ public class TriggerForNext : MonoBehaviour
     bool nextScene;
 
     /// <summary>
-    /// Debug Purposes
-    /// </summary>
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            nextScene = true;
-        }
-    }
-
-    /// <summary>
     /// Used as a sample on how to have whatever trigger resets the laps reset it.
     /// </summary>
     /// <param name="other"></param>
@@ -27,7 +16,7 @@ public class TriggerForNext : MonoBehaviour
         {
             return;
         }
-      //  var spawn = FindObjectOfType<SpawnManager>();
-       // spawn.HandleNewLap(nextScene);
+        var spawn = FindObjectOfType<SpawnManager>();
+        spawn.HandleNewLap(false);
     }
 }

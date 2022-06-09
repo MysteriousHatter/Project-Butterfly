@@ -18,8 +18,11 @@ public class Paraloop_Mechanic : MonoBehaviour
     [SerializeField] int currentIndex = 0;
     [SerializeField] bool startPath;
 
-    private float timeToDeletePoint = 0.5f;
+    [SerializeField] private float timeToDeletePoint = 4f;
     float timeToDeletePointPlaceholder;
+
+    [SerializeField] private float timeToAddPoint = 0.5f;
+    float timeToAddPointPlaceholder;
 
     [SerializeField] private GameObject vortexPrefab;
 
@@ -27,26 +30,29 @@ public class Paraloop_Mechanic : MonoBehaviour
     void Start()
     {
         startPath = true;
+        timeToAddPointPlaceholder = timeToDeletePoint;
         timeToDeletePointPlaceholder = timeToDeletePoint;
-        StartCoroutine(InstantiateTransformations());
+        //StartCoroutine(InstantiateTransformations());
         StartCoroutine(GetLineIntersection());
     }
 
-    IEnumerator InstantiateTransformations()
+    public void InstantiateTransformations()
     {
         Node currentNode;
 
-        while (true)
-        {
-            yield return new WaitForSeconds(0.5f);
-            //targetIndex++;
+        //yield return new WaitForSeconds(0.5f);
+        //targetIndex++;
 
-            if (startNode != null)
+        timeToAddPoint -= Time.deltaTime;
+        if (timeToAddPoint <= 0f)
+        {
+            if (startNode == null)
             {
-                currentNode= new Node(this.transform.position);
+                currentNode = new Node(this.transform.position);
                 neighbors.Add(currentNode);
                 //Debug.Log("Current position " + neighbors[currentIndex].coordinates + "The total count: " + neighbors.Count);
                 currentIndex++;
+                timeToAddPoint = timeToAddPointPlaceholder;
 
 
             }
@@ -55,10 +61,10 @@ public class Paraloop_Mechanic : MonoBehaviour
                 startCoordinates = this.transform.position;
                 startNode = new Node(startCoordinates);
                 neighbors.Add(startNode);
-                Debug.Log("The Start Position " + neighbors[currentIndex]);
+                //Debug.Log("The Start Position " + neighbors[currentIndex]);
                 currentIndex++;
+                timeToAddPoint = timeToAddPointPlaceholder;
             }
-
 
         }
 
@@ -68,7 +74,7 @@ public class Paraloop_Mechanic : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             for (int i = 0; i < neighbors.Count; i++)
             {
                 for (int j = i + 2; j < neighbors.Count; j++)
@@ -99,7 +105,7 @@ public class Paraloop_Mechanic : MonoBehaviour
                             Debug.Log("We found a point that intersected");
                             Debug.Log("We found the intersection at " + intersection);
 
-                            yield return new WaitForSeconds(0.1f);
+                           // yield return new WaitForSeconds(0.1f);
                             List<Node> connectedCoord = ConnectTheNodes(new Node(intersection));
                             Node intersectionNode = new Node(intersection);
                             connectedCoord[j].connectedTo = intersectionNode;
@@ -107,7 +113,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
                             float sqrArea = FindVortexArea(connectedCoord, intersectionNode);
                             Debug.Log("the sqrArea " + sqrArea);
-                            if(sqrArea <= 200f)
+                            if(sqrArea >= 0.1f && sqrArea <= 200f)
                             {
                                 Instantiate(vortexPrefab, FindVortexCenter(connectedCoord, intersectionNode), Quaternion.identity);
                                 neighbors.RemoveRange(0, neighbors.Count - 1);
@@ -121,7 +127,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
                 }
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
 
     }
@@ -167,7 +173,7 @@ public class Paraloop_Mechanic : MonoBehaviour
         {
             count++;
             Debug.Log("The count "  + i + "The total count " + placeholder.Count);
-
+            //TODO: Check if connected nodes are similar to each other
             placeholder[i].connectedTo = placeholder[i + 1];
             Debug.Log("The current node " + neighbors[i].coordinates + " is connected to " + neighbors[i].connectedTo.coordinates);
             Debug.Log("After " + currentIndex);
@@ -222,16 +228,24 @@ public class Paraloop_Mechanic : MonoBehaviour
         Vector3 lineVec1, Vector3 linePoint2, Vector3 lineVec2)
     {
 
+
+
+        Debug.Log("Line Point 1 " + linePoint1 + "and Line Point 2" + linePoint2);
         Vector3 lineVec3 = linePoint2 - linePoint1;
+        Debug.Log("lineVec3 " + lineVec3);
         Vector3 crossVec1and2 = Vector3.Cross(lineVec1, lineVec2);
+        Debug.Log("crossVec1and2 " + crossVec1and2 + "is made out of lineVec1 " + lineVec1 + "and " + lineVec2);
         Vector3 crossVec3and2 = Vector3.Cross(lineVec3, lineVec2);
+        Debug.Log("crossVec3and2 " + crossVec3and2 + "is made out of lineVec1 " + lineVec3 + "and " + lineVec2);
 
         float planarFactor = Vector3.Dot(lineVec3, crossVec1and2);
+        Debug.Log("PlaneFactor " + planarFactor);
 
         //is coplanar, and not parallel
-        if (Mathf.Abs(planarFactor) < 0.01f
-                && crossVec1and2.sqrMagnitude > 0.01f)
+        if (Mathf.Abs(planarFactor) < 0.5f
+                && crossVec1and2.sqrMagnitude > 0.5f)
         {
+            Debug.Log("An Intersection");
             float s = Vector3.Dot(crossVec3and2, crossVec1and2)
                     / crossVec1and2.sqrMagnitude;
             intersection = linePoint1 + (lineVec1 * s);
@@ -239,6 +253,7 @@ public class Paraloop_Mechanic : MonoBehaviour
         }
         else
         {
+            Debug.Log("No Intersection");
             intersection = Vector3.zero;
             return Tuple.Create(false, intersection);
         }
@@ -248,17 +263,20 @@ public class Paraloop_Mechanic : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        if (currentIndex >= 4)
+        if (neighbors != null)
         {
-            for (int i = 0; i < neighbors.Count; i++)
+            if (currentIndex >= 4)
             {
-                Gizmos.color = Color.black;
-                Gizmos.DrawCube(neighbors[i].coordinates, Vector3.one);
-
-                if (i != 0)
+                for (int i = 0; i < neighbors.Count; i++)
                 {
-                    //Gizmos.DrawLine(listOfTransfromations[i + 1], transform.position);
-                    Gizmos.DrawLine(neighbors[i - 1].coordinates,neighbors[i].coordinates);
+                    Gizmos.color = Color.black;
+                    Gizmos.DrawCube(neighbors[i].coordinates, Vector3.one);
+
+                    if (i != 0)
+                    {
+                        //Gizmos.DrawLine(listOfTransfromations[i + 1], transform.position);
+                        Gizmos.DrawLine(neighbors[i - 1].coordinates, neighbors[i].coordinates);
+                    }
                 }
             }
         }
@@ -266,8 +284,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
         timeToDeletePoint -= Time.deltaTime;
         if(timeToDeletePoint <= 0f)
         {
@@ -275,8 +292,14 @@ public class Paraloop_Mechanic : MonoBehaviour
             {
                 neighbors.RemoveRange(0, 1);
                 timeToDeletePoint = timeToDeletePointPlaceholder;
+                
             }
         }
+    }
+
+    public void ClearNeighbors()
+    {
+        neighbors.Clear();
     }
 
 

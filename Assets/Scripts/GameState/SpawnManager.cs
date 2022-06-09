@@ -16,6 +16,8 @@ public class SpawnManager : MonoBehaviour
 
     private string baseName;
 
+    CheckpointHandler checkpointHandler;
+
     private void Start()
     {
         baseName = SceneManager.GetActiveScene().name;
@@ -23,6 +25,7 @@ public class SpawnManager : MonoBehaviour
             return;
         currentScene = sceneList[0];
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Additive);
+        checkpointHandler = FindObjectOfType<CheckpointHandler>();
     }
 
     /// <summary>
@@ -41,6 +44,7 @@ public class SpawnManager : MonoBehaviour
         }
         if(progress)
         {
+            checkpointHandler.CheckPointPassed();
             lapCount++;
             if(lapCount < sceneList.Length)
             {
