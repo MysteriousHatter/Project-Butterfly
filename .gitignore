@@ -56,4 +56,13 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
 *.dwlt
+
+# Wwise files
+ProjectButterflyAudio/.cache/
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*

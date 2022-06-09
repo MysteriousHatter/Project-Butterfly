@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B7F73BE8-F4EB-4CD8-A724-D87CDD92FEC1}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="TestEvents" ID="{B7F73BE8-F4EB-4CD8-A724-D87CDD92FEC1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_TestBeep" ID="{55B73788-07DD-4163-A298-07F900E5A7CF}">
+					<ChildrenList>
+						<Action Name="" ID="{429F7372-4837-4805-BA9E-D0D3B3F130AD}" ShortID="102970749">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestBeep" ID="{FFDE8A92-9F5A-4576-9331-1ACD9A2BD5E4}" WorkUnitID="{B3C82CF8-FD07-438A-912A-5B431761CA87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TestBeep_Loop" ID="{DF2C3308-0356-42E1-91EC-0F107B56DE42}">
+					<ChildrenList>
+						<Action Name="" ID="{F1902A2E-E137-4041-A868-DB1ECB7BB87D}" ShortID="598405408">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestBeepLoop" ID="{4BDBB881-AD48-4D61-9F46-43A3C54DE55F}" WorkUnitID="{B3C82CF8-FD07-438A-912A-5B431761CA87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TestBeep_3D" ID="{66785EED-36CC-4E1C-9B65-8567C4EE4459}">
+					<ChildrenList>
+						<Action Name="" ID="{87ADCA01-018A-4EE2-BCEB-736B4FC7AA23}" ShortID="915394590">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestBeep_3D" ID="{E8CC6825-C011-433E-BE28-253634DA5CDB}" WorkUnitID="{B3C82CF8-FD07-438A-912A-5B431761CA87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_TestBeep_Loop" ID="{4DA08819-2C5B-421D-87BA-BAB385AA3CAB}">
+					<ChildrenList>
+						<Action Name="" ID="{6F325917-DECA-473B-9C0D-D6F066A3D947}" ShortID="47755820">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestBeepLoop" ID="{4BDBB881-AD48-4D61-9F46-43A3C54DE55F}" WorkUnitID="{B3C82CF8-FD07-438A-912A-5B431761CA87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_TestBeep_Loop_3D" ID="{3215AFE2-5506-44D7-A8C1-953AE22E947B}">
+					<ChildrenList>
+						<Action Name="" ID="{DD066E28-48E1-4B56-B9D3-13852F4D1B57}" ShortID="310047207">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestBeepLoop_3D" ID="{C9825205-D15D-4E4C-93C8-D1024B3163BC}" WorkUnitID="{B3C82CF8-FD07-438A-912A-5B431761CA87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TestBeep_Loop_3D" ID="{9528F24F-DB99-4B75-97E7-4C3C9BF9583E}">
+					<ChildrenList>
+						<Action Name="" ID="{85F6EA9F-D449-47CE-B137-FE45F476F051}" ShortID="806771375">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TestBeepLoop_3D" ID="{C9825205-D15D-4E4C-93C8-D1024B3163BC}" WorkUnitID="{B3C82CF8-FD07-438A-912A-5B431761CA87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
