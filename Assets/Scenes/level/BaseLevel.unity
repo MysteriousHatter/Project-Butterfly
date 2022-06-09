@@ -19800,7 +19800,7 @@ MonoBehaviour:
     showVertexPathOptions: 1
     showNormals: 1
     showNormalsHelpInfo: 0
-    tabIndex: 0
+    tabIndex: 1
   initialized: 1
 --- !u!114 &1941544757
 MonoBehaviour:
@@ -20085,6 +20085,18 @@ PrefabInstance:
       propertyPath: pathCreator
       value: 
       objectReference: {fileID: 839433806}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: boostBallTime
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: boostBallSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: boostBallTimePlaceHolder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7291254568860154676, guid: c765fabe34ff825418603548f455a8aa, type: 3}
       propertyPath: m_RootOrder
       value: 14

@@ -60,7 +60,6 @@ public class ScoreUI : MonoBehaviour
         ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.ORBS);
         ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.ORBS);
 
-        ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.PURPLEORB);
         ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
         ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
         ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
@@ -99,7 +98,7 @@ public class ScoreUI : MonoBehaviour
         {
             purpleOrbText.gameObject.SetActive(true);
         }
-        var currentValue = (int)Mathf.Lerp(0, finalRecord.purpleOrbsCollected, animationTime);
+        var currentValue = (int)Mathf.Lerp(0, finalRecord.orbsCollected, animationTime);
         purpleOrbText.text = "Purple Orbs: " + currentValue;
         if (animationTime >= 1 && !timeText.gameObject.activeSelf)
         {

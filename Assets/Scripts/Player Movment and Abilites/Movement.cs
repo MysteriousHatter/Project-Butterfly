@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
+using System;
 
 public class Movement : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Movement : MonoBehaviour
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
+    [SerializeField] float knockback = 1;
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -39,6 +41,12 @@ public class Movement : MonoBehaviour
     private float startSpeedValue;
     private bool isSpeedBoostActive = false;
     [SerializeField] private float speedGauge;
+
+    //Boost Ball
+    public bool ActivateBoostBall { get; set; }
+    [SerializeField] private float boostBallSpeed;
+    [SerializeField] private float boostBallTime;
+    private Vector3 velocity = Vector3.zero;
     void Start()
     {
         if (pathCreator != null)
@@ -51,6 +59,13 @@ public class Movement : MonoBehaviour
             OnPathChanged();
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
+            ActivateBoostBall = false;
+        }
+
+        if(knockback == 0)
+        {
+            //Since default knock back value should never be 0
+            knockback = 0.3f;
         }
     }
 
@@ -80,6 +95,7 @@ public class Movement : MonoBehaviour
             else if (PlayerMovementInput.y < 0f) { yValue -= Speed * Time.deltaTime; }
 
             PlayerSpeedUp();
+            MoveForward();
 
         }
     }
@@ -146,6 +162,7 @@ public class Movement : MonoBehaviour
             paraloop.InstantiateTransformations(true);
         }
     }
+
 
     private void RotatePlayer()
     {
@@ -262,5 +279,38 @@ public class Movement : MonoBehaviour
 
     } 
 
-    
+    public void MoveBack(Vector3 moveDirection)
+    {
+        float pushedBackDistance =Vector3.Dot( pathCreator.path.GetDirectionAtDistance(distanceTravelled), moveDirection);
+        if (pushedBackDistance < 0)
+        {
+            distanceTravelled -= Speed * knockback;
+        }
+        else if(pushedBackDistance > 0)
+        {
+            distanceTravelled += Speed * knockback;
+        }
+        if(pushedBackDistance != 0)
+        {
+            playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+            playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
+        }
+    }
+
+    //TODO: Fix Roation to face right when dashing
+    public void MoveForward()
+    {
+        if (ActivateBoostBall)
+        {
+            StartCoroutine(FindObjectOfType<CameraMovement>().SpeedUpCamera(0.8f));
+            distanceTravelled += boostBallSpeed * 0.3f;
+            playerBody.transform.position = Vector3.SmoothDamp(playerBody.transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled), ref velocity, boostBallTime);
+            ActivateBoostBall = false;
+        }
+        //playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
+
+    }
 }
+
+    
+

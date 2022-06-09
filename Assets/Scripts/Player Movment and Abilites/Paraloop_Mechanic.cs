@@ -292,8 +292,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
         timeToDeletePoint -= Time.deltaTime;
         if(timeToDeletePoint <= 0f)
         {

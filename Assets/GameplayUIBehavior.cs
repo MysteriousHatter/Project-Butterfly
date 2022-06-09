@@ -98,6 +98,9 @@ public class GameplayUIBehavior : MonoBehaviour
         if (!paused && gameStarted)
         {
             UpdateTheTimer();
+            scoreText = "Score: " + ScoreManager.Instance.GetCurrentScore();
+            scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+
         }
 
         if (gameWon)
@@ -169,6 +172,16 @@ public class GameplayUIBehavior : MonoBehaviour
     public void setScore(float point)
     {
         this.score += point;
+    }
+
+    public float getTime()
+    {
+        return timeLeft;
+    }
+
+    public void setTime(float time)
+    {
+        this.timeLeft += time;
     }
 
     /// <summary>

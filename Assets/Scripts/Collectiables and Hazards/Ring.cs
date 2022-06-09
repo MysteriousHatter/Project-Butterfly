@@ -61,7 +61,6 @@ public class Ring : MonoBehaviour
             Debug.Log("Collected");
             Collected = true;
             player = other.gameObject;
-            GameplayManager.Instance.OnOrbCollected();
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
             IncreaseBoostGauge(boostValue);
         }
