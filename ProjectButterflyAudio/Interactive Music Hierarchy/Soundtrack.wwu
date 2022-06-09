@@ -299,6 +299,7 @@
 						<MusicPlaylistContainer Name="OverworldPlaylist" ID="{3DCD1480-6708-4E38-9EB7-8C6341ECADDD}" ShortID="321948010">
 							<PropertyList>
 								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="148"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -311,7 +312,7 @@
 							<ChildrenList>
 								<MusicSegment Name="OverworldTheme" ID="{D9BB4C08-2719-47D4-B781-5C5E14DC92A8}" ShortID="135503885">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="189999.954648526"/>
+										<Property Name="EndPosition" Type="Real64" Value="240780.313186995"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -322,40 +323,23 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="miniGame" ID="{37BD2E07-C7D8-49B1-AD51-A7C0EFD4D768}" ShortID="118520766">
-											<PropertyList>
-												<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
-												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-												<Property Name="MaxSoundPerInstance" Type="int16">
-													<ValueList>
-														<Value>1</Value>
-													</ValueList>
-												</Property>
-												<Property Name="UseMaxSoundPerInstance" Type="bool">
-													<ValueList>
-														<Value>True</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
+										<MusicTrack Name="butterflyLevel1_0" ID="{D3A8E5D4-6B3C-4E07-BDA5-EB4573E7CB55}" ShortID="126463440">
 											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{77EA728C-B444-4845-9316-924F55C85BC4}"/>
-												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="miniGame" ID="{6D164552-04E7-4E2F-B05B-089BFE82A543}">
+												<AudioFileSource Name="butterflyLevel1_0" ID="{03716724-71B1-4655-AC4A-2FD71DF0200B}">
 													<Language>SFX</Language>
-													<AudioFile>Soundtrack\miniGame.wav</AudioFile>
+													<AudioFile>butterflyLevel1.0.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="266905303"/>
+														<MediaID ID="1002544718"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<TransitionList>
-												<MusicTransition Name="Root" ID="{42D3D95B-C404-48C4-8D09-83A52C19C765}">
+												<MusicTransition Name="Root" ID="{EC670BB2-7772-4AE1-84C5-1BCD0CF49C1A}">
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
@@ -366,18 +350,18 @@
 												<ObjectList Name="Sequences">
 													<Reference>
 														<Local>
-															<MusicTrackSequence Name="" ID="{85726466-D92A-4BD3-8C27-027F12D190CC}">
+															<MusicTrackSequence Name="" ID="{2F0935A3-BD82-4BD7-A87C-A367C82610F1}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="miniGame" ID="{1847AD43-CE4B-4DF9-A64D-5F51D10A5BDE}">
+																				<MusicClip Name="butterflyLevel1_0" ID="{08A4C24D-DB07-46B6-B9DF-4FF0F3474F7E}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="228648.645833333"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="miniGame" ID="{6D164552-04E7-4E2F-B05B-089BFE82A543}"/>
+																					<AudioSourceRef Name="butterflyLevel1_0" ID="{03716724-71B1-4655-AC4A-2FD71DF0200B}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -402,7 +386,7 @@
 													<MusicCue Name="Exit Cue" ID="{44179541-E293-45C8-8064-7634A167040D}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="1000"/>
+															<Property Name="TimeMs" Type="Real64" Value="222972.972972973"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>

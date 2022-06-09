@@ -9,6 +9,8 @@
 			<ChildrenList>
 				<WorkUnit Name="PlayerWingFlaps" ID="{1F7C202A-E603-4F56-AA01-BC4FC5D3338B}" PersistMode="Reference"/>
 				<WorkUnit Name="PlayerFlying" ID="{76FCE5B4-173E-4DB1-84C4-C6B29963C1B9}" PersistMode="Reference"/>
+				<WorkUnit Name="PlayerSpeedBoost" ID="{7EA912A5-A650-4F76-B4AA-23ECCFC9888A}" PersistMode="Reference"/>
+				<WorkUnit Name="PlayerVortex" ID="{912FEE57-3DBE-49D1-80A2-F8B08D869AD3}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
