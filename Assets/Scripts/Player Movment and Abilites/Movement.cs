@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
+using System;
 
 public class Movement : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class Movement : MonoBehaviour
     private float startSpeedValue;
     private bool isSpeedBoostActive = false;
     [SerializeField] private float speedGauge;
+
+    //Boost Ball
+    public bool ActivateBoostBall { get; set; }
+    [SerializeField] private float boostBallSpeed;
+    [SerializeField] private float boostBallTime;
     void Start()
     {
         if (pathCreator != null)
@@ -52,6 +58,7 @@ public class Movement : MonoBehaviour
             OnPathChanged();
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
+            ActivateBoostBall = false;
         }
 
         if(knockback == 0)
@@ -87,6 +94,7 @@ public class Movement : MonoBehaviour
             else if (PlayerMovementInput.y < 0f) { yValue -= Speed * Time.deltaTime; }
 
             PlayerSpeedUp();
+            MoveForward();
 
         }
     }
@@ -150,6 +158,7 @@ public class Movement : MonoBehaviour
             this.gameObject.tag = "Player";
         }
     }
+
 
     private void RotatePlayer()
     {
@@ -281,6 +290,18 @@ public class Movement : MonoBehaviour
             playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
             playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
         }
+    }
+
+    public void MoveForward()
+    {
+        if (ActivateBoostBall)
+        {
+            distanceTravelled += boostBallSpeed * Time.deltaTime;
+            playerBody.transform.position = Vector3.Lerp(playerBody.transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled), boostBallTime * Time.deltaTime);
+            ActivateBoostBall = false;
+        }
+        //playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
+
     }
 }
 

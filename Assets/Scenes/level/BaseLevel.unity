@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1156619205}
   - {fileID: 2020835321}
@@ -3213,6 +3214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 368180699}
   - {fileID: 1105118122}
@@ -3896,6 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1582033342}
   - {fileID: 444340982}
@@ -4397,6 +4400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 904698308}
   - {fileID: 1507167112}
@@ -5774,6 +5778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1930840060}
   - {fileID: 307123891}
@@ -6066,6 +6071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1147976810}
   - {fileID: 1575421854}
@@ -6690,6 +6696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 194408009}
   - {fileID: 1993050965}
@@ -9745,6 +9752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2019039273}
   - {fileID: 409173951}
@@ -10326,6 +10334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1535704645}
   - {fileID: 1996855380}
@@ -10827,6 +10836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 632001032}
   - {fileID: 604805213}
@@ -11941,6 +11951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1886420681}
   - {fileID: 25935628}
@@ -12711,6 +12722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1968777391}
   - {fileID: 879233897}
@@ -12880,6 +12892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 681725388}
   - {fileID: 948802208}
@@ -13215,6 +13228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 420241009}
   - {fileID: 1048628144}
@@ -13384,6 +13398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 679935850}
   - {fileID: 1443577163}
@@ -13874,6 +13889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 666825675}
   - {fileID: 946414745}
@@ -15851,6 +15867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1391114089}
   - {fileID: 1130079711}
@@ -16416,6 +16433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2043901242}
   - {fileID: 1403087617}
@@ -17506,6 +17524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 100503936}
   - {fileID: 848307394}
@@ -17873,6 +17892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1674312523}
   - {fileID: 1398235252}
@@ -18800,6 +18820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2102677437}
   - {fileID: 243507272}
@@ -18886,6 +18907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 389012416}
   - {fileID: 1204136779}
@@ -19304,6 +19326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1396739050}
   - {fileID: 2011843166}
@@ -19777,7 +19800,7 @@ MonoBehaviour:
     showVertexPathOptions: 1
     showNormals: 1
     showNormalsHelpInfo: 0
-    tabIndex: 0
+    tabIndex: 1
   initialized: 1
 --- !u!114 &1941544757
 MonoBehaviour:
@@ -20058,6 +20081,18 @@ PrefabInstance:
       propertyPath: pathCreator
       value: 
       objectReference: {fileID: 839433806}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: boostBallTime
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: boostBallSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+      propertyPath: boostBallTimePlaceHolder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7291254568860154676, guid: c765fabe34ff825418603548f455a8aa, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -21009,6 +21044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 213983573}
   - {fileID: 1043231314}
@@ -21799,6 +21835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1176640400}
   - {fileID: 2116532439}
