@@ -4,6 +4,7 @@
 		<WorkUnit Name="Player_Hazard" ID="{E83173AA-42C2-4464-89B5-374DE0749FD4}" PersistMode="Standalone">
 			<ChildrenList>
 				<WorkUnit Name="Spikes" ID="{D09711EE-F889-4066-830D-2BBC3F2F600F}" PersistMode="Reference"/>
+				<WorkUnit Name="PlayerHurt" ID="{9620781B-74E7-48EA-8B81-14CABF4FD5C3}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
