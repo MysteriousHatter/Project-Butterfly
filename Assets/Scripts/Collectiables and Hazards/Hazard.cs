@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    public GameObject collider;
+    public GameObject playerCollider;
     public GameObject player;
     [SerializeField] float timePenalty;
 
     void Start()
     {
-        collider = GameObject.FindWithTag("Player");
-        player = collider.transform.parent.gameObject;
+        playerCollider = GameObject.FindWithTag("Player");
+        player = playerCollider.transform.parent.gameObject;
     }
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
