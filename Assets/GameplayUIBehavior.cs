@@ -83,6 +83,11 @@ public class GameplayUIBehavior : MonoBehaviour
         timeLeft = timeTotal;
         timeText = "Time: " + timeTotal;
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
+        if(Time.timeScale == 0)
+        {
+            //Fix BUG: Start of the game is always playing
+            Time.timeScale = 1;
+        }
     }
 
     // Update is called once per frame
