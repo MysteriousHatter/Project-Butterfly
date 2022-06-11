@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/GameOver.unity
     guid: 725e43bb64792a54a80fbed7b44310a8
+  - enabled: 1
+    path: Assets/Scenes/Testlevels/Loop1ItemsStatueTest.unity
+    guid: 4dc02e5dffa98b94c80c1305009174f8
   m_configObjects: {}
