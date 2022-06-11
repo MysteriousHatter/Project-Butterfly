@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace0037095105654faafadb59fcf1c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statueHealth: 20
+  statueHealth: 5
 --- !u!1 &7028177971560195562
 GameObject:
   m_ObjectHideFlags: 0

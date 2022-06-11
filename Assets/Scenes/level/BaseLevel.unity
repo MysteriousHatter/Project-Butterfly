@@ -8641,7 +8641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: {fileID: 102900000, guid: 1ba77bb27c26af34db222085d3b7fcbf, type: 3}
   sceneList:
-  - {fileID: 102900000, guid: 4dc02e5dffa98b94c80c1305009174f8, type: 3}
+  - {fileID: 102900000, guid: 73cf4ca02b14ada4e9049092d2617eb4, type: 3}
   - {fileID: 102900000, guid: 260406d7c6aab0540805f7abcb0b1acf, type: 3}
   - {fileID: 102900000, guid: cd0a99086f4ad614290c10b010738b92, type: 3}
   - {fileID: 102900000, guid: 05c99867c4da96945b6516f2932cd81c, type: 3}
@@ -20091,7 +20091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
       propertyPath: boostBallSpeed
-      value: 500
+      value: 530
       objectReference: {fileID: 0}
     - target: {fileID: 7291254568860154675, guid: c765fabe34ff825418603548f455a8aa, type: 3}
       propertyPath: boostBallTimePlaceHolder
