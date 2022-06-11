@@ -21,6 +21,7 @@ public class BoostBall : MonoBehaviour
         if (playerTag == "Player")
         {
             Debug.Log("Hit Hazard");
+            AkSoundEngine.PostEvent("PlayerPickup", this.gameObject);
             player.GetComponent<Movement>().ActivateBoostBall = true;
         }
     }

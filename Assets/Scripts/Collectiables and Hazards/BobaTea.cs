@@ -14,6 +14,7 @@ public class BobaTea : MonoBehaviour
         {
             Debug.Log("Collected Boba Tea");
             //TODO: insert Boba functionality here
+            AkSoundEngine.PostEvent("PlayerPickup", this.gameObject);
             FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
             FindObjectOfType<Movement>().setBoostRefill(boostRefill);
             Destroy(this.gameObject);

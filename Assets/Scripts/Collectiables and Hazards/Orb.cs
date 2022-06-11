@@ -13,6 +13,7 @@ public class Orb : MonoBehaviour
         {
             Debug.Log("Collected Orb");
             //TODO: insert Orb functionality here
+            AkSoundEngine.PostEvent("PlayerPickup", this.gameObject);
             FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.ORBS);
             Destroy(this.gameObject);
