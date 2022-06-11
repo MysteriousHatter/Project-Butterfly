@@ -90,11 +90,12 @@ public class GameplayManager : MonoBehaviour
         m_unlockedStates++;
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
-
+        ScoreManager.Instance.PathCompleted ((int)GameplayUIBehavior.Instance.TimeLeft);
         if (m_unlockedStates >3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
             GameplayUIBehavior.Instance.YouWin();
+            FindObjectOfType<ScoreUI>()?.StartAnimation();
             //Game completed 
         }
     }
