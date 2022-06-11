@@ -117,6 +117,7 @@ public class GameplayUIBehavior : MonoBehaviour
     public void StartTheGame()
     {
         gameStarted = true;
+        timeLeft = timeTotal;
     }
 
     public void PauseUnpause()

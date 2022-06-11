@@ -24,6 +24,7 @@ public class ShrineBehavior : MonoBehaviour
             GameplayManager.Instance.OnLoopCompleted();
             ScoreManager.Instance.Start();
             GameplayUIBehavior.Instance.StartTheGame();
+
         }
     }
 }
