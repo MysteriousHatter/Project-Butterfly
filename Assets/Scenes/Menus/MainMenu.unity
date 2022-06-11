@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -624,6 +624,7 @@ GameObject:
   - component: {fileID: 518999745}
   - component: {fileID: 518999744}
   - component: {fileID: 518999743}
+  - component: {fileID: 518999746}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: HideWhenHowToPlay
@@ -746,6 +747,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518999741}
   m_CullTransparentMesh: 1
+--- !u!114 &518999746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518999741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8348595742707083516, guid: c8a08046ddb000c4fa7aa614be2895bb, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1762631618662074889, guid: 181ec5f8b5b9f9040b6a7f6678da79cf, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &582025697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1104,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598691540}
   m_CullTransparentMesh: 1
+--- !u!1 &599461361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599461363}
+  - component: {fileID: 599461362}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &599461362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599461361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c2aba08694bba47a94d9a3f39e0d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 3ce80f801af0c5a45b1eddb24f1d00cf, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &599461363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599461361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 902821072}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605946812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1301,7 @@ GameObject:
   - component: {fileID: 681503554}
   - component: {fileID: 681503553}
   - component: {fileID: 681503552}
+  - component: {fileID: 681503555}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: HideWhenHowToPlay
@@ -1319,6 +1424,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681503550}
   m_CullTransparentMesh: 1
+--- !u!114 &681503555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681503550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8348595742707083516, guid: c8a08046ddb000c4fa7aa614be2895bb, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2324821284455834075, guid: 7b58e1005d589fa4eb0432c4a3de20ff, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &800200534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1571,62 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &902821071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 902821072}
+  - component: {fileID: 902821073}
+  m_Layer: 0
+  m_Name: MainSoundbank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &902821072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902821071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 599461363}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902821073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902821071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66bfb6bd0b2645458062026973d0f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 69e98e18d676d0a4c9175c4bed93532f, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &1001422871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1637,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1001422874}
   - component: {fileID: 1001422873}
-  - component: {fileID: 1001422872}
+  - component: {fileID: 1001422876}
+  - component: {fileID: 1001422875}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1439,14 +1646,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1001422872
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001422871}
-  m_Enabled: 1
 --- !u!20 &1001422873
 Camera:
   m_ObjectHideFlags: 0
@@ -1505,6 +1704,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1001422875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001422871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494f9f2ac5455ab48808ae6db1d297dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &1001422876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001422871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bae24d63809e1d49a61a5470645469e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1048212208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1828,7 @@ GameObject:
   - component: {fileID: 1150443665}
   - component: {fileID: 1150443664}
   - component: {fileID: 1150443663}
+  - component: {fileID: 1150443666}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: HideWhenHowToPlay
@@ -1715,6 +1951,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150443661}
   m_CullTransparentMesh: 1
+--- !u!114 &1150443666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150443661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8348595742707083516, guid: c8a08046ddb000c4fa7aa614be2895bb, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2324821284455834075, guid: 7b58e1005d589fa4eb0432c4a3de20ff, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1159739583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +2044,7 @@ GameObject:
   - component: {fileID: 1187985840}
   - component: {fileID: 1187985839}
   - component: {fileID: 1187985838}
+  - component: {fileID: 1187985841}
   m_Layer: 5
   m_Name: InstructionsButton
   m_TagString: HideWhenHowToPlay
@@ -1885,6 +2167,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187985836}
   m_CullTransparentMesh: 1
+--- !u!114 &1187985841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187985836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8348595742707083516, guid: c8a08046ddb000c4fa7aa614be2895bb, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2324821284455834075, guid: 7b58e1005d589fa4eb0432c4a3de20ff, type: 3}
+          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+          m_MethodName: HandleEvent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1150443661}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1557726368
 GameObject:
   m_ObjectHideFlags: 0
