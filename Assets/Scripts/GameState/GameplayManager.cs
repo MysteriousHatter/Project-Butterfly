@@ -21,8 +21,12 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
+    int currentLap;
     public PathCreation.PathCreator[] paths;
+    public int[] orbsNeeded;
+    int[] orbsCollected;
     private static GameplayManager instance;
+    private SpawnManager spawnManager;
 
     private bool CurrentStatueUnlocked { get; set; }
 
@@ -30,6 +34,8 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         CurrentStatueUnlocked = false;
+        orbsCollected = new int[orbsNeeded.Length];
+        spawnManager = FindObjectOfType<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -38,7 +44,21 @@ public class GameplayManager : MonoBehaviour
         
     }
 
+    public void UpdateLap()
+    {
+        if(orbsNeeded[currentLap] <= orbsCollected[currentLap])
+        {
+            currentLap++;
+            spawnManager.HandleNewLap(true);
+        }
+        else
+        {
+            spawnManager.HandleNewLap(false);
+        }
+    }
 
-
-
+    public void CollectedOrb()
+    {
+        orbsCollected[currentLap]++;
+    }
 }

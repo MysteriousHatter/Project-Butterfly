@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     private string baseName;
 
     CheckpointHandler checkpointHandler;
+    Movement movement;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class SpawnManager : MonoBehaviour
         currentScene = sceneList[0];
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Additive);
         checkpointHandler = FindObjectOfType<CheckpointHandler>();
+        movement = FindObjectOfType<Movement>();
     }
 
     /// <summary>
@@ -50,6 +52,7 @@ public class SpawnManager : MonoBehaviour
             {
                 currentScene = sceneList[lapCount];
             }
+            movement.pathCreator = GameplayManager.Instance.paths[lapCount];
         }
         foreach(Scene scene in unload)
         {
