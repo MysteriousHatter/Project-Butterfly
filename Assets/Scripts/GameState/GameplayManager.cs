@@ -30,7 +30,9 @@ public class GameplayManager : MonoBehaviour
 
     private int m_unlockedStates = 0;
 
+
     private bool nextPath;
+
 
     // Start is called before the first frame update
     void Start()
@@ -73,13 +75,11 @@ public class GameplayManager : MonoBehaviour
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
-
         }
         else
         {
             spawn.HandleNewLap(false);
             GameplayUIBehavior.Instance.OnSamePathRepeated();
-
         }
         resetOrbCount();
     }

@@ -154,4 +154,9 @@ public class ScoreManager : MonoBehaviour
     {
         return currentRunRecord.GetInLoopScore();
     }
+
+    public int GetCurrentOrb()
+    {
+        return currentRunRecord.orbsCollected;
+    }
 }
