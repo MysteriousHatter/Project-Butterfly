@@ -72,12 +72,13 @@ public class GameplayManager : MonoBehaviour
             Debug.Log("Handle New lap");
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
-
+            GameplayUIBehavior.Instance.StartTheGame();
 
         }
         else
         {
             spawn.HandleNewLap(false);
+            GameplayUIBehavior.Instance.OnSamePathRepeated();
 
         }
         resetOrbCount();
