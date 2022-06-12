@@ -92,6 +92,7 @@ public class GameplayManager : MonoBehaviour
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
         ScoreManager.Instance.PathCompleted ((int)GameplayUIBehavior.Instance.TimeLeft);
+        GameplayUIBehavior.Instance.SetOrb(0);
         if (m_unlockedStates >3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
