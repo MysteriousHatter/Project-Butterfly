@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{263F2568-9320-45A6-8047-EB64EB6C6204}" SchemaVersion="103" RootDocumentID="{C9536109-E563-4140-A228-267C4C23B90F}" ParentDocumentID="{C9536109-E563-4140-A228-267C4C23B90F}">
+	<AudioObjects>
+		<WorkUnit Name="LapCleared" ID="{263F2568-9320-45A6-8047-EB64EB6C6204}" OwnerID="{C9536109-E563-4140-A228-267C4C23B90F}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="lapCleared_0" ID="{39EC5639-36AE-441B-A85D-BC48789B5503}" ShortID="501988574">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="lapCleared_0" ID="{7E1ED72B-061A-4864-8874-D6E77ED59621}">
+							<Language>SFX</Language>
+							<AudioFile>lapCleared.0.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="268423636"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="lapCleared_0" ID="{7E1ED72B-061A-4864-8874-D6E77ED59621}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -18,10 +18,10 @@ public class Paraloop_Mechanic : MonoBehaviour
     [SerializeField] int currentIndex = 0;
     [SerializeField] bool startPath;
 
-    [SerializeField] private float timeToDeletePoint = 4f;
+    [SerializeField] private float timeToAddPoint = 4f;
     float timeToDeletePointPlaceholder;
 
-    [SerializeField] private float timeToAddPoint = 0.5f;
+    [SerializeField] private float timeToDeletePoint = 4f;
     float timeToAddPointPlaceholder;
 
     [SerializeField] private GameObject vortexPrefab;
@@ -30,42 +30,49 @@ public class Paraloop_Mechanic : MonoBehaviour
     void Start()
     {
         startPath = true;
-        timeToAddPointPlaceholder = timeToDeletePoint;
+        timeToAddPointPlaceholder = timeToAddPoint;
         timeToDeletePointPlaceholder = timeToDeletePoint;
         //StartCoroutine(InstantiateTransformations());
         StartCoroutine(GetLineIntersection());
     }
 
-    public void InstantiateTransformations()
+    public void InstantiateTransformations(bool instantiatePoints)
     {
-        Node currentNode;
-
-        //yield return new WaitForSeconds(0.5f);
-        //targetIndex++;
-
-        timeToAddPoint -= Time.deltaTime;
-        if (timeToAddPoint <= 0f)
+        if (instantiatePoints)
         {
-            if (startNode == null)
-            {
-                currentNode = new Node(this.transform.position);
-                neighbors.Add(currentNode);
-                //Debug.Log("Current position " + neighbors[currentIndex].coordinates + "The total count: " + neighbors.Count);
-                currentIndex++;
-                timeToAddPoint = timeToAddPointPlaceholder;
+            Node currentNode;
 
+            //yield return new WaitForSeconds(0.5f);
+            //targetIndex++;
+            timeToAddPoint -= Time.deltaTime;
+            if (timeToAddPoint <= 0f)
+            {
+
+                if (startNode == null)
+                {
+                    currentNode = new Node(this.GetComponentInParent<Movement>().transform.position);
+                    neighbors.Add(currentNode);
+                    Debug.Log("Start Prinitng 1");
+                    //Debug.Log("Current position " + neighbors[currentIndex].coordinates + "The total count: " + neighbors.Count);
+                    currentIndex++;
+                    timeToAddPoint = timeToAddPointPlaceholder;
+                }
+                else
+                {
+                    startCoordinates = this.transform.position;
+                    startNode = new Node(startCoordinates);
+                    Debug.Log("Start Prinitng 2");
+                    neighbors.Add(startNode);
+                    //Debug.Log("The Start Position " + neighbors[currentIndex]);
+                    currentIndex++;
+                    timeToAddPoint = timeToAddPointPlaceholder;
+                }
 
             }
-            else
-            {
-                startCoordinates = this.transform.position;
-                startNode = new Node(startCoordinates);
-                neighbors.Add(startNode);
-                //Debug.Log("The Start Position " + neighbors[currentIndex]);
-                currentIndex++;
-                timeToAddPoint = timeToAddPointPlaceholder;
-            }
-
+        }
+        else
+        {
+            ClearNeighbors();
         }
 
     }
@@ -85,6 +92,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
                     if (IsOutOfBounds(j, j + 1, neighbors.Count)) { bDiff = aDiff; }
                     else { bDiff = neighbors[j + 1].coordinates - neighbors[j].coordinates; }
+                    
 
                     //out, were basically declaring a varibale in the method
                     if (LineLineIntersection(out intersection, neighbors[i].coordinates, aDiff, neighbors[j].coordinates, bDiff).Item1)
@@ -284,8 +292,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
         timeToDeletePoint -= Time.deltaTime;
         if(timeToDeletePoint <= 0f)
         {

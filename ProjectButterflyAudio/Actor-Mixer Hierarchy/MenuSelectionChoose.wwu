@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1FE9A7B9-521C-4C8F-BBFA-5570F2FEA58D}" SchemaVersion="103" RootDocumentID="{AEF10014-9C36-4E1F-9C46-0F42DB6DE683}" ParentDocumentID="{AEF10014-9C36-4E1F-9C46-0F42DB6DE683}">
+	<AudioObjects>
+		<WorkUnit Name="MenuSelectionChoose" ID="{1FE9A7B9-521C-4C8F-BBFA-5570F2FEA58D}" OwnerID="{AEF10014-9C36-4E1F-9C46-0F42DB6DE683}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="menuSelectionChoose_0" ID="{9FA7CB31-2C75-417C-A5A6-7E91E32B2CD6}" ShortID="276585492">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="menuSelectionChoose_0" ID="{4BAD5D63-48A3-4A1F-B5FD-1CDC1057541F}">
+							<Language>SFX</Language>
+							<AudioFile>menuSelectionChoose.0.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="99126778"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="menuSelectionChoose_0" ID="{4BAD5D63-48A3-4A1F-B5FD-1CDC1057541F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}" SchemaVersion="103">
+<WwiseDocument Type="WorkUnit" ID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}" SchemaVersion="103" RootDocumentID="{C9536109-E563-4140-A228-267C4C23B90F}" ParentDocumentID="{C9536109-E563-4140-A228-267C4C23B90F}">
 	<AudioObjects>
-		<WorkUnit Name="Statues" ID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}" PersistMode="Standalone">
+		<WorkUnit Name="Statues" ID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}" OwnerID="{C9536109-E563-4140-A228-267C4C23B90F}" PersistMode="Nested">
 			<ChildrenList>
 				<WorkUnit Name="Statues_Trapped" ID="{4572382B-F891-4A8C-88B4-4FC8E37518A0}" PersistMode="Reference"/>
 				<WorkUnit Name="Statues_Freed" ID="{84BDDD40-F2C3-45D6-820C-48F11FFB1EB2}" PersistMode="Reference"/>

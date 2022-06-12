@@ -13,7 +13,7 @@ public class Jewelry : MonoBehaviour
         {
             Debug.Log("Collected Jewelry");
             //TODO: insert Jewelry functionality here
-            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
+            ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.JEWELRY);
             Destroy(this.gameObject);
         }
     }

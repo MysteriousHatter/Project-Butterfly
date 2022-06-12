@@ -30,6 +30,10 @@ public class GameplayManager : MonoBehaviour
 
     private int m_unlockedStates = 0;
 
+
+    private bool nextPath;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,31 +50,38 @@ public class GameplayManager : MonoBehaviour
     public void OnOrbCollected(int orbsCollected = 1)
     {
         m_currentCollectedOrb += orbsCollected;
-
-        FindObjectOfType<GameplayUIBehavior>().SetOrb(m_currentCollectedOrb);
     }
 
-    public bool CanUnlockStatue()
+    public int getOrbCollected()
     {
-        return m_currentCollectedOrb > m_orbsNeedToUnlockStatue;
+        return m_currentCollectedOrb;
     }
+
+    public void resetOrbCount()
+    {
+        m_currentCollectedOrb = 0;
+    }
+
+    public bool getStatueIsFree() { return nextPath; }
+    public void setStatueIsFree(bool progress) { nextPath = progress; }
 
     public void OnLoopCompleted()
     {
         var spawn = FindObjectOfType<SpawnManager>();
 
-        if (CanUnlockStatue())
+        if (getStatueIsFree())
         {
+            Debug.Log("Handle New lap");
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
-
+            GameplayUIBehavior.Instance.StartTheGame();
         }
         else
         {
             spawn.HandleNewLap(false);
-
+            GameplayUIBehavior.Instance.OnSamePathRepeated();
         }
-        m_currentCollectedOrb = 0;
+        resetOrbCount();
     }
 
     public void OnStatuesUnlocked()
@@ -80,11 +91,12 @@ public class GameplayManager : MonoBehaviour
         m_unlockedStates++;
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
-
+        ScoreManager.Instance.PathCompleted ((int)GameplayUIBehavior.Instance.TimeLeft);
         if (m_unlockedStates >3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
             GameplayUIBehavior.Instance.YouWin();
+            FindObjectOfType<ScoreUI>()?.StartAnimation();
             //Game completed 
         }
     }

@@ -81,10 +81,9 @@ public class ScoreManager : MonoBehaviour
     List<PathCompletionRecord> allRunRecords = new List<PathCompletionRecord>();
 
 
-    void Start()
+    public void Start()
     {
         currentRunRecord = new PathCompletionRecord();
-
     }
 
 

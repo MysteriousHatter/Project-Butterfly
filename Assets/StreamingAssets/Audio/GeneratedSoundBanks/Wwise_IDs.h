@@ -13,11 +13,22 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID LAPCLEARED = 1550399012U;
+        static const AkUniqueID MENUSELECTBACK = 3107940081U;
+        static const AkUniqueID MENUSELECTCHOOSE = 1040688795U;
+        static const AkUniqueID MENUSELECTHIGHLIGHT = 88822120U;
         static const AkUniqueID PLAY_MUSICTHEME = 2332797262U;
+        static const AkUniqueID PLAY_PLAYER_WINGFLAPS = 2113457283U;
         static const AkUniqueID PLAY_TESTBEEP = 1955951874U;
         static const AkUniqueID PLAY_TESTBEEP_3D = 1681067324U;
         static const AkUniqueID PLAY_TESTBEEP_LOOP = 523232931U;
         static const AkUniqueID PLAY_TESTBEEP_LOOP_3D = 3475882615U;
+        static const AkUniqueID PLAYERHURT = 3537581393U;
+        static const AkUniqueID PLAYERPICKUP = 2734591854U;
+        static const AkUniqueID PLAYERVORTEX = 2762437514U;
+        static const AkUniqueID SPEEDBOOST = 612788291U;
+        static const AkUniqueID STAGECLEARED = 1582988071U;
+        static const AkUniqueID STATUEFREED = 3424670137U;
         static const AkUniqueID STOP_MUSICTHEME = 1688769292U;
         static const AkUniqueID STOP_TESTBEEP_LOOP = 2989390457U;
         static const AkUniqueID STOP_TESTBEEP_LOOP_3D = 304008745U;
