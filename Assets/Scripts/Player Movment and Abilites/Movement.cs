@@ -40,10 +40,11 @@ public class Movement : MonoBehaviour
     // isVulnerable can be referenced by skill component to make player immune to damage and instead destroy other object
     public bool isInvulnerable;
     //Boost Mechanic Variables
-    [SerializeField] [Range(1.0f, 5.0f)] private float _shiftSpeedBoost = 3.5f;
+    [SerializeField] [Range(1.0f, 50.0f)] private float _shiftSpeedBoost = 50f;
     private float startSpeedValue;
     private bool isSpeedBoostActive = false;
     [SerializeField] private float speedGauge;
+    [SerializeField] BoostGauge boostGauge;
 
     //Boost Ball
     public bool ActivateBoostBall { get; set; }
@@ -64,6 +65,7 @@ public class Movement : MonoBehaviour
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
+            boostGauge.SetMaxBoost(speedGauge);
         }
 
         if(knockback == 0)
@@ -141,6 +143,7 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(0) && speedGauge > 0)
         {
             speedGauge--;
+            boostGauge.SetBoost(speedGauge);
             //this.gameObject.tag = "Drill";
             playerBody.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
@@ -279,10 +282,12 @@ public class Movement : MonoBehaviour
         if(speedGauge < 90)
         {
             speedGauge += boostRefill;
+            boostGauge.SetBoost(speedGauge);
         }
         else
         {
             speedGauge = 90f;
+            boostGauge.SetBoost(speedGauge);
         }
 
     } 
