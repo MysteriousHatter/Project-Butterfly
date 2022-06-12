@@ -7,12 +7,13 @@ public class ShooterAI : MonoBehaviour
 {
     public GameObject player;
     public GameObject bulletPrefab;
+    private Animator animator;
 
     Vector3 directionToShoot;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -26,12 +27,19 @@ public class ShooterAI : MonoBehaviour
         if (Vector3.Distance(player.transform.position, transform.position) < 10f)
         {
             Debug.Log("player is close");
+            animator.SetBool("Jump", true);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Attack", false);
             return true;
         }
         else
         {
             print("player isnt close" + Vector3.Distance(player.transform.position, transform.position));
+            animator.SetBool("Jump", false);
+            animator.SetBool("Attack", false);
+            animator.SetBool("Idle", true);
             return false;
+           
         }
     }
     [Task]
@@ -44,6 +52,9 @@ public class ShooterAI : MonoBehaviour
 
     [Task]
     void Fire() {
+        animator.SetBool("Jump", false);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Attack",true);
         GameObject bullet = GameObject.Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
         bullet.transform.forward = directionToShoot;

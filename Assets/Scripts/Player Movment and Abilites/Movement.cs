@@ -25,6 +25,9 @@ public class Movement : MonoBehaviour
     // User this to lerp later
     private float currentRotationAngle = 0;
 
+    //Animator Script
+    Animator myAnimator;
+
     public float TraveledDistance
     {
         get { return distanceTravelled; }
@@ -59,6 +62,7 @@ public class Movement : MonoBehaviour
             OnPathChanged();
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
+            myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
         }
 
@@ -252,12 +256,13 @@ public class Movement : MonoBehaviour
         //paraloop.InstantiateTransformations();
         if (MoveVector.sqrMagnitude != 0)
         {
-            Debug.Log("Start points");
+            myAnimator.SetBool("Flying", true);
             
         }
         else
         {
             paraloop.ClearNeighbors();
+            myAnimator.SetBool("Flying", true);
         }
 
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
