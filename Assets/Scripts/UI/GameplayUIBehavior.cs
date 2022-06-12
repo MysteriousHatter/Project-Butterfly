@@ -279,7 +279,7 @@ public class GameplayUIBehavior : MonoBehaviour
             next += check;
         }
         display += next;
-        previousCheckpointTime.GetComponent<Text>().text = display;
+        previousCheckpointTime.GetComponent<TMP_Text>().text = display;
         previousCheckpointTime.SetActive(true);
         Invoke("TurnOffCheckPoint", displayTime);
     }
