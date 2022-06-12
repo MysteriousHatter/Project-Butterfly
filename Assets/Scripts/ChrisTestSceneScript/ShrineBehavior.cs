@@ -22,7 +22,7 @@ public class ShrineBehavior : MonoBehaviour
         {
             Debug.Log("Have we freed a statue " + GameplayManager.Instance.getStatueIsFree());
             GameplayManager.Instance.OnLoopCompleted();
-            GameplayUIBehavior.Instance.StartTheGame();
+
         }
     }
 }

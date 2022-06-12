@@ -23,6 +23,12 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The temp text that pops up when the player wins. Will change later")]
     [SerializeField] private GameObject winText;
 
+    [SerializeField]
+    private GameObject fractionSlider;
+
+    [SerializeField]
+    private GameObject fractionText;
+
 
     [Tooltip("Is the game pause?")]
     [SerializeField] private bool paused;
@@ -46,12 +52,12 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The total spped of adding score.")]
     [SerializeField] private float scoreSpeed;
 
-    [SerializeField] private float score;
 
     private string timeText;
 
     private string scoreText;
 
+    private int orb;
     [Tooltip("The amount of time the checkpoint display is up")]
     [SerializeField]private float displayTime;
 
@@ -83,6 +89,7 @@ public class GameplayUIBehavior : MonoBehaviour
         timeLeft = timeTotal;
         timeText = "Time: " + timeTotal;
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
+        fractionSlider.GetComponent<Slider>().value = 0;
         if(Time.timeScale == 0)
         {
             //Fix BUG: Start of the game is always playing
@@ -99,28 +106,25 @@ public class GameplayUIBehavior : MonoBehaviour
         }
 
 
-
         if (!paused && gameStarted)
         {
             UpdateTheTimer();
             scoreText = "Score: " + ScoreManager.Instance.GetCurrentScore();
             scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
-
-        }
-
-        if (gameWon)
-        {
-            if (timeLeft > 0)
-            {
-                YouWin();
-            }
         }
     }
 
     public void StartTheGame()
     {
         gameStarted = true;
+        timeLeft = timeTotal;
+
     }
+    public void OnSamePathRepeated()
+    {
+        gameStarted = true;
+    }
+
 
     public void PauseUnpause()
     {
@@ -155,29 +159,52 @@ public class GameplayUIBehavior : MonoBehaviour
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
     }
 
-    public  void YouWin()
+    private void UpdateOrbUI()
+    {
+        string textTemp = "Orbs collected = " + orb + "/20";
+        fractionText.GetComponent<TMP_Text>().text = textTemp;
+        if (orb == 0)
+        {
+            fractionSlider.GetComponent<Slider>().value = 0;
+        }
+        else if(orb <= 20)
+        {
+            fractionSlider.GetComponent<Slider>().value += 0.05f;
+        }
+        
+        
+    }
+
+    public void YouWin()
     {
         gameStarted = false;
         gameWon = true;
         winText.SetActive(true);
         finalTime = timeLeft;
-
-        score += finalTime;
-
-        scoreText = "Score: " + (float)Math.Round((score), 0);
-
+        //timeLeft = 0;
         scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
     }
 
-    public float getScore()
+
+    public int GetOrb()
     {
-        return score;
+        return orb;
     }
 
-    public void setScore(float point)
+    public void SetOrb(int orbTotal)
     {
-        this.score += point;
+        if(orbTotal == 0)
+        {
+            orb = orbTotal;
+        }
+        else
+        {
+            orb++;
+        }
+        
+        UpdateOrbUI();
     }
+
 
     public float getTime()
     {
@@ -252,7 +279,7 @@ public class GameplayUIBehavior : MonoBehaviour
             next += check;
         }
         display += next;
-        previousCheckpointTime.GetComponent<Text>().text = display;
+        previousCheckpointTime.GetComponent<TMP_Text>().text = display;
         previousCheckpointTime.SetActive(true);
         Invoke("TurnOffCheckPoint", displayTime);
     }

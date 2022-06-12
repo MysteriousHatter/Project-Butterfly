@@ -5,7 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    [SerializeField]
+    private float CameraArmLength = 5f;
     public GameObject player;
     public GameObject cameraRightObject;
     private Vector3 cameraSpeedHolder;
@@ -23,7 +24,7 @@ public class CameraMovement : MonoBehaviour
             // always be on the right side of the player transform
             Vector3 cancelYOffeset = cameraRightObject.transform.right;
             cancelYOffeset.y = 0;
-            this.gameObject.transform.position = cancelYOffeset * 10f + player.transform.position;
+            this.gameObject.transform.position = cancelYOffeset * CameraArmLength + player.transform.position;
             this.gameObject.transform.LookAt(player.transform.position);
         }
     }

@@ -30,7 +30,9 @@ public class GameplayManager : MonoBehaviour
 
     private int m_unlockedStates = 0;
 
+
     private bool nextPath;
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,13 +74,12 @@ public class GameplayManager : MonoBehaviour
             Debug.Log("Handle New lap");
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
-
-
+            GameplayUIBehavior.Instance.StartTheGame();
         }
         else
         {
             spawn.HandleNewLap(false);
-
+            GameplayUIBehavior.Instance.OnSamePathRepeated();
         }
         resetOrbCount();
     }
@@ -90,11 +91,12 @@ public class GameplayManager : MonoBehaviour
         m_unlockedStates++;
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
-
+        ScoreManager.Instance.PathCompleted ((int)GameplayUIBehavior.Instance.TimeLeft);
         if (m_unlockedStates >3)
         {
             //TODO: START GAME FINISHED SEQUENCE HERE
             GameplayUIBehavior.Instance.YouWin();
+            FindObjectOfType<ScoreUI>()?.StartAnimation();
             //Game completed 
         }
     }

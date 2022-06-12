@@ -14,8 +14,9 @@ public class BobaTea : MonoBehaviour
         {
             Debug.Log("Collected Boba Tea");
             //TODO: insert Boba functionality here
-            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
             FindObjectOfType<Movement>().setBoostRefill(boostRefill);
+            ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.BOBA);
+
             Destroy(this.gameObject);
         }
     }

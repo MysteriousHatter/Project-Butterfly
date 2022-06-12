@@ -81,10 +81,9 @@ public class ScoreManager : MonoBehaviour
     List<PathCompletionRecord> allRunRecords = new List<PathCompletionRecord>();
 
 
-    void Start()
+    public void Start()
     {
         currentRunRecord = new PathCompletionRecord();
-
     }
 
 
@@ -154,5 +153,10 @@ public class ScoreManager : MonoBehaviour
     public int GetCurrentScore()
     {
         return currentRunRecord.GetInLoopScore();
+    }
+
+    public int GetCurrentOrb()
+    {
+        return currentRunRecord.orbsCollected;
     }
 }
