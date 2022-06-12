@@ -118,7 +118,13 @@ public class GameplayUIBehavior : MonoBehaviour
     {
         gameStarted = true;
         timeLeft = timeTotal;
+
     }
+    public void OnSamePathRepeated()
+    {
+        gameStarted = true;
+    }
+
 
     public void PauseUnpause()
     {
