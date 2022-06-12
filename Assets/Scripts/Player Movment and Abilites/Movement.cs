@@ -25,6 +25,9 @@ public class Movement : MonoBehaviour
     // User this to lerp later
     private float currentRotationAngle = 0;
 
+    //Animator Script
+    Animator myAnimator;
+
     public float TraveledDistance
     {
         get { return distanceTravelled; }
@@ -59,6 +62,7 @@ public class Movement : MonoBehaviour
             OnPathChanged();
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
+            myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
         }
 
@@ -108,7 +112,7 @@ public class Movement : MonoBehaviour
 
     private void CheckIfPlayerIsInvinisable()
     {
-        if (this.gameObject.tag == "Drill")
+        if (playerBody.gameObject.tag == "Drill")
         {
             isInvulnerable = true;
         }
@@ -137,7 +141,8 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(0) && speedGauge > 0)
         {
             speedGauge--;
-            this.gameObject.tag = "Drill";
+            //this.gameObject.tag = "Drill";
+            playerBody.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
             if (Speed < 20f)
             {
@@ -152,13 +157,15 @@ public class Movement : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             Speed = startSpeedValue;
-            this.gameObject.tag = "Player";
+            //this.gameObject.tag = "Player";
+            playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
         else
         {
             Speed = startSpeedValue;
-            this.gameObject.tag = "Player";
+            //this.gameObject.tag = "Player";
+            playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
     }
@@ -252,12 +259,13 @@ public class Movement : MonoBehaviour
         //paraloop.InstantiateTransformations();
         if (MoveVector.sqrMagnitude != 0)
         {
-            Debug.Log("Start points");
+            myAnimator.SetBool("Flying", true);
             
         }
         else
         {
             paraloop.ClearNeighbors();
+            myAnimator.SetBool("Flying", true);
         }
 
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);

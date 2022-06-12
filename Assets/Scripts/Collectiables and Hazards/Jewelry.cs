@@ -9,7 +9,7 @@ public class Jewelry : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var playerTag = other.gameObject.tag;
-        if (playerTag == "Player" || playerTag == "Drill")
+        if (playerTag == "Player" || playerTag == "Drill" || playerTag == "Vortex")
         {
             Debug.Log("Collected Jewelry");
             //TODO: insert Jewelry functionality here

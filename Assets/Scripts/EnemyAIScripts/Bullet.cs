@@ -8,7 +8,7 @@ namespace Panda.Examples.Shooter
     public class Bullet : MonoBehaviour
     {
         public float speed = 1.0f;
-        public float duration = 5.0f;
+        public float duration = 15.0f;
         public float damage = 1.0f;
         public GameObject impactPrefab;
 
@@ -64,7 +64,7 @@ namespace Panda.Examples.Shooter
         }
         */
 
-        void Explode(RaycastHit hit)
+        public void Explode()
         {
 
             Destroy(this.gameObject);
