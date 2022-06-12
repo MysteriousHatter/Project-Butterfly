@@ -112,7 +112,7 @@ public class Movement : MonoBehaviour
 
     private void CheckIfPlayerIsInvinisable()
     {
-        if (this.gameObject.tag == "Drill")
+        if (playerBody.gameObject.tag == "Drill")
         {
             isInvulnerable = true;
         }
@@ -141,7 +141,8 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(0) && speedGauge > 0)
         {
             speedGauge--;
-            this.gameObject.tag = "Drill";
+            //this.gameObject.tag = "Drill";
+            playerBody.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
             if (Speed < 20f)
             {
@@ -156,13 +157,15 @@ public class Movement : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             Speed = startSpeedValue;
-            this.gameObject.tag = "Player";
+            //this.gameObject.tag = "Player";
+            playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
         else
         {
             Speed = startSpeedValue;
-            this.gameObject.tag = "Player";
+            //this.gameObject.tag = "Player";
+            playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
     }

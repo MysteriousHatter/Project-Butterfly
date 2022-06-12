@@ -175,8 +175,8 @@ MonoBehaviour:
   neighbors: []
   currentIndex: 0
   startPath: 0
-  timeToDeletePoint: 0.451
-  timeToAddPoint: 0.5
+  timeToAddPoint: 0.3
+  timeToDeletePoint: 0.5
   vortexPrefab: {fileID: 3115127250037394708, guid: 86951a446b17e6249a92aacc610f9f7a, type: 3}
 --- !u!96 &768312726
 TrailRenderer:
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 7291254568860154675}
   m_Layer: 0
   m_Name: Follower
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -814,7 +814,7 @@ MonoBehaviour:
   isInvulnerable: 0
   _shiftSpeedBoost: 3.5
   speedGauge: 90
-  boostBallSpeed: 510
+  boostBallSpeed: 530
   boostBallTime: 800
 --- !u!1001 &99170264628740731
 PrefabInstance:

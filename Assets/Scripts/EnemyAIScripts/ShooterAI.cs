@@ -8,25 +8,26 @@ public class ShooterAI : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     private Animator animator;
+    [SerializeField] private float distanceCheck = 5f;
 
     Vector3 directionToShoot;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+            animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(animator == null) { Destroy(this.gameObject); }
     }
     [Task]
     bool IsPlayerClose()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) < 10f)
+        if (Vector3.Distance(transform.position, player.transform.position) < distanceCheck)
         {
-            Debug.Log("player is close");
+            Debug.Log("player is close " + Vector3.Distance(player.transform.position, transform.position));
             animator.SetBool("Jump", true);
             animator.SetBool("Idle", false);
             animator.SetBool("Attack", false);
@@ -57,7 +58,7 @@ public class ShooterAI : MonoBehaviour
         animator.SetBool("Attack",true);
         GameObject bullet = GameObject.Instantiate(bulletPrefab);
         bullet.transform.position = transform.position;
-        bullet.transform.forward = directionToShoot;
+        bullet.transform.up = -Vector3.forward;
         Task.current.Succeed();
     }
 

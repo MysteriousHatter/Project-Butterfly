@@ -4845,7 +4845,6 @@ MonoBehaviour:
   timeToDestory: 5
   speed: 10
   magnetDistance: 360
-  center: {fileID: 0}
 --- !u!1 &3115127250104720465
 GameObject:
   m_ObjectHideFlags: 0
@@ -19397,7 +19396,7 @@ GameObject:
   - component: {fileID: 2776572848685540750}
   m_Layer: 0
   m_Name: Center
-  m_TagString: Player
+  m_TagString: Vortex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

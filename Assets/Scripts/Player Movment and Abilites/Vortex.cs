@@ -23,7 +23,7 @@ public class Vortex : MonoBehaviour
         for (int i = 0; i < hitColliders.Length; i++)
         {
 
-            if (hitColliders[i].tag == "Collectible")
+            if (hitColliders[i].tag == "Collectible" || hitColliders[i].tag == "Enemy")
             {
                 //Debug.Log("Object were hitting " + hitColliders[i].gameObject.name);
                 Transform collectiable = hitColliders[i].transform;

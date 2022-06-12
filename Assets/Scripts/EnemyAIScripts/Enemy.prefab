@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308668762128330698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top Stretch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8932432110135446510}
   - component: {fileID: 1176398581165679616}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: skin 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,9 +139,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3550589271200518435}
   - component: {fileID: 3194734703034797638}
-  m_Layer: 0
+  - component: {fileID: 9058257401537019066}
+  m_Layer: 3
   m_Name: Stationary_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +176,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.041975, y: 1.4878421, z: 2.3057022}
   m_Center: {x: -0.048235893, y: -0.24392104, z: -0.08942652}
+--- !u!114 &9058257401537019066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830381566889873731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d255a83bb843c41a6c6c43adb5c786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollider: {fileID: 0}
+  player: {fileID: 0}
+  timePenalty: 10
 --- !u!1 &1894206136057353302
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050298556905698259}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: COG_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4851612567725283694}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Root Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 912100505926591502}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5952016710440853492}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rotation_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,9 +330,9 @@ GameObject:
   - component: {fileID: 4941164502317322138}
   - component: {fileID: 61383519511164831}
   - component: {fileID: 7582469844802035779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 5998833581976224511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.24, y: -4.61, z: -5.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3550589271200518435}
@@ -349,8 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519d2121c8474eb4cae6685b6436f607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7291254568860154679, guid: c765fabe34ff825418603548f455a8aa, type: 3}
+  player: {fileID: 0}
   bulletPrefab: {fileID: 124132, guid: 1a62fef3c4f8a474e9efd647f8e618b6, type: 3}
+  distanceCheck: 10
 --- !u!114 &7582469844802035779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - {fileID: 0}
+  - {fileID: 4900000, guid: c0d2507c6d7bbe04d9f3a54cb9b1e4a0, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:
@@ -382,7 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5847672788861234846}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412427418833019568}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top Stretch_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,9 +463,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8905848290594771711}
   - component: {fileID: 3932118131606390243}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Slime_Rig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -498,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796003657937140735}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6780501227851379043}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: COG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
