@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{935E670E-1A5D-49D6-9EF0-19CBFFD6A2E3}" SchemaVersion="103" RootDocumentID="{C9536109-E563-4140-A228-267C4C23B90F}" ParentDocumentID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}">
-	<AudioObjects>
-		<WorkUnit Name="Shrines" ID="{935E670E-1A5D-49D6-9EF0-19CBFFD6A2E3}" OwnerID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}" PersistMode="Nested"/>
-	</AudioObjects>
-</WwiseDocument>

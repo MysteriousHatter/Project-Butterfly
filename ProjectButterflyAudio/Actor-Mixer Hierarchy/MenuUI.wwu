@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{AEF10014-9C36-4E1F-9C46-0F42DB6DE683}" SchemaVersion="103">
 	<AudioObjects>
 		<WorkUnit Name="MenuUI" ID="{AEF10014-9C36-4E1F-9C46-0F42DB6DE683}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="4"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<WorkUnit Name="MenuSelectionHighlight" ID="{0095552C-6E7B-4391-AE9C-A03D31BE15F2}" PersistMode="Reference"/>
 				<WorkUnit Name="MenuSelectionChoose" ID="{1FE9A7B9-521C-4C8F-BBFA-5570F2FEA58D}" PersistMode="Reference"/>

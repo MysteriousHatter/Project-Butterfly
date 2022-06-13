@@ -11,7 +11,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SoundtrackSwitch" ID="{A495938A-B282-45D8-AA1F-17409641B3E7}" WorkUnitID="{EF971E9B-A9C5-4B91-AA8F-9FE2D15CFCEC}"/>
+									<ObjectRef Name="SoundtrackSwitch" ID="{B63C2A96-E9E7-4782-AAE4-0D9ABAC82CF5}" WorkUnitID="{EF971E9B-A9C5-4B91-AA8F-9FE2D15CFCEC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -22,7 +22,7 @@
 						<Action Name="" ID="{C39F8389-BBC0-4CBF-8844-E5ED0F81B174}" ShortID="349117483">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="SoundtrackSwitch" ID="{A495938A-B282-45D8-AA1F-17409641B3E7}" WorkUnitID="{EF971E9B-A9C5-4B91-AA8F-9FE2D15CFCEC}"/>
+									<ObjectRef Name="SoundtrackSwitch" ID="{B63C2A96-E9E7-4782-AAE4-0D9ABAC82CF5}" WorkUnitID="{EF971E9B-A9C5-4B91-AA8F-9FE2D15CFCEC}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
