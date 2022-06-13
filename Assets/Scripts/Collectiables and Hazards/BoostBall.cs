@@ -22,6 +22,8 @@ public class BoostBall : MonoBehaviour
         {
             Debug.Log("Boosst");
             player.GetComponent<Movement>().ActivateBoostBall = true;
+            StartCoroutine(player.GetComponent<Movement>().MoveForward());
+
         }
     }
 }
