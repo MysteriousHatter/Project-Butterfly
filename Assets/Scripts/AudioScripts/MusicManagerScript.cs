@@ -14,7 +14,9 @@ public class MusicManagerScript : MonoBehaviour
         // player visits 'how to play', returns to main menu,
         // music should not restart when revisiting main menu.
         // loading/un-loading scenes, should not affect music event.
+        AkSoundEngine.PostEvent("Play_MusicTheme", this.gameObject);
     }
+
 
     // In the event that Ak State component does not function in each scene
     // use the two methods below to update Ak State
