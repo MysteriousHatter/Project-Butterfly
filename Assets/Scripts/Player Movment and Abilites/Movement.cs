@@ -63,6 +63,8 @@ public class Movement : MonoBehaviour
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
+            myAnimator.gameObject.transform.localRotation = Quaternion.Euler(0f, 180f, 90f);
+            myAnimator.gameObject.GetComponent<BoxCollider>().center = new Vector3(0, 0, -0.15f);
             ActivateBoostBall = false;
         }
 
