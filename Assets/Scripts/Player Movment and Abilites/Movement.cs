@@ -128,7 +128,7 @@ public class Movement : MonoBehaviour
     // is as close as possible to its position on the old path
     void OnPathChanged()
     {
-        distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+        distanceTravelled = 0;
 
         Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
         Vector3 angle = rotation.eulerAngles;
