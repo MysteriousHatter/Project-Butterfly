@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{862AC03A-539A-4748-95AF-C877A7ABB94C}" SchemaVersion="103" RootDocumentID="{79842AFD-5408-4636-AF75-58A56A55E1DE}" ParentDocumentID="{79842AFD-5408-4636-AF75-58A56A55E1DE}">
-	<AudioObjects>
-		<WorkUnit Name="Enemy_Retreat" ID="{862AC03A-539A-4748-95AF-C877A7ABB94C}" OwnerID="{79842AFD-5408-4636-AF75-58A56A55E1DE}" PersistMode="Nested"/>
-	</AudioObjects>
-</WwiseDocument>
