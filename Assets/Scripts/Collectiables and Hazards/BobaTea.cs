@@ -10,13 +10,13 @@ public class BobaTea : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var playerTag = other.gameObject.tag;
-        if (playerTag == "Player" || playerTag == "Drill")
+        if (playerTag == "Player" || playerTag == "Drill" || playerTag == "Vortex")
         {
             Debug.Log("Collected Boba Tea");
             //TODO: insert Boba functionality here
-            AkSoundEngine.PostEvent("PlayerPickup", this.gameObject);
-            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
             FindObjectOfType<Movement>().setBoostRefill(boostRefill);
+            ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.BOBA);
+
             Destroy(this.gameObject);
         }
     }

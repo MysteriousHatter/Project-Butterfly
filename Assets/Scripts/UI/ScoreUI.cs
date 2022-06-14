@@ -23,7 +23,7 @@ public class ScoreUI : MonoBehaviour
     void Start()
     {
         Reset();
-        Test();
+      //  Test();
     }
 
     // Update is called once per frame
@@ -73,7 +73,7 @@ public class ScoreUI : MonoBehaviour
 
 
     }
-    void StartAnimation()
+    public void StartAnimation()
     {
         Reset();
         updating = true;

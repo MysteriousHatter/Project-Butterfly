@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Drill
   - HideWhenHowToPlay
+  - Enemy
   layers:
   - Default
   - TransparentFX

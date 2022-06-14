@@ -9,13 +9,15 @@ public class Orb : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var playerTag = other.gameObject.tag;
-        if (playerTag == "Player" || playerTag == "Drill")
+        if (playerTag == "Player" || playerTag == "Drill" || playerTag == "Vortex")
         {
             Debug.Log("Collected Orb");
             //TODO: insert Orb functionality here
-            AkSoundEngine.PostEvent("PlayerPickup", this.gameObject);
-            FindObjectOfType<GameplayUIBehavior>().setScore(scoreValue);
+
+            GameplayManager.Instance.OnOrbCollected();
+            //TODO: Update statue count in UI and gameManager look at chris' code
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.ORBS);
+            GameplayUIBehavior.Instance.SetOrb(ScoreManager.Instance.GetCurrentOrb());
             Destroy(this.gameObject);
         }
     }
