@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="NPC_Locomotion" ID="{79842AFD-5408-4636-AF75-58A56A55E1DE}" PersistMode="Standalone">
 			<PropertyList>
-				<Property Name="Color" Type="int16" Value="6"/>
+				<Property Name="Color" Type="int16" Value="9"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>

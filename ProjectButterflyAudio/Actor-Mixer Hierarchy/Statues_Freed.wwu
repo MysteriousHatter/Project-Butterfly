@@ -4,12 +4,27 @@
 		<WorkUnit Name="Statues_Freed" ID="{84BDDD40-F2C3-45D6-820C-48F11FFB1EB2}" OwnerID="{812D9635-8755-461B-9D0E-44B8E9A0C2ED}" PersistMode="Nested">
 			<ChildrenList>
 				<Sound Name="statueFreed_0" ID="{7EF2F532-30CD-469B-ADB7-23AFDAE656F8}" ShortID="492008611">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>54</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
+							<ObjectRef Name="StatueFreed" ID="{562737EF-920E-4D1E-9325-47F8D954BF53}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Glitch" ID="{86F10581-F5E0-4CA4-9CEF-0A268F5C19B7}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

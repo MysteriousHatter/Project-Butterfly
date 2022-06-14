@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 5199596}
   - {fileID: 822320479}
@@ -699,6 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 756025120}
   - {fileID: 1565115766}
@@ -1221,6 +1223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 401579410}
   - {fileID: 1748783636}
@@ -1473,6 +1476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1191565490}
   - {fileID: 837499829}
@@ -2870,6 +2874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1262614834}
   - {fileID: 1158401016}
@@ -3775,6 +3780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2037163255}
   - {fileID: 243695391}
@@ -4110,6 +4116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1739141533}
   - {fileID: 1222309134}
@@ -4832,10 +4839,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d916a633123df143a4b8fb27a612528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 5
+  playerBody: {fileID: 0}
+  Sensitvity: 0
   pathCreator: {fileID: 839433806}
   endOfPathInstruction: 0
-  speed: 5
+  paraloop: {fileID: 0}
+  knockback: 1
   isInvulnerable: 0
+  _shiftSpeedBoost: 3.5
+  speedGauge: 0
+  boostBallSpeed: 0
+  boostBallTime: 0
 --- !u!1 &254029088
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,6 +6182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 513013016}
   - {fileID: 23776731}
@@ -6901,6 +6917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1748494473}
   - {fileID: 1832714120}
@@ -7485,6 +7502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 880735552}
   - {fileID: 1053634856}
@@ -7571,6 +7589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 91059107}
   - {fileID: 803725717}
@@ -7740,6 +7759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1438962914}
   - {fileID: 783091109}
@@ -8198,6 +8218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1597638120}
   - {fileID: 295820042}
@@ -8760,6 +8781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1963646811}
   - {fileID: 748146256}
@@ -8929,6 +8951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1431370236}
   - {fileID: 743458766}
@@ -11273,6 +11296,64 @@ Transform:
   m_Father: {fileID: 2112447531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &555082824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555082826}
+  - component: {fileID: 555082825}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &555082825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555082824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c2aba08694bba47a94d9a3f39e0d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: 3ce80f801af0c5a45b1eddb24f1d00cf, type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!4 &555082826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555082824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1715355616}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560197662
 GameObject:
   m_ObjectHideFlags: 0
@@ -11691,6 +11772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1854156906}
   - {fileID: 1655295383}
@@ -13495,6 +13577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 297493161}
   - {fileID: 96317659}
@@ -14325,6 +14408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1878706042}
   - {fileID: 913622361}
@@ -15808,6 +15892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 833078102}
   - {fileID: 580706658}
@@ -18560,6 +18645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 370192637}
   - {fileID: 774903450}
@@ -20046,6 +20132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 718116023}
   - {fileID: 502608303}
@@ -21192,6 +21279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 979745019}
   - {fileID: 1044968169}
@@ -22169,6 +22257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 899238770}
   - {fileID: 828099266}
@@ -22900,6 +22989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1241100203}
   - {fileID: 1032693974}
@@ -23267,6 +23357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 477736750}
   - {fileID: 1203233444}
@@ -24970,6 +25061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1953628190}
   - {fileID: 479670821}
@@ -25305,6 +25397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1237914398}
   - {fileID: 1298648852}
@@ -25597,6 +25690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2067148459}
   - {fileID: 1069611691}
@@ -26055,6 +26149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1956165298}
   - {fileID: 1047715857}
@@ -26630,6 +26725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 833422785}
   - {fileID: 1996453380}
@@ -26799,6 +26895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1712593088}
   - {fileID: 171406371}
@@ -27134,6 +27231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1316935226}
   - {fileID: 1521230105}
@@ -27426,6 +27524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1367417649}
   - {fileID: 1106366601}
@@ -28307,7 +28406,8 @@ GameObject:
   - component: {fileID: 1407856705}
   - component: {fileID: 1407856704}
   - component: {fileID: 1407856706}
-  - component: {fileID: 1407856703}
+  - component: {fileID: 1407856708}
+  - component: {fileID: 1407856707}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -28315,14 +28415,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1407856703
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407856702}
-  m_Enabled: 1
 --- !u!20 &1407856704
 Camera:
   m_ObjectHideFlags: 0
@@ -28399,6 +28491,42 @@ MonoBehaviour:
   Above: 4
   MoveSnappiness: 3
   LookSnappiness: 2
+--- !u!114 &1407856707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407856702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494f9f2ac5455ab48808ae6db1d297dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &1407856708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407856702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bae24d63809e1d49a61a5470645469e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1408794469
 GameObject:
   m_ObjectHideFlags: 0
@@ -29481,6 +29609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1455626746}
   - {fileID: 1834217203}
@@ -30100,6 +30229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2005970496}
   - {fileID: 1336306100}
@@ -31079,6 +31209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 2051215734}
   - {fileID: 901645201}
@@ -32908,6 +33039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 517266346}
   - {fileID: 1888587672}
@@ -34027,6 +34159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 18587308}
   - {fileID: 1436446159}
@@ -34388,6 +34521,62 @@ Transform:
   m_Father: {fileID: 1531223740}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1715355615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715355616}
+  - component: {fileID: 1715355617}
+  m_Layer: 0
+  m_Name: MainSoundbank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715355616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715355615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 555082826}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715355617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715355615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66bfb6bd0b2645458062026973d0f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 69e98e18d676d0a4c9175c4bed93532f, type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &1717016206
 GameObject:
   m_ObjectHideFlags: 0
@@ -34517,6 +34706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1088903446}
   - {fileID: 523921522}
@@ -34852,6 +35042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 552997709}
   - {fileID: 1433191109}
@@ -35748,6 +35939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1012801189}
   - {fileID: 747441639}
@@ -36000,6 +36192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 586514335}
   - {fileID: 806740955}
@@ -36790,6 +36983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1680989609}
   - {fileID: 1545625639}
@@ -37387,6 +37581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1217408175}
   - {fileID: 1056215179}
@@ -38134,6 +38329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 864680352}
   - {fileID: 241299649}
@@ -38220,6 +38416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1953372759}
   - {fileID: 83936997}
@@ -38338,6 +38535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 511195098}
   - {fileID: 603841003}
@@ -39864,6 +40062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 289473718}
   - {fileID: 1960269561}
@@ -41826,6 +42025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 694521828}
   - {fileID: 2113117509}
@@ -42027,6 +42227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5e93eea7639d847bfa00013bcf4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostValue: 1.5
   subParticles:
   - {fileID: 1359701656}
   - {fileID: 1169398672}

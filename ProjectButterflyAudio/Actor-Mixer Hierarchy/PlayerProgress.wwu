@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{C9536109-E563-4140-A228-267C4C23B90F}" SchemaVersion="103">
 	<AudioObjects>
 		<WorkUnit Name="PlayerProgress" ID="{C9536109-E563-4140-A228-267C4C23B90F}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<WorkUnit Name="LapCleared" ID="{263F2568-9320-45A6-8047-EB64EB6C6204}" PersistMode="Reference"/>
 				<WorkUnit Name="StageCleared" ID="{8AC639D8-2E3D-49B3-812E-712B20724C8C}" PersistMode="Reference"/>

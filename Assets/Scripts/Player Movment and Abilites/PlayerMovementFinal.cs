@@ -70,7 +70,8 @@ public class PlayerMovementFinal : MonoBehaviour
 
     private void PlayerSpeedUp()
     {
-        if(Input.GetMouseButton(0))
+        AkSoundEngine.PostEvent("SpeedBoost", this.gameObject);
+        if (Input.GetMouseButton(0))
         {
             this.gameObject.tag = "Drill";
             if(Speed < 20f)
