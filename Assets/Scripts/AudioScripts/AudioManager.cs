@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
     {
         // detect collision between playerChar and x
         // play pickup event
+
     }
 
     public void HazardSFX()
