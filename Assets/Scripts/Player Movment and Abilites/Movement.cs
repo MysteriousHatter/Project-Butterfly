@@ -63,8 +63,6 @@ public class Movement : MonoBehaviour
             setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
-            myAnimator.gameObject.transform.localRotation = Quaternion.Euler(0f, 180f, 90f);
-            myAnimator.gameObject.GetComponent<BoxCollider>().center = new Vector3(0, 0, -0.15f);
             ActivateBoostBall = false;
         }
 
@@ -184,10 +182,14 @@ public class Movement : MonoBehaviour
 
     private void RotatePlayer()
     {
-        if (PlayerRotation.sqrMagnitude != 0)
+        if (PlayerRotation.sqrMagnitude != 0 /*|| myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Character1_Reference|kaya_Idle"*/)
         {
             float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
- 
+            //if (myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Character1_Reference|kaya_Idle")
+            //{
+            //    playerInputAngle = 180f;
+            //}
+
             // Set player rotation along with the path rotation
             Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
             Vector3 angle = rotation.eulerAngles;
@@ -278,7 +280,7 @@ public class Movement : MonoBehaviour
         else
         {
             paraloop.ClearNeighbors();
-            myAnimator.SetBool("Flying", true);
+            myAnimator.SetBool("Flying", false);
         }
 
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
