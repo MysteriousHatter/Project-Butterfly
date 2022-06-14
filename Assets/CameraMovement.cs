@@ -22,7 +22,8 @@ public class CameraMovement : MonoBehaviour
         if (!isBoosting)
         {
             // always be on the right side of the player transform
-            Vector3 cancelYOffeset = cameraRightObject.transform.right;
+            Vector3 cancelYOffeset = cameraRightObject.GetComponent<CameraLookUpUpdate>().RightVector;
+
             cancelYOffeset.y = 0;
             this.gameObject.transform.position = cancelYOffeset * CameraArmLength + player.transform.position;
             this.gameObject.transform.LookAt(player.transform.position);
@@ -38,12 +39,12 @@ public class CameraMovement : MonoBehaviour
 
         while (cameraLerp < delay)
         {
-            Vector3 cancelYOffeset = cameraRightObject.transform.right;
+            Vector3 cancelYOffeset = cameraRightObject.GetComponent<CameraLookUpUpdate>().RightVector;
             cancelYOffeset.y = 0;
             cameraLerp += Time.deltaTime;
             float lerp = cameraLerp / delay;
 
-            this.gameObject.transform.position = Vector3.Lerp(cameraSpeedHolder, player.transform.position + cancelYOffeset * 10f, lerp);
+            this.gameObject.transform.position = Vector3.Lerp(cameraSpeedHolder, player.transform.position + cancelYOffeset * CameraArmLength, lerp);
             this.gameObject.transform.LookAt(player.transform.position);
 
            
