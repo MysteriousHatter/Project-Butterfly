@@ -30,53 +30,52 @@ public class AudioManager : MonoBehaviour
         // do not destroy until game is destroyed
     }
 
-    public void MusicState()
-    {
-        // get scene name
-        AkSoundEngine.SetState("GameState", "InMenu");
-        // set state based on scene name
-    }
-
     public void PickupSFX()
     {
         // detect collision between playerChar and x
         // play pickup event
-
+        AkSoundEngine.PostEvent("PlayerPickup", gameObject);
     }
 
     public void HazardSFX()
     {
         // detect collision between playerChar and y
         // play hazard event
+        AkSoundEngine.PostEvent("PlayerHurt", gameObject);
     }
 
     public void VortexSFX()
     {
         // detect vortex generation
         // play vortex event
+        AkSoundEngine.PostEvent("PlayerVortex", gameObject);
     }
 
     public void BoostSFX()
     {
         // detect collision with booster
         // play boost event
+        AkSoundEngine.PostEvent("SpeedBoost", gameObject);
     }
 
     public void LapClearedSFX()
     {
         // detect new lap
         // play lap cleared event
+        AkSoundEngine.PostEvent("LapCleared", gameObject);
     }
 
     public void StageClearedSFX()
     {
         // detect player winning
         // play stage cleared event
+        AkSoundEngine.PostEvent("StageCleared", gameObject);
     }
 
     public void StatueSFX()
     {
         // detect statue status
         // play statue event
+        AkSoundEngine.PostEvent("StatueFreed", gameObject);
     }
 }

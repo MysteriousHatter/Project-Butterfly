@@ -14,6 +14,7 @@ public class BobaTea : MonoBehaviour
         {
             Debug.Log("Collected Boba Tea");
             //TODO: insert Boba functionality here
+            AudioManager.instance.PickupSFX();
             FindObjectOfType<Movement>().setBoostRefill(boostRefill);
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.BOBA);
 

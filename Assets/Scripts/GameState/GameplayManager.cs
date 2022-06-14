@@ -75,6 +75,7 @@ public class GameplayManager : MonoBehaviour
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
+            AudioManager.instance.LapClearedSFX();
         }
         else
         {
@@ -98,6 +99,7 @@ public class GameplayManager : MonoBehaviour
             //TODO: START GAME FINISHED SEQUENCE HERE
             GameplayUIBehavior.Instance.YouWin();
             FindObjectOfType<ScoreUI>()?.StartAnimation();
+            AudioManager.instance.StageClearedSFX();
             //Game completed 
         }
     }
