@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplayUIBehavior : MonoBehaviour
 {
@@ -152,13 +153,21 @@ public class GameplayUIBehavior : MonoBehaviour
         }
         else
         {
-            gameStarted = false;
-            loseText.SetActive(true);
+            //gameStarted = false;
+            //loseText.SetActive(true);
+            StartCoroutine(YouLose());
         }
 
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
     }
 
+    IEnumerator YouLose()
+    {
+        gameStarted = false;
+        loseText.SetActive(true);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("GameOver");
+    }
     private void UpdateOrbUI()
     {
         string textTemp = "Orbs collected = " + orb + "/20";
