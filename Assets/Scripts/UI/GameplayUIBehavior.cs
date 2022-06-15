@@ -183,8 +183,20 @@ public class GameplayUIBehavior : MonoBehaviour
         
         
     }
-
     public void YouWin()
+    {
+        /*
+        gameStarted = false;
+        gameWon = true;
+        winText.SetActive(true);
+        finalTime = timeLeft;
+        //timeLeft = 0;
+        scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
+        */
+        StartCoroutine(WinRoutine());
+    }
+
+    IEnumerator WinRoutine()
     {
         gameStarted = false;
         gameWon = true;
@@ -192,8 +204,10 @@ public class GameplayUIBehavior : MonoBehaviour
         finalTime = timeLeft;
         //timeLeft = 0;
         scorePanel.GetComponentInChildren<TMP_Text>().text = scoreText;
-    }
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("WinScene");
 
+    }
 
     public int GetOrb()
     {
