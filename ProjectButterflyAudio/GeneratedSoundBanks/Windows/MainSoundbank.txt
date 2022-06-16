@@ -9,7 +9,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1681067324	Play_TestBeep_3D			\TestEvents\Play_TestBeep_3D	
 	1688769292	Stop_MusicTheme			\Soundtrack\Stop_MusicTheme	
 	1955951874	Play_TestBeep			\TestEvents\Play_TestBeep	
-	2113457283	Play_Player_WingFlaps			\Player\PlayerLocomotion\Play_Player_WingFlaps	
 	2332797262	Play_MusicTheme			\Soundtrack\Play_MusicTheme	
 	2734591854	PlayerPickup			\Player\PlayerCollision\PlayerPickup	
 	2762437514	PlayerVortex			\Player\PlayerLocomotion\PlayerVortex	
@@ -26,7 +25,9 @@ State	ID	Name	State Group			Notes
 	748895195	None	GameState			
 	984691642	InGame	GameState			
 	3374585465	InMenu	GameState			
-	3820324306	InCredits	GameState			
+
+Effect plug-ins	ID	Name	Type				Notes
+	2258521792	Brick_Wall_Minus_1dB_Peak_Slow_Release	Wwise Peak Limiter			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	99126778	menuSelectionChoose_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\menuSelectionChoose.0_C1F52A07.wem		\Actor-Mixer Hierarchy\MenuUI\MenuSelectionChoose\menuSelectionChoose_0		6006
@@ -34,14 +35,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	141860355	vortexSFX_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\vortexSFX.0_C1F52A07.wem		\Actor-Mixer Hierarchy\Player_Locomotion\PlayerVortex\vortexSFX_0		31460
 	268423636	lapCleared_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\lapCleared.0_C1F52A07.wem		\Actor-Mixer Hierarchy\PlayerProgress\LapCleared\lapCleared_0		48017
 	297380057	TestBeep	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\TestFiles\TestBeep_3F75BDB9.wem		\Actor-Mixer Hierarchy\TestFiles\TestBeep		2469
-	326003378	building	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\Soundtrack\building_3D1D1BA5.wem		\Interactive Music Hierarchy\Soundtrack\SoundtrackSwitch\EndingPlaylist\EndingTheme\building		167040
+	326003378	building	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\Soundtrack\building_3D1D1BA5.wem		\Interactive Music Hierarchy\Soundtrack\SoundtrackSwitch\InMenuPlaylist\InMenuMusic\building		167040
 	383980882	statueFreed_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\statueFreed.0_C1F52A07.wem		\Actor-Mixer Hierarchy\PlayerProgress\Statues\Statues_Freed\statueFreed_0		70274
 	503481687	playerHurt_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\playerHurt.0_C1F52A07.wem		\Actor-Mixer Hierarchy\Player_Hazard\PlayerHurt\playerHurt_0		5336
 	582910014	menuSelectionHighlight_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\menuSelectionHighlight.0_C1F52A07.wem		\Actor-Mixer Hierarchy\MenuUI\MenuSelectionHighlight\menuSelectionHighlight_0		4797
-	623375128	liftOff	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\Soundtrack\liftOff_3D1D1BA5.wem		\Interactive Music Hierarchy\Soundtrack\SoundtrackSwitch\MenuPlaylist\MenuTheme\liftOff		422425
 	645673246	pickupSFX_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\pickupSFX.0_C1F52A07.wem		\Actor-Mixer Hierarchy\Collectibles\Pickups\pickupSFX_0		24093
 	809950130	playerDash_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\playerDash.0_C1F52A07.wem		\Actor-Mixer Hierarchy\Player_Locomotion\PlayerSpeedBoost\playerDash_0		15130
 	833936406	menuSelectionBack_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\menuSelectionBack.0_C1F52A07.wem		\Actor-Mixer Hierarchy\MenuUI\MenuSelectionBack\menuSelectionBack_0		6234
-	1002544718	butterflyLevel1_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\butterflyLevel1.0_3D1D1BA5.wem		\Interactive Music Hierarchy\Soundtrack\SoundtrackSwitch\OverworldPlaylist\OverworldTheme\butterflyLevel1_0		3963823
-	1030837220	TestBeepLoop	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\TestFiles\TestBeepLoop_9EDFC787.wem		\Actor-Mixer Hierarchy\TestFiles\TestBeepLoop		8409
+	1002544718	butterflyLevel1_0	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\butterflyLevel1.0_3D1D1BA5.wem		\Interactive Music Hierarchy\Soundtrack\SoundtrackSwitch\InGamePlayllist\InGameMusic\butterflyLevel1_0		3963823
+	1030837220	TestBeepLoop_3D	C:\Users\Croony Moons\Documents\GameJams\GreenlightJam\2022\Project-Butterfly\ProjectButterflyAudio\.cache\Windows\SFX\TestFiles\TestBeepLoop_9EDFC787.wem		\Actor-Mixer Hierarchy\TestFiles\3DTestFiles\TestBeepLoop_3D		8409
 

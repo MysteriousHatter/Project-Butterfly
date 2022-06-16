@@ -29,13 +29,24 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+							<ObjectRef Name="Brick_Wall_Minus_1dB_Peak_Slow_Release" ID="{9FB8DC2B-7F1C-4E4E-8FA5-50872652D2DD}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
+							<ObjectRef Name="Boost" ID="{4121FDBF-4B06-4046-8EF4-B24F503A6E82}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Glitch" ID="{86F10581-F5E0-4CA4-9CEF-0A268F5C19B7}" WorkUnitID="{EC86FCBC-4FAD-4FF5-8E8F-DF120615F64E}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

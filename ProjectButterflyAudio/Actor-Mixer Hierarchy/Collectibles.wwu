@@ -2,10 +2,11 @@
 <WwiseDocument Type="WorkUnit" ID="{49D6126A-0F01-411D-82C4-A6C54DE9E40F}" SchemaVersion="103">
 	<AudioObjects>
 		<WorkUnit Name="Collectibles" ID="{49D6126A-0F01-411D-82C4-A6C54DE9E40F}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="14"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
-				<WorkUnit Name="PurpleOrbs" ID="{1139DCF6-0D5E-4555-B455-0D5E13989027}" PersistMode="Reference"/>
-				<WorkUnit Name="Jewelry" ID="{1EE8E4A8-1D64-4038-90D2-EB7D6E8DB8DD}" PersistMode="Reference"/>
-				<WorkUnit Name="BobaTea" ID="{67FD50F3-5BCB-49A9-9161-F38712024D44}" PersistMode="Reference"/>
 				<WorkUnit Name="Pickups" ID="{BD562152-130C-4805-86F4-06785F389BE6}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>

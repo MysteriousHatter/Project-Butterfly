@@ -8,26 +8,32 @@
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{7F5982E0-32FC-44F6-870E-C840BD193553}" WorkUnitID="{98255372-4DBB-404A-B957-CA342B802521}"/>
 						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+							<ObjectRef Name="Brick_Wall_Minus_1dB_Peak_Slow_Release" ID="{9FB8DC2B-7F1C-4E4E-8FA5-50872652D2DD}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="PlayerMaster" ID="{42B9B762-98AA-4451-AAAF-3677C4DBD4FD}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Color" Type="int16" Value="14"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
 								<Bus Name="PlayerLocomotion" ID="{C0A9496C-CB29-49F7-B0AA-75CF3C30F4C8}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="14"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
-										<Bus Name="WingFlaps" ID="{FEBBE914-348B-43AA-BF78-9C8D5E4971B1}">
-											<ObjectLists/>
-										</Bus>
-										<Bus Name="FlyingMotions" ID="{A0DE7ABD-2B68-4008-A10D-E0C821B1A11E}">
-											<ObjectLists/>
-										</Bus>
 										<Bus Name="Boost" ID="{4121FDBF-4B06-4046-8EF4-B24F503A6E82}">
 											<ObjectLists/>
 										</Bus>
-										<Bus Name="Paraloop" ID="{AE80CFCD-0D05-4B34-80AC-5FD965E682D3}">
+										<Bus Name="Vortex" ID="{02408F0F-3323-4CB4-AC47-E3B96FE4A99D}">
 											<ObjectLists/>
 										</Bus>
 									</ChildrenList>
@@ -35,9 +41,6 @@
 								</Bus>
 								<Bus Name="PlayerCollision" ID="{292D5DE5-D526-41E7-BFB5-1C2F07EE9504}">
 									<ChildrenList>
-										<Bus Name="PlayerEnemyCollision" ID="{595391E6-062C-4B71-B636-3B3FCB73D208}">
-											<ObjectLists/>
-										</Bus>
 										<Bus Name="PlayerHazardCollision" ID="{F93504B2-C0B3-4605-B1B3-C56877C8FE38}">
 											<ObjectLists/>
 										</Bus>
@@ -49,16 +52,23 @@
 								</Bus>
 							</ChildrenList>
 							<ObjectLists/>
-						</Bus>
-						<Bus Name="AmbientMaster" ID="{AEFE7321-9B5C-43F5-901D-F39611D3551E}">
-							<ChildrenList>
-								<Bus Name="AmbientBeds" ID="{4CD55E17-6D66-4DB3-B6B5-085BCFAF310E}">
-									<ObjectLists/>
-								</Bus>
-							</ChildrenList>
-							<ObjectLists/>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="PlayerProgress" ID="{AAD5B71A-DFA0-45F0-8EA0-22B0E1738BD6}"/>
+									<DuckingParam>
+										<Volume>-6</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
 						</Bus>
 						<AuxBus Name="Reverbs" ID="{AEAF2C19-7099-43C8-9069-AA3174953360}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="6"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<AuxBus Name="Outdoor" ID="{8124A8A0-8F24-4FD1-B12B-A8B780043CA6}">
 									<ChildrenList>
@@ -77,6 +87,14 @@
 								<AuxBus Name="Digital" ID="{D489E06F-1492-4D79-912F-3C1610CA01C8}">
 									<ChildrenList>
 										<AuxBus Name="Glitch" ID="{86F10581-F5E0-4CA4-9CEF-0A268F5C19B7}">
+											<ReferenceList>
+												<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+													<ObjectRef Name="Space_Dreaming" ID="{4FF7C4B2-37B0-4DFF-8E8A-1420102AE2DD}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+												</Reference>
+												<Reference Name="Effect1" PluginName="Wwise Peak Limiter" CompanyID="0" PluginID="110" PluginType="3">
+													<ObjectRef Name="Brick_Wall_Minus_1dB_Peak_Slow_Release" ID="{9FB8DC2B-7F1C-4E4E-8FA5-50872652D2DD}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+												</Reference>
+											</ReferenceList>
 											<ObjectLists/>
 										</AuxBus>
 									</ChildrenList>
@@ -87,7 +105,7 @@
 						</AuxBus>
 						<Bus Name="NPCMaster" ID="{6FC16FA6-9845-4DDC-9153-B76E50F32EF0}">
 							<PropertyList>
-								<Property Name="Color" Type="int16" Value="6"/>
+								<Property Name="Color" Type="int16" Value="9"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
@@ -109,16 +127,16 @@
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="SceneUIMaster" ID="{4CFBC0B0-BC59-421E-B7F4-7EACAED397F1}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
-								<Bus Name="Timer" ID="{0E22C586-A07E-4812-86C3-2F04BE776D43}">
-									<ObjectLists/>
-								</Bus>
-								<Bus Name="Score" ID="{3FCA438F-0DF0-49E5-A365-49D38F8CF1BF}">
-									<ObjectLists/>
-								</Bus>
-								<Bus Name="LapCounter" ID="{E1B830E5-4F06-41E4-AD36-166C3BD7E8B0}">
-									<ObjectLists/>
-								</Bus>
 								<Bus Name="Menu" ID="{B258817D-3755-4F66-A393-8BB1C7CA8DDA}">
 									<ChildrenList>
 										<Bus Name="MenuSelection" ID="{DEC70428-1CAD-4C29-86CF-77A7CF5AFC31}">
@@ -133,10 +151,11 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</Bus>
-						<Bus Name="SpawnMaster" ID="{C09B3303-B1F8-48B2-8C09-487D81C991CE}">
-							<ObjectLists/>
-						</Bus>
 						<Bus Name="SoundtrackMaster" ID="{0E51233D-FB29-4495-AF6E-D6D14B0C242E}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="5"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Bus Name="MenuBus" ID="{D1455F85-10BA-4E71-9E00-BCB062816525}">
 									<ObjectLists/>
@@ -144,7 +163,51 @@
 								<Bus Name="OverworldBus" ID="{EAE342C1-440D-4849-9593-0B4F017511A1}">
 									<ObjectLists/>
 								</Bus>
-								<Bus Name="EndingBus" ID="{AFC23EB5-0E03-4713-8EEC-4083CB940BB6}">
+							</ChildrenList>
+							<ObjectLists/>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="PlayerMaster" ID="{42B9B762-98AA-4451-AAAF-3677C4DBD4FD}"/>
+									<DuckingParam>
+										<Volume>-6</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="PlayerProgress" ID="{AAD5B71A-DFA0-45F0-8EA0-22B0E1738BD6}"/>
+									<DuckingParam>
+										<Volume>-6</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="SceneUIMaster" ID="{4CFBC0B0-BC59-421E-B7F4-7EACAED397F1}"/>
+									<DuckingParam>
+										<Volume>-6</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="PlayerProgress" ID="{AAD5B71A-DFA0-45F0-8EA0-22B0E1738BD6}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="3"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Bus Name="LapCleared" ID="{689E6278-3220-40CD-9643-58E688FCC998}">
+									<ObjectLists/>
+								</Bus>
+								<Bus Name="StageCleared" ID="{93FFC946-82E8-4C86-B181-F22695F6A93E}">
+									<ObjectLists/>
+								</Bus>
+								<Bus Name="StatueFreed" ID="{562737EF-920E-4D1E-9325-47F8D954BF53}">
 									<ObjectLists/>
 								</Bus>
 							</ChildrenList>
