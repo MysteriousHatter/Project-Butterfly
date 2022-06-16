@@ -7,8 +7,6 @@ using System;
 public class Movement : MonoBehaviour
 {
 
-    [SerializeField] private FadeScript fade;
-
     //Movment variables
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerRotation;
@@ -79,7 +77,7 @@ public class Movement : MonoBehaviour
     {
         CheckIfPlayerIsInvinisable();
 
-        if (pathCreator != null && fade.fadeOut == true)
+        if (pathCreator != null)
         {
 
             //TODO: Add Kaya VFX trail
@@ -108,6 +106,7 @@ public class Movement : MonoBehaviour
                 Debug.Log("We're going left");
                 distanceTravelled -= Speed * Time.deltaTime;
             }
+
           
 
 
@@ -186,19 +185,14 @@ public class Movement : MonoBehaviour
         if (PlayerRotation.sqrMagnitude != 0)
         {
             float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
-            if (myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Character1_Reference|kaya_Idle")
-            {
-                playerInputAngle = 90f;
-                Debug.Log("This rotation " + myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
-            }
-
+ 
             // Set player rotation along with the path rotation
             Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
             Vector3 angle = rotation.eulerAngles;
             // clear z to 0 since we don't need roll angles 
             angle.z = 0;
             rotation.eulerAngles = angle;
-            myAnimator.transform.rotation = rotation;
+            playerBody.transform.rotation = rotation;
 
              float rotateSpeed = 360f;
             float angleSnapAtDegree = rotateSpeed * Time.deltaTime;
@@ -214,7 +208,7 @@ public class Movement : MonoBehaviour
                     }
                     else
                     {
-                        AngleDifference = playerInputAngle + currentRotationAngle + 180f;
+                        AngleDifference = playerInputAngle + currentRotationAngle + 90f;
                     }
                 }
             }
@@ -244,9 +238,9 @@ public class Movement : MonoBehaviour
                 currentRotationAngle = currentRotationAngle + 360F;
             }
             // Use this to update angle around player models x (right) axis
-            Vector3 right = myAnimator.transform.right;
+            Vector3 right = playerBody.transform.right;
             right.y = 0;
-            myAnimator.transform.Rotate(new Vector3(-1, 0, 0), currentRotationAngle - 90);
+            playerBody.transform.Rotate(new Vector3(-1, 0, 0), currentRotationAngle - 90);
         }
     }
 
@@ -282,7 +276,7 @@ public class Movement : MonoBehaviour
         else
         {
             paraloop.ClearNeighbors();
-            myAnimator.SetBool("Flying", false);
+            myAnimator.SetBool("Flying", true);
         }
 
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
