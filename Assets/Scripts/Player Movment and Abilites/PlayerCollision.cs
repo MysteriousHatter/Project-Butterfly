@@ -29,7 +29,7 @@ public class PlayerCollision : MonoBehaviour
     private void HurtPlayer(Collision other, Vector3 heading, float dot)
     {
         Debug.Log("Collision detected, hazard hit");
-        AkSoundEngine.PostEvent("PlayerHurt", this.gameObject);
+        AudioManager.instance.HazardSFX();
         if (playerMovement.isInvulnerable)
         {
             Destroy(other.gameObject);
