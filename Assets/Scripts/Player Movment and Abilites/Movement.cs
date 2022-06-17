@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
     [SerializeField] float knockback = 1;
+    [SerializeField] Animator playerAnimation;
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -117,8 +118,13 @@ public class Movement : MonoBehaviour
     {
         MovePlayer();
         RotatePlayer();
+        AnimationUpdate();
     }
 
+    private void AnimationUpdate()
+    {
+            playerAnimation.SetBool("Moving", PlayerMovementInput.sqrMagnitude != 0);
+    }
     private void CheckIfPlayerIsInvinisable()
     {
         if (playerBody.gameObject.tag == "Drill")
@@ -169,6 +175,7 @@ public class Movement : MonoBehaviour
             //this.gameObject.tag = "Player";
             playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
+            playerAnimation.SetTrigger("Drill");
         }
         else if(!ActivateBoostBall)
         {
@@ -208,7 +215,7 @@ public class Movement : MonoBehaviour
                     }
                     else
                     {
-                        AngleDifference = playerInputAngle + currentRotationAngle + 90f;
+                        AngleDifference = playerInputAngle + currentRotationAngle + 180f;
                     }
                 }
             }
