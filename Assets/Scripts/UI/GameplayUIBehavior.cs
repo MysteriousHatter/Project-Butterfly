@@ -24,6 +24,9 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The temp text that pops up when the player wins. Will change later")]
     [SerializeField] private GameObject winText;
 
+    [Tooltip("Shows how much time the player has lost.")]
+    [SerializeField] private GameObject timeLossDisplay;
+
     [SerializeField]
     private GameObject fractionSlider;
 
@@ -237,6 +240,14 @@ public class GameplayUIBehavior : MonoBehaviour
     public void setTime(float time)
     {
         this.timeLeft += time;
+        timeLossDisplay.SetActive(true);
+        timeLossDisplay.GetComponentInChildren<TMP_Text>().text = "-" + time + "sec";
+        Invoke("ShutTheOff", 2f);
+    }
+
+    private void ShutTheOff()
+    {
+        timeLossDisplay.SetActive(false);
     }
 
     /// <summary>
