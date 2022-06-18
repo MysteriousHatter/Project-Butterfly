@@ -32,7 +32,7 @@ RectTransform:
   m_Children:
   - {fileID: 6167496356688956222}
   m_Father: {fileID: 9141112435766665847}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 4511951779530942681}
   - component: {fileID: 1805980863439730145}
   m_Layer: 5
-  m_Name: Timer Text
+  m_Name: Timer Sub Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2938,7 +2938,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9141112435766665847}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3072,8 +3072,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6672050740809090769}
   - {fileID: 9141112435558849885}
+  - {fileID: 6672050740809090769}
   m_Father: {fileID: 9141112436531847670}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

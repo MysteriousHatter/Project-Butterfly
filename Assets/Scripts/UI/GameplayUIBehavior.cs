@@ -237,12 +237,12 @@ public class GameplayUIBehavior : MonoBehaviour
         return timeLeft;
     }
 
-    public void setTime(float time)
+    public void setTime(float t)
     {
-        this.timeLeft += time;
+        this.timeLeft += t;
         timeLossDisplay.SetActive(true);
-        timeLossDisplay.GetComponentInChildren<TMP_Text>().text = "-" + time + "sec";
-        Invoke("ShutTheOff", 2f);
+        timeLossDisplay.GetComponentInChildren<TMP_Text>().text = t + "sec";
+        Invoke("ShutTheOff", 1.25f);
     }
 
     private void ShutTheOff()
