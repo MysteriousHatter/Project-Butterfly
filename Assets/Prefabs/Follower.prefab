@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404861791517098645}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1376254250165931445
 MeshFilter:
@@ -115,7 +115,6 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5119570477398894013}
   - {fileID: 498469823983330704}
   - {fileID: 68749855720833500}
   - {fileID: 1396225798559432931}
@@ -319,7 +318,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404861791517098645}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1376298819976268437
 MeshFilter:
@@ -402,7 +401,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404861791517098645}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1375546209842786355
 MeshFilter:
@@ -485,7 +484,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404861791517098645}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1375336703225530909
 MeshFilter:
@@ -568,7 +567,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1404861791517098645}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1375331813787789677
 MeshFilter:
@@ -806,7 +805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d916a633123df143a4b8fb27a612528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 0}
   Speed: 5
   playerBody: {fileID: 0}
   Sensitvity: 0
@@ -814,9 +812,11 @@ MonoBehaviour:
   endOfPathInstruction: 0
   paraloop: {fileID: 0}
   knockback: 1
+  playerAnimation: {fileID: 0}
   isInvulnerable: 0
   _shiftSpeedBoost: 3.5
   speedGauge: 90
+  boostGauge: {fileID: 0}
   boostBallSpeed: 530
   boostBallTime: 800
 --- !u!1001 &99170264628740731
@@ -840,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 422bc7a2608d41144870da0a5de4ed45, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 422bc7a2608d41144870da0a5de4ed45, type: 3}
       propertyPath: m_LocalScale.x
@@ -1791,7 +1791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7cdf81ce0d4258245bd50664e39cebf2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7cdf81ce0d4258245bd50664e39cebf2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2721,80 +2721,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &4649657944639357526
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1404861791517098645}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_Name
-      value: kaya_Idle_ANIM
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9130df78d56a1304980c1162fd342ab4, type: 2}
-    - target: {fileID: 5866666021909216657, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-      propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Character1_RightFoot'\n\tTransform 'Character1_LeftHandThumb3'\n\tTransform
-        'Character1_RightToeBase'\n\tTransform 'Character1_LeftFoot'\n\tTransform
-        'Character1_LeftHandRing3'\n\tTransform 'Character1_RightHandRing2'\n\tTransform
-        'Character1_RightHandPinky3'\n\tTransform 'Character1_RightHand'\n\tTransform
-        'Character1_Spine1'\n\tTransform 'Character1_Head'\n\tand more ...\n\tFrom
-        animation clip 'Character1_Reference|kaya_Flight'"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
---- !u!4 &5119570477398894013 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba4515ea9c896e540aec772a13caba8d, type: 3}
-  m_PrefabInstance: {fileID: 4649657944639357526}
-  m_PrefabAsset: {fileID: 0}

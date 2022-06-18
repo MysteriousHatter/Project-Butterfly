@@ -41,10 +41,11 @@ public class Movement : MonoBehaviour
     // isVulnerable can be referenced by skill component to make player immune to damage and instead destroy other object
     public bool isInvulnerable;
     //Boost Mechanic Variables
-    [SerializeField][Range(1.0f, 5.0f)] private float _shiftSpeedBoost = 3.5f;
+    [SerializeField][Range(1.0f, 50.0f)] private float _shiftSpeedBoost = 50f;
     private float startSpeedValue;
     private bool isSpeedBoostActive = false;
     [SerializeField] private float speedGauge;
+    [SerializeField] BoostGauge boostGauge;
 
     //Boost Ball
     public bool ActivateBoostBall { get; set; }
@@ -65,6 +66,7 @@ public class Movement : MonoBehaviour
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
+            boostGauge.SetMaxBoost(speedGauge);
         }
 
         if (knockback == 0)
@@ -109,7 +111,8 @@ public class Movement : MonoBehaviour
                 distanceTravelled -= Speed * Time.deltaTime;
             }
 
-
+            PlayerSpeedUp();
+            MoveForward();
 
 
         }
@@ -160,6 +163,7 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(0) && speedGauge > 0)
         {
             speedGauge--;
+            boostGauge.SetBoost(speedGauge);
             //this.gameObject.tag = "Drill";
             playerBody.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
@@ -173,14 +177,14 @@ public class Movement : MonoBehaviour
                 Speed = 20f;
             }
         }
-        else if (Input.GetMouseButtonUp(0) && !ActivateBoostBall)
+        else if (Input.GetMouseButtonUp(0))
         {
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
             playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
-        else if (!ActivateBoostBall)
+        else
         {
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
@@ -188,6 +192,7 @@ public class Movement : MonoBehaviour
             paraloop.InstantiateTransformations(true);
         }
     }
+
 
     private float idleWaitLength = 0f;
     private void RotatePlayer()
@@ -335,15 +340,17 @@ public class Movement : MonoBehaviour
     }
 
     public float getBoostRefill() { return speedGauge; }
-    public void setBoostRefill(float boostRefill) 
+    public void setBoostRefill(float boostRefill)
     {
-        if(speedGauge < 90)
+        if (speedGauge < 90)
         {
             speedGauge += boostRefill;
+            boostGauge.SetBoost(speedGauge);
         }
         else
         {
             speedGauge = 90f;
+            boostGauge.SetBoost(speedGauge);
         }
 
     }
