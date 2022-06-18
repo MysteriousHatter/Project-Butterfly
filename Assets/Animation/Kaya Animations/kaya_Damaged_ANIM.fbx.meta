@@ -14,16 +14,19 @@ ModelImporter:
     second: Character1_Reference|Character1_Reference|Take 001|BaseLayer.002
   - first:
       74: -4432861354655677525
-    second: Character1_Reference|kaya_Drill
+    second: Drill
   - first:
       74: -388707426207827630
-    second: Character1_Reference|kaya_Flight
+    second: Flight
   - first:
       74: -3218254852268880817
     second: Character1_Reference|kaya_Idle
   - first:
       74: 7242812621475654306
-    second: Character1_Reference|kaya_injured
+    second: Injured
+  - first:
+      74: -3100369314251171874
+    second: Idle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -141,7 +144,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Character1_Reference|kaya_Drill
+      name: Drill
       takeName: Character1_Reference|kaya_Drill
       internalID: 0
       firstFrame: 0
@@ -170,7 +173,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Character1_Reference|kaya_Flight
+      name: Flight
       takeName: Character1_Reference|kaya_Flight
       internalID: 0
       firstFrame: 0
@@ -199,7 +202,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Character1_Reference|kaya_Idle
+      name: Idle
       takeName: Character1_Reference|kaya_Idle
       internalID: 0
       firstFrame: 0
@@ -228,7 +231,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Character1_Reference|kaya_injured
+      name: Injured
       takeName: Character1_Reference|kaya_injured
       internalID: 0
       firstFrame: 0
