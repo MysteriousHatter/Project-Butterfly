@@ -289,9 +289,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 598691541}
-  - {fileID: 605946813}
   m_Father: {fileID: 1847765529}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -340,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Padding: {x: 0, y: -0.9, z: 0, w: 20.85}
   m_Softness: {x: 0, y: 0}
 --- !u!1 &416903398
 GameObject:
@@ -758,7 +757,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598691540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -768,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0003758244, y: -0.0000043809414}
+  m_AnchoredPosition: {x: -4.600002, y: 0}
   m_SizeDelta: {x: 309.765, y: 209.975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598691542
@@ -791,49 +790,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'How To Play Project Butterfly:How To Play Project Butterfly:How To Play
-    Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:'
+  m_text: "Kaya\u2019s pet butterfly Tamagotchi, Shinbou, suddenly transported her
+    into a cyber world! Shinobou told Kaya that this world is infected by a mysterious
+    virus, and the only way to save it is to free the infected statues. Before Kaya
+    could ask how to free the statues, Shinbou fused with her, granting her the power
+    of flight and a snazzy new outfit! Together with Shinbou, Kaya decides to cure
+    the cyber world of its sinister virus.\r\n\n\r\n\nPlaying as Kaya, your goal
+    is to fly through four different paths under the time limit. \r\n\r\nYou will
+    begin at the Shrine on one path. To make it to the next one, collect 20 Purple
+    Orbs and purify the infected Statue. If you return to the Shrine with the Statue
+    in time, you will be transported to the next path. The timer refreshes each time
+    you reach a new path.\r\n\r\nThe virus is spreading quickly. Avoid enemies and
+    hazards during your flight, else you will lose precious time! \r\n\r\nControls\r\n\tBasic
+    Flight: Use the WASD keys to control Kaya\u2019s flight along a side-scrolling
+    path.\r\n\tBoost: Hold [KEY] to dash forth in a corkscrew, destroying enemies
+    in your way! (Requires Boost to perform)\r\n\tParaloop: Draw a circle with your
+    flight trail to create a small vortex! This vortex can attract objects and stun
+    enemies for a short period of time.\r\n\r\nObjects\r\nShrine: The starting and
+    ending point of each lap.\r\nPurple Orbs: +100 Points. Collect 20 to free a Statue.\r\nJewelry:
+    +200 Points\r\nStatues: +500 Points\r\nRing: +10 Boost\r\nBoba Tea: +50 Boost\r\nDash
+    Ball: Pass through one to blast off in the direction the ball is pointing.\r\nSpikes:
+    -15 seconds\r\nSpike Ball: -20 seconds\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0c9a59510b725b4f9fba5ba086f4502, type: 2}
   m_sharedMaterial: {fileID: 3331158940331254082, guid: a0c9a59510b725b4f9fba5ba086f4502, type: 2}
@@ -852,7 +829,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 938f753e417fc8642ad7bd656e99a3e9, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -938,17 +915,17 @@ RectTransform:
   m_GameObject: {fileID: 605946812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2090392498}
-  m_Father: {fileID: 105954986}
-  m_RootOrder: 1
+  m_Father: {fileID: 1847765529}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 195.00003, y: -2.63}
-  m_SizeDelta: {x: 20, y: 411.227}
+  m_AnchoredPosition: {x: 20.664017, y: -3.8060007}
+  m_SizeDelta: {x: 67.075, y: 513.918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605946814
 MonoBehaviour:
@@ -991,9 +968,9 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2041286200}
-  m_HandleRect: {fileID: 2041286199}
+  m_HandleRect: {fileID: 2090392498}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2024,7 +2001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1847765529
 Transform:
   m_ObjectHideFlags: 0
@@ -2039,6 +2016,7 @@ Transform:
   m_Children:
   - {fileID: 1048212209}
   - {fileID: 1634915031}
+  - {fileID: 605946813}
   - {fileID: 105954986}
   m_Father: {fileID: 800200538}
   m_RootOrder: 1
@@ -2101,7 +2079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3fb580970ae8c48e7befdc608b11eacc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31936a43597639745b27b5b0d297e7e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2295,7 +2273,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2309,6 +2287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136545962}
   - component: {fileID: 2136545961}
+  - component: {fileID: 2136545963}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2393,6 +2372,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &2136545963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136545960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &5625793405667742403
 PrefabInstance:
   m_ObjectHideFlags: 0
