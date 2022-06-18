@@ -22,7 +22,9 @@ public class Movement : MonoBehaviour
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
-    [SerializeField] float knockback = 1;
+    [SerializeField] float knockback = 0.3f;
+    [SerializeField] Animator playerAnimation;
+
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -187,14 +189,32 @@ public class Movement : MonoBehaviour
 
     private void RotatePlayer()
     {
-        if (PlayerRotation.sqrMagnitude != 0)
+
+           float rotateSpeed = 360f;
+        Vector2 localPlayerRotation = PlayerRotation;
+        if (currentRotationAngle < 90f && currentRotationAngle > 0f)
         {
-            float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
-            if (myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Character1_Reference|kaya_Idle")
+            Debug.Log("Bad Area");
+        }
+
+        float idleAngleOffset = 0f;
+            if(PlayerRotation.sqrMagnitude  == 0  && stunTime <= 0 )
             {
-                playerInputAngle = 90f;
-                Debug.Log("This rotation " + myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
-            }
+            //Pretend moving up straight so kaya is upright
+            localPlayerRotation.y = 1;
+            localPlayerRotation.x = 0;
+            // this offset is needed since the idle animation has a 90 degree offset comparing to other
+                idleAngleOffset = +Mathf.Lerp(0, 90, 1f);
+                rotateSpeed = 360f;
+                idleWaitLength += Time.deltaTime;
+        }
+        else
+        {
+            //reset idle timer when player presses anything
+            idleWaitLength = 0f;
+        }
+            float playerInputAngle = Mathf.Atan2(localPlayerRotation.y, localPlayerRotation.x) * Mathf.Rad2Deg;
+
 
             // Set player rotation along with the path rotation
             Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
