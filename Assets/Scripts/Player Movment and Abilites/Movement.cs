@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     //Movment variables
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerRotation;
-    float yValue = 0;
+    float deltaY = 0f;
     public float Speed = 5;
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private float Sensitvity;
@@ -79,9 +79,21 @@ public class Movement : MonoBehaviour
 
         if (pathCreator != null)
         {
+
             //TODO: Add Kaya VFX trail
             PlayerMovementInput = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
             PlayerRotation = new Vector2(PlayerMovementInput.x, PlayerMovementInput.y).normalized;
+
+            if (ActivateBoostBall)
+            {
+                PlayerMovementInput = Vector3.right;
+                PlayerRotation = new Vector2(PlayerMovementInput.x, 0);
+            }
+            else
+            {
+                //if (PlayerMovementInput.y > 0f) { yValue += Speed * Time.deltaTime; }
+                //else if (PlayerMovementInput.y < 0f) { yValue -= Speed * Time.deltaTime; }
+            }
 
             if (PlayerMovementInput.x > 0f)
             {
@@ -95,11 +107,8 @@ public class Movement : MonoBehaviour
                 distanceTravelled -= Speed * Time.deltaTime;
             }
 
-            if (PlayerMovementInput.y > 0f) { yValue += Speed * Time.deltaTime; }
-            else if (PlayerMovementInput.y < 0f) { yValue -= Speed * Time.deltaTime; }
+          
 
-            PlayerSpeedUp();
-            MoveForward();
 
         }
     }
@@ -126,7 +135,7 @@ public class Movement : MonoBehaviour
     // is as close as possible to its position on the old path
     void OnPathChanged()
     {
-        distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+        distanceTravelled = 0;
 
         Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
         Vector3 angle = rotation.eulerAngles;
@@ -154,14 +163,14 @@ public class Movement : MonoBehaviour
                 Speed = 20f;
             }
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && !ActivateBoostBall)
         {
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
             playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
-        else
+        else if(!ActivateBoostBall)
         {
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
@@ -255,12 +264,14 @@ public class Movement : MonoBehaviour
     private void MovePlayer()
     {
         //TODO: Stop delay with spawning points
+
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
-        //paraloop.InstantiateTransformations();
+        //paraloop.InstantiateTransformations()
         if (MoveVector.sqrMagnitude != 0)
         {
             myAnimator.SetBool("Flying", true);
-            
+            PlayerSpeedUp();
+
         }
         else
         {
@@ -269,7 +280,16 @@ public class Movement : MonoBehaviour
         }
 
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-        playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
+        if(PlayerMovementInput.y > 0)
+        {
+            deltaY +=  Speed * Time.deltaTime;
+        }
+        else if(PlayerMovementInput.y < 0)
+        {
+            deltaY -= Speed * Time.deltaTime;
+        }
+    
+        playerBody.transform.position = new Vector3(playerBody.transform.position.x, deltaY, playerBody.transform.position.z);
 
     }
 
@@ -301,23 +321,40 @@ public class Movement : MonoBehaviour
         if(pushedBackDistance != 0)
         {
             playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-            playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
+            playerBody.transform.position = new Vector3(playerBody.transform.position.x, deltaY, playerBody.transform.position.z);
         }
     }
 
     //TODO: Fix Roation to face right when dashing
-    public void MoveForward()
+
+    public IEnumerator MoveForward()
     {
-        if (ActivateBoostBall)
+        while (ActivateBoostBall)
         {
-            StartCoroutine(FindObjectOfType<CameraMovement>().SpeedUpCamera(0.8f));
-            distanceTravelled += boostBallSpeed * 0.3f;
-            playerBody.transform.position = Vector3.SmoothDamp(playerBody.transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled), ref velocity, boostBallTime);
+            Speed = 20f;
+            PlayerMovementInput = Vector3.right;
+            yield return new WaitForSeconds(1.0f);
             ActivateBoostBall = false;
         }
-        //playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
 
     }
+
+
+    //public void MoveForward()
+    //{
+    //    if (ActivateBoostBall)
+    //    {
+    //        Speed = 20f;
+    //        PlayerMovementInput = Vector3.right;
+    //        //StartCoroutine(FindObjectOfType<CameraMovement>().SpeedUpCamera(0.8f));
+    //        //distanceTravelled += boostBallSpeed * 0.3f;
+    //        //playerBody.transform.position = Vector3.SmoothDamp(playerBody.transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled), ref velocity, boostBallTime);
+    //        //ActivateBoostBall = false;
+    //    }
+    //    //playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+    //    //playerBody.transform.position = new Vector3(playerBody.transform.position.x, yValue, playerBody.transform.position.z);
+
+    //}
 }
 
     

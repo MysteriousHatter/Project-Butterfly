@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44892d8a55fead4583b9563d8e6b1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostRefill: 0
+  boostRefill: 20
   scoreValue: 50
 --- !u!114 &1562136300739701758
 MonoBehaviour:

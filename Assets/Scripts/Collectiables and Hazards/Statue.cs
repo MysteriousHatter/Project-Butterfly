@@ -35,6 +35,7 @@ public class Statue : MonoBehaviour
                     statueFree = true;
                     GameplayManager.Instance.setStatueIsFree(statueFree);
                     ChangeStatueColor();
+                    AudioManager.instance.StatueSFX();
                 }
                 GameplayManager.Instance.resetOrbCount();
             }

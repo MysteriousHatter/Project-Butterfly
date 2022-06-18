@@ -16,11 +16,6 @@ public class SceneScript : MonoBehaviour
         SceneManager.LoadScene("BaseLevel");
     }
 
-    public void WinGame()
-    {
-        SceneManager.LoadScene("WinScene");
-    }
-
     public void Settings()
     {
         SceneManager.LoadScene("Settings");
@@ -31,10 +26,6 @@ public class SceneScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void GameOver()
-    {
-        SceneManager.LoadScene("GameOver");
-    }
 
     public void HowToPlay()
     {
