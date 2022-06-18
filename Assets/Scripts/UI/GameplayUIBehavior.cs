@@ -99,6 +99,9 @@ public class GameplayUIBehavior : MonoBehaviour
             //Fix BUG: Start of the game is always playing
             Time.timeScale = 1;
         }
+        
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
+
     }
 
     // Update is called once per frame
