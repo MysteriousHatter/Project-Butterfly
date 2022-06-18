@@ -9,7 +9,6 @@ TagManager:
   - Drill
   - HideWhenHowToPlay
   - Enemy
-  - Vortex
   layers:
   - Default
   - TransparentFX
@@ -17,7 +16,7 @@ TagManager:
   - Collectiable
   - Water
   - UI
-  - Post-Processing
+  - 
   - 
   - 
   - 
