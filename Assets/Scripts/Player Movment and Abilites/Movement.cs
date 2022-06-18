@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
-    [SerializeField] float knockback = 1;
+    [SerializeField] float knockback = 0.3f;
     [SerializeField] Animator playerAnimation;
 
     // User this to lerp later
@@ -198,7 +198,7 @@ public class Movement : MonoBehaviour
     {
 
            float rotateSpeed = 360f;
-
+        Vector2 localPlayerRotation = PlayerRotation;
         if (currentRotationAngle < 90f && currentRotationAngle > 0f)
         {
             Debug.Log("Bad Area");
@@ -208,8 +208,8 @@ public class Movement : MonoBehaviour
             if(PlayerRotation.sqrMagnitude  == 0  && stunTime <= 0 )
             {
             //Pretend moving up straight so kaya is upright
-                PlayerRotation.y = 1;
-                PlayerRotation.x = 0;
+            localPlayerRotation.y = 1;
+            localPlayerRotation.x = 0;
             // this offset is needed since the idle animation has a 90 degree offset comparing to other
                 idleAngleOffset = +Mathf.Lerp(0, 90, 1f);
                 rotateSpeed = 360f;
@@ -220,7 +220,7 @@ public class Movement : MonoBehaviour
             //reset idle timer when player presses anything
             idleWaitLength = 0f;
         }
-            float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
+            float playerInputAngle = Mathf.Atan2(localPlayerRotation.y, localPlayerRotation.x) * Mathf.Rad2Deg;
 
                 // Set player rotation along with the path rotation
             Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
