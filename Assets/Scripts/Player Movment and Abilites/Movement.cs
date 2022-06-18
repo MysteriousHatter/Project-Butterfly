@@ -52,6 +52,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float boostBallSpeed;
     [SerializeField] private float boostBallTime;
     private Vector3 velocity = Vector3.zero;
+
+    public GameObject particles;
     void Start()
     {
         if (pathCreator != null)
@@ -73,6 +75,8 @@ public class Movement : MonoBehaviour
             //Since default knock back value should never be 0
             knockback = 0.3f;
         }
+
+        InvokeRepeating("SpawnParticle", .5f, .2f);
     }
 
     void Update()
@@ -345,7 +349,17 @@ public class Movement : MonoBehaviour
 
     }
 
+    void SpawnParticle()
+    {
+        GameObject toDelete = Instantiate(particles, playerBody.transform.position, playerBody.transform.rotation);
+        StartCoroutine(DestroyParticle(toDelete));
+    }
 
+    IEnumerator DestroyParticle(GameObject toDelete)
+    {
+        yield return new WaitForSeconds(4f);
+        Destroy(toDelete);
+    }
     //public void MoveForward()
     //{
     //    if (ActivateBoostBall)
