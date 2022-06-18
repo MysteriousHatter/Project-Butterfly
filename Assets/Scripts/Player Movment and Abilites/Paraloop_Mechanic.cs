@@ -50,7 +50,7 @@ public class Paraloop_Mechanic : MonoBehaviour
 
                 if (startNode == null)
                 {
-                    currentNode = new Node(this.GetComponentInParent<Movement>().transform.position);
+                    currentNode = new Node(this.transform.localPosition);
                     neighbors.Add(currentNode);
                     Debug.Log("Start Prinitng 1");
                     //Debug.Log("Current position " + neighbors[currentIndex].coordinates + "The total count: " + neighbors.Count);
@@ -59,7 +59,7 @@ public class Paraloop_Mechanic : MonoBehaviour
                 }
                 else
                 {
-                    startCoordinates = this.transform.position;
+                    startCoordinates = this.transform.localPosition;
                     startNode = new Node(startCoordinates);
                     Debug.Log("Start Prinitng 2");
                     neighbors.Add(startNode);
@@ -114,7 +114,7 @@ public class Paraloop_Mechanic : MonoBehaviour
                             Debug.Log("We found the intersection at " + intersection);
 
                            // yield return new WaitForSeconds(0.1f);
-                            List<Node> connectedCoord = ConnectTheNodes(new Node(intersection));
+                            List<Node> connectedCoord = ConnectTheNodes(new Node(intersection),neighbors[i], neighbors[j + 1]);
                             Node intersectionNode = new Node(intersection);
                             connectedCoord[j].connectedTo = intersectionNode;
                             Debug.Log("The final index is " + connectedCoord[j].coordinates + " is connected to " + connectedCoord[j].connectedTo.coordinates);
@@ -123,7 +123,8 @@ public class Paraloop_Mechanic : MonoBehaviour
                             Debug.Log("the sqrArea " + sqrArea);
                             if(sqrArea >= 0.1f && sqrArea <= 200f)
                             {
-                                Instantiate(vortexPrefab, FindVortexCenter(connectedCoord, intersectionNode), Quaternion.identity);
+                                GameObject instance = Instantiate(vortexPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+                                instance.transform.position = FindVortexCenter(connectedCoord, intersectionNode);
                                 neighbors.RemoveRange(0, neighbors.Count - 1);
                             }
                             yield return null;
@@ -171,26 +172,26 @@ public class Paraloop_Mechanic : MonoBehaviour
         
     }
 
-    private List<Node> ConnectTheNodes(Node IntersectionNode)
+    private List<Node> ConnectTheNodes(Node IntersectionNode, Node firstPoint, Node lastPoint)
     {
         List<Node> placeholder = neighbors;
 
         int count = 0;
         Debug.Log("Before " + currentIndex);
-        for(int i = 0; i + 1 < placeholder.Count; i++)
+        for (int i = 0; placeholder[i].connectedTo != null; i++)
         {
             count++;
-            Debug.Log("The count "  + i + "The total count " + placeholder.Count);
+            Debug.Log("The count " + i + "The total count " + placeholder.Count);
             //TODO: Check if connected nodes are similar to each other
-            placeholder[i].connectedTo = placeholder[i + 1];
-            Debug.Log("The current node " + neighbors[i].coordinates + " is connected to " + neighbors[i].connectedTo.coordinates);
-            Debug.Log("After " + currentIndex);
-
+            if (placeholder[i].connectedTo != placeholder[i + 1])
+            {
+                placeholder[i].connectedTo = placeholder[i + 1];
+                Debug.Log("The current node " + neighbors[i].coordinates + " is connected to " + neighbors[i].connectedTo.coordinates);
+                Debug.Log("After " + currentIndex);
+            }
         }
-        //Debug.Log("The final index " + count + "is " + placeholder[count-1].coordinates);
-        //placeholder[count - 1].connectedTo = IntersectionNode;
 
-        return placeholder;
+            return placeholder;
     }
 
     private Vector3 FindVortexCenter(List<Node> connectedNodes, Node inersectionNode)
@@ -198,20 +199,28 @@ public class Paraloop_Mechanic : MonoBehaviour
         Node currentNode = connectedNodes[0].connectedTo;
         Vector3 totalToCenter = Vector3.zero;
 
-        int count = 0;
-        while (currentNode.connectedTo != null) 
+
+
+        var totalX = 0f;
+        var totalY = 0f;
+        var totalZ = 0f;
+
+        foreach (var player in connectedNodes)
         {
-            count++;
-            Debug.Log("The list of current nodes to sum " + currentNode.coordinates + "connected " + currentNode.connectedTo.coordinates);
-            totalToCenter += currentNode.coordinates;
-            currentNode = currentNode.connectedTo;
+            totalX += player.coordinates.x;
+            totalY += player.coordinates.y;
+            totalZ += player.coordinates.z;
         }
-        totalToCenter += inersectionNode.coordinates;
-        Debug.Log("Before Division " + totalToCenter);
-        return totalToCenter /= count;
-        Debug.Log("The total " + totalToCenter);
 
+        //totalX += inersectionNode.coordinates.x;
+        //totalY += inersectionNode.coordinates.y;
+        //totalZ += inersectionNode.coordinates.z;
 
+        var centerX = totalX / connectedNodes.Count;
+        var centerY = totalY / connectedNodes.Count;
+        var centerZ = totalZ / connectedNodes.Count;
+
+        return new Vector3(centerX,centerY,centerZ);
         
     }
 
