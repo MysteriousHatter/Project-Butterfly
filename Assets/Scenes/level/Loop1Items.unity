@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+>>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3512,10 +3516,97 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
+<<<<<<< Updated upstream
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2067273015
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorData:
+    _bezierPath:
+      points:
+      - {x: 89.08922, y: 0, z: -20.904724}
+      - {x: 97.00337, y: 0, z: -18.444958}
+      - {x: 100.28749, y: 0, z: -4.183098}
+      - {x: 96.78825, y: 0, z: 3.329483}
+      - {x: 94.62456, y: 0, z: 7.974761}
+      - {x: 79.45649, y: 0, z: 4.7425394}
+      - {x: 79.559265, y: 0, z: 17.605492}
+      - {x: 79.69092, y: 0, z: 34.082565}
+      - {x: 105.69342, y: 0, z: 32.469727}
+      - {x: 132.91405, y: 0, z: 33.78038}
+      - {x: 149.07053, y: 0, z: 34.558304}
+      - {x: 177.93019, y: 0, z: 51.22316}
+      - {x: 177.4596, y: 0, z: 67.39131}
+      - {x: 176.53963, y: 0, z: 98.9987}
+      - {x: 123.041046, y: 0, z: 88.252556}
+      - {x: 103.98429, y: 0, z: 116.9772}
+      - {x: 64.18802, y: 0, z: 176.96297}
+      - {x: -17.34005, y: 0, z: 179.45523}
+      - {x: -15.288282, y: 0, z: 123.73127}
+      - {x: -14.197204, y: 0, z: 94.09866}
+      - {x: -103.530205, y: 0, z: 78.24349}
+      - {x: -111.412674, y: 0, z: 52.45523}
+      - {x: -118.17562, y: 0, z: 30.329592}
+      - {x: -96.229546, y: 0, z: -31.887787}
+      - {x: -71.50689, y: 0, z: -46.22424}
+      - {x: -44.400322, y: 0, z: -61.9431}
+      - {x: -2.067665, y: 0, z: -62.079063}
+      - {x: 14.288748, y: 0, z: -59.194744}
+      - {x: 29.207718, y: 0, z: -56.563908}
+      - {x: 25.0521, y: 0, z: -32.01213}
+      - {x: 38.602795, y: 0, z: -23.195732}
+      - {x: 45.77495, y: 0, z: -18.529362}
+      - {x: 72.62131, y: 0, z: -26.023048}
+      isClosed: 1
+      space: 2
+      controlMode: 0
+      autoControlLength: 0.3
+      boundsUpToDate: 0
+      bounds:
+        m_Center: {x: 31.905712, y: 0, z: 47.097404}
+        m_Extent: {x: 146.8497, y: 0, z: 94.52639}
+      perAnchorNormalsAngle:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      globalNormalsAngle: 0
+      flipNormals: 0
+    vertexPathUpToDate: 1
+    vertexPathMaxAngleError: 0.3
+    vertexPathMinVertexSpacing: 0.01
+    showTransformTool: 1
+    showPathBounds: 0
+    showPerSegmentBounds: 0
+    displayAnchorPoints: 1
+    displayControlPoints: 1
+    bezierHandleScale: 1
+    globalDisplaySettingsFoldout: 0
+    keepConstantHandleSize: 0
+    showNormalsInVertexMode: 0
+    showBezierPathInVertexMode: 0
+    showDisplayOptions: 1
+    showPathOptions: 1
+    showVertexPathDisplayOptions: 0
+    showVertexPathOptions: 1
+    showNormals: 1
+    showNormalsHelpInfo: 0
+    tabIndex: 0
+  initialized: 1
+--- !u!114 &2080860141
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

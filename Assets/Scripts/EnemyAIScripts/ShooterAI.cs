@@ -5,7 +5,7 @@ using Panda;
 
 public class ShooterAI : MonoBehaviour
 {
-    public GameObject player;
+    public Movement player => FindObjectOfType<Movement>();
     public GameObject bulletPrefab;
 
     Vector3 directionToShoot;

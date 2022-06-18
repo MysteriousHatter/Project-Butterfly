@@ -165,7 +165,16 @@ public class Movement : MonoBehaviour
         if (PlayerRotation.sqrMagnitude != 0)
         {
             float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
+<<<<<<< Updated upstream
  
+=======
+            //if (myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Character1_Reference|kaya_Idle")
+            //{
+            //    playerInputAngle = 90f;
+            //    Debug.Log("This rotation " + myAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+            //}
+
+>>>>>>> Stashed changes
             // Set player rotation along with the path rotation
             Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
             Vector3 angle = rotation.eulerAngles;
