@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3058980309927508177
+--- !u!1001 &8495484045640227241
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,14 +10,14 @@ PrefabInstance:
     - target: {fileID: 6783442436395058606, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c80083ffcc8ea4523bd1a19b87fa03f0, type: 3}
+      objectReference: {fileID: 21300000, guid: 2f5f88874246f4ebbaca620f3cd37fad, type: 3}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_RootOrder
@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_AnchorMin.x
@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.195885
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -62.049316
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058608, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -96,92 +96,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058609, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442436395058609, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058609, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HowToPlay
+      value: PlayGame
       objectReference: {fileID: 0}
     - target: {fileID: 6783442436395058611, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
       propertyPath: m_Name
-      value: InstructionsButton
+      value: PlayButton Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219188, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219188, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -21.6351
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219188, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 20.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219188, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_text
-      value: How to Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_fontSize
-      value: 10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_margin.w
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_margin.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_margin.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_margin.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_fontSizeMin
-      value: 10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_verticalMapping
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_horizontalMapping
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_enableWordWrapping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783442437747219189, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
+    - target: {fileID: 6783442436395058611, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
+      propertyPath: m_TagString
+      value: HideWhenHowToPlay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a4ac0b5f2cd3b54d9816f7c86b6d37c, type: 3}
