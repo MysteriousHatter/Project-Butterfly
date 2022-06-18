@@ -16,9 +16,6 @@ AnimatorStateMachine:
     m_State: {fileID: -3689261192256149588}
     m_Position: {x: 390, y: 300, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 8448362120638905125}
-    m_Position: {x: 700, y: 290, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 1391331170886151696}
     m_Position: {x: 310, y: 40, z: 0}
   m_ChildStateMachines: []
@@ -66,7 +63,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8071252582659175373}
-  - {fileID: 3405876613037641506}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -76,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5989944985505651859, guid: 58d7f6df50360e049a006e396de87ad8, type: 3}
+  m_Motion: {fileID: -7131326631039571345, guid: ce7e542d6ee96c54896623699a26fe79, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -242,7 +238,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7729051703499634103}
-  - {fileID: -829695923576823866}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -252,7 +247,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5989944985505651859, guid: 58d7f6df50360e049a006e396de87ad8, type: 3}
+  m_Motion: {fileID: -5989944985505651859, guid: ce7e542d6ee96c54896623699a26fe79, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -275,10 +270,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 1
-  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -300,10 +295,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 0
+  m_ExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
