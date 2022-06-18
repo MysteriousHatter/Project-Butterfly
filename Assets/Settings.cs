@@ -29,9 +29,24 @@ public class Settings : MonoBehaviour
     public void FullScreenDropBox(TMP_Dropdown dropdown)
     {
         Debug.Log("Option" + dropdown.value);
+        int choice = dropdown.value;
         //Value 0 = Full Screen
         //Value 1 = Borderless Windowed
         //Value 2 = Windowed
+        switch (choice)
+        {
+            case 0:
+                Screen.SetResolution(Screen.width, Screen.height, FullScreenMode.ExclusiveFullScreen);
+                break;
+            case 1:
+                Screen.SetResolution(Screen.width, Screen.height, FullScreenMode.FullScreenWindow);
+                break;
+            case 2:
+                Screen.SetResolution(Screen.width, Screen.height, FullScreenMode.Windowed);
+                break;
+            default:
+                break;
+        }
     }
 
    
