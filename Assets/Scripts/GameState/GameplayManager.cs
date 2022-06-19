@@ -32,7 +32,7 @@ public class GameplayManager : MonoBehaviour
 
     public int LinkCount { get; set; }
     [SerializeField] private float linkTimerPlaceholder = 3f;
-     private float linkTimer; 
+    [SerializeField] private float linkTimer; 
 
     private int m_unlockedStates = 0;
 
@@ -58,42 +58,34 @@ public class GameplayManager : MonoBehaviour
     private void LinkTimeLeft()
     {
         linkTimer -= Time.deltaTime;
-        if (linkTimer <= 0)
+        if(LinkCount > 2)
+        {
+            //Show UI
+        }
+
+        if(linkTimer <= 0)
         {
             //1. Turn Of UI for link Counter
-            GameplayUIBehavior.Instance.showLinkNumber(false);
             //2. Mutiply total linkCountScore by ten
-            int totalLinkCOuntScore = LinkCount;
+            int totalLinkCOuntScore = LinkCount * 10;
             //3. Update to scoreManager
-            ScoreManager.Instance.OnLinkCollected(LinkCount);
             //4. Return LinkCount to zero
-            LinkCount = 0;
         }
     }
 
     public void OnOrbCollected(int orbsCollected = 1)
     {
+        LinkCount += orbsCollected;
+        if(LinkCount > 0)
+        {
+            linkTimer = linkTimerPlaceholder;
+        }
+
         m_currentCollectedOrb += orbsCollected;
 
     }
 
-    public void OnLinkCollected(int linkCollected = 1)
-    {
-        LinkCount += linkCollected;
-        if (LinkCount > 0)
-        {
-            linkTimer = linkTimerPlaceholder;
-        }
-        if (LinkCount >= 2)
-        {
-            //Show UI
-            GameplayUIBehavior.Instance.showLinkNumber(true);
-
-        }
-
-    }
-
-
+ 
 
     public int getOrbCollected()
     {
