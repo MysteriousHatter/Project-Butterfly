@@ -288,15 +288,16 @@ RectTransform:
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 912104666}
   - {fileID: 598691541}
   m_Father: {fileID: 1847765529}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.84, y: -2.63}
-  m_SizeDelta: {x: 564.5665, y: 284.1}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 6.84, y: 5.4652}
+  m_SizeDelta: {x: 564.5665, y: 243.3029}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &105954987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,11 +313,11 @@ MonoBehaviour:
   m_Content: {fileID: 598691541}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
-  m_Inertia: 1
+  m_Inertia: 0
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 2
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 605946814}
@@ -339,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: -0.9, z: 0, w: 20.85}
+  m_Padding: {x: 0, y: -0.9, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
 --- !u!1 &416903398
 GameObject:
@@ -743,6 +744,7 @@ GameObject:
   - component: {fileID: 598691541}
   - component: {fileID: 598691543}
   - component: {fileID: 598691542}
+  - component: {fileID: 598691544}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -763,12 +765,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105954986}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.600002, y: 0}
-  m_SizeDelta: {x: 309.765, y: 209.975}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -4.600002, y: -618.87}
+  m_SizeDelta: {x: 309.765, y: 1237.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598691542
 MonoBehaviour:
@@ -795,22 +797,24 @@ MonoBehaviour:
     virus, and the only way to save it is to free the infected statues. Before Kaya
     could ask how to free the statues, Shinbou fused with her, granting her the power
     of flight and a snazzy new outfit! Together with Shinbou, Kaya decides to cure
-    the cyber world of its sinister virus.\r\n\n\r\n\nPlaying as Kaya, your goal
-    is to fly through four different paths under the time limit. \r\n\r\nYou will
-    begin at the Shrine on one path. To make it to the next one, collect 20 Purple
-    Orbs and purify the infected Statue. If you return to the Shrine with the Statue
-    in time, you will be transported to the next path. The timer refreshes each time
+    the cyber world of its sinister virus.\r\n\n\nPlaying as Kaya, your goal is to
+    fly through four different paths under the time limit. \r\n\r\nYou will begin
+    at the Shrine on one path. To make it to the next one, collect 20 Purple Orbs
+    and purify the infected Statue. If you return to the Shrine with the Statue in
+    time, you will be transported to the next path. The timer refreshes each time
     you reach a new path.\r\n\r\nThe virus is spreading quickly. Avoid enemies and
-    hazards during your flight, else you will lose precious time! \r\n\r\nControls\r\n\tBasic
-    Flight: Use the WASD keys to control Kaya\u2019s flight along a side-scrolling
-    path.\r\n\tBoost: Hold [KEY] to dash forth in a corkscrew, destroying enemies
-    in your way! (Requires Boost to perform)\r\n\tParaloop: Draw a circle with your
-    flight trail to create a small vortex! This vortex can attract objects and stun
-    enemies for a short period of time.\r\n\r\nObjects\r\nShrine: The starting and
-    ending point of each lap.\r\nPurple Orbs: +100 Points. Collect 20 to free a Statue.\r\nJewelry:
-    +200 Points\r\nStatues: +500 Points\r\nRing: +10 Boost\r\nBoba Tea: +50 Boost\r\nDash
-    Ball: Pass through one to blast off in the direction the ball is pointing.\r\nSpikes:
-    -15 seconds\r\nSpike Ball: -20 seconds\r\n"
+    hazards during your flight, else you will lose precious time! \r\n\r\n<sprite
+    name=\"howToWin\">\n\n\n\n\n\n\n\n\n\nControls\r\n\tBasic Flight: Use the WASD
+    keys to control Kaya\u2019s flight along a side-scrolling path.\r\n\tBoost: Hold
+    [KEY] to dash forth in a corkscrew, destroying enemies in your way! (Requires
+    Boost to perform)\r\n\tParaloop: Draw a circle with your flight trail to create
+    a small vortex! This vortex can attract objects and stun enemies for a short
+    period of time.\r\n\r\n<sprite name=\"paraloop\">\n\n\n\n\n\n\n\n\n\nObjects\r\nShrine:
+    The starting and ending point of each lap.\r\nPurple Orbs: +100 Points. Collect
+    20 to free a Statue.\r\nJewelry: +200 Points\r\nStatues: +500 Points\r\nRing:
+    +10 Boost\r\nBoba Tea: +50 Boost\r\nDash Ball: Pass through one to blast off
+    in the direction the ball is pointing.\r\nSpikes: -15 seconds\r\nSpike Ball:
+    -20 seconds\r\n\n<sprite name=\"collectibles\">\n\n\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0c9a59510b725b4f9fba5ba086f4502, type: 2}
   m_sharedMaterial: {fileID: 3331158940331254082, guid: a0c9a59510b725b4f9fba5ba086f4502, type: 2}
@@ -829,7 +833,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: 938f753e417fc8642ad7bd656e99a3e9, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: ceb7a4432cd7f824b836bf0e90d9abe2, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -887,6 +891,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598691540}
   m_CullTransparentMesh: 1
+--- !u!114 &598691544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598691540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &605946812
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +917,7 @@ GameObject:
   - component: {fileID: 605946816}
   - component: {fileID: 605946815}
   - component: {fileID: 605946814}
+  - component: {fileID: 605946817}
   m_Layer: 0
   m_Name: Scrollbar
   m_TagString: Untagged
@@ -924,8 +943,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.664017, y: -3.8060007}
-  m_SizeDelta: {x: 67.075, y: 513.918}
+  m_AnchoredPosition: {x: 20.664017, y: -4.3752046}
+  m_SizeDelta: {x: 67.075, y: 485.4578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605946814
 MonoBehaviour:
@@ -970,8 +989,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2041286200}
   m_HandleRect: {fileID: 2090392498}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.1965703
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1014,6 +1033,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605946812}
   m_CullTransparentMesh: 1
+--- !u!114 &605946817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605946812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcef05da062631d4a80617059cb51ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &681503550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1281,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &912104665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912104666}
+  - component: {fileID: 912104668}
+  - component: {fileID: 912104667}
+  m_Layer: 0
+  m_Name: TextBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &912104666
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912104665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 105954986}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.819, y: -0.00022888184}
+  m_SizeDelta: {x: 315.324, y: 243.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &912104667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912104665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.066037714, g: 0, b: 0, a: 0.54901963}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3fb580970ae8c48e7befdc608b11eacc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &912104668
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912104665}
+  m_CullTransparentMesh: 1
 --- !u!1 &984570258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,15 +1580,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.68235296}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 31936a43597639745b27b5b0d297e7e0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2001,7 +2108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1847765529
 Transform:
   m_ObjectHideFlags: 0
@@ -2222,7 +2329,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2272,8 +2379,8 @@ RectTransform:
   m_Father: {fileID: 605946813}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.8034297}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
