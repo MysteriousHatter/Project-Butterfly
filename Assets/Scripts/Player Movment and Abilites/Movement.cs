@@ -315,14 +315,14 @@ public class Movement : MonoBehaviour
         //paraloop.InstantiateTransformations()
         if (MoveVector.sqrMagnitude != 0)
         {
-            myAnimator.SetBool("Flying", true);
+            myAnimator.SetBool("Moving", true);
             PlayerSpeedUp();
 
         }
         else
         {
             paraloop.ClearNeighbors();
-            myAnimator.SetBool("Flying", true);
+            myAnimator.SetBool("Moving", false);
         }
 
         playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
