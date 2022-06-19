@@ -49,6 +49,7 @@ public class Ring : MonoBehaviour
             Debug.Log("Collected");
             Collected = true;
             player = other.gameObject;
+            AudioManager.instance.PickupSFX();
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
             IncreaseBoostGauge(boostValue);
         }
@@ -61,6 +62,7 @@ public class Ring : MonoBehaviour
             Debug.Log("Collected");
             Collected = true;
             player = other.gameObject;
+            AudioManager.instance.PickupSFX();
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
             IncreaseBoostGauge(boostValue);
         }

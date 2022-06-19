@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{76FCE5B4-173E-4DB1-84C4-C6B29963C1B9}" SchemaVersion="103" RootDocumentID="{A61D85C0-BBDE-4829-BFE2-2A80E2B3528B}" ParentDocumentID="{A61D85C0-BBDE-4829-BFE2-2A80E2B3528B}">
-	<AudioObjects>
-		<WorkUnit Name="PlayerFlying" ID="{76FCE5B4-173E-4DB1-84C4-C6B29963C1B9}" OwnerID="{A61D85C0-BBDE-4829-BFE2-2A80E2B3528B}" PersistMode="Nested"/>
-	</AudioObjects>
-</WwiseDocument>

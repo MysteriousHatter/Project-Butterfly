@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{839D3789-22F6-464D-9D80-E3AA731BB2B9}" SchemaVersion="103" RootDocumentID="{9768D5F9-C449-4D4E-A107-3AF74E9A348E}" ParentDocumentID="{9768D5F9-C449-4D4E-A107-3AF74E9A348E}">
-	<Attenuations>
-		<WorkUnit Name="PlayerLocomotion" ID="{839D3789-22F6-464D-9D80-E3AA731BB2B9}" OwnerID="{9768D5F9-C449-4D4E-A107-3AF74E9A348E}" PersistMode="Nested"/>
-	</Attenuations>
-</WwiseDocument>

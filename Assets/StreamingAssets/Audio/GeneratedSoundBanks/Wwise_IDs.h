@@ -18,7 +18,6 @@ namespace AK
         static const AkUniqueID MENUSELECTCHOOSE = 1040688795U;
         static const AkUniqueID MENUSELECTHIGHLIGHT = 88822120U;
         static const AkUniqueID PLAY_MUSICTHEME = 2332797262U;
-        static const AkUniqueID PLAY_PLAYER_WINGFLAPS = 2113457283U;
         static const AkUniqueID PLAY_TESTBEEP = 1955951874U;
         static const AkUniqueID PLAY_TESTBEEP_3D = 1681067324U;
         static const AkUniqueID PLAY_TESTBEEP_LOOP = 523232931U;
@@ -54,7 +53,6 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID INCREDITS = 3820324306U;
                 static const AkUniqueID INGAME = 984691642U;
                 static const AkUniqueID INMENU = 3374585465U;
                 static const AkUniqueID NONE = 748895195U;
@@ -142,12 +140,8 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID AMBIENTBEDS = 1182634443U;
-        static const AkUniqueID AMBIENTMASTER = 1459460693U;
         static const AkUniqueID BOOST = 2389703494U;
-        static const AkUniqueID ENDINGBUS = 3128577630U;
-        static const AkUniqueID FLYINGMOTIONS = 2545167021U;
-        static const AkUniqueID LAPCOUNTER = 1183712868U;
+        static const AkUniqueID LAPCLEARED = 1550399012U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MENU = 2607556080U;
         static const AkUniqueID MENUBUS = 4119570698U;
@@ -158,20 +152,18 @@ namespace AK
         static const AkUniqueID NPCPATROL = 1214424580U;
         static const AkUniqueID NPCRETREAT = 3464610615U;
         static const AkUniqueID OVERWORLDBUS = 1689042417U;
-        static const AkUniqueID PARALOOP = 2051369405U;
         static const AkUniqueID PAUSEMENU = 3494343696U;
         static const AkUniqueID PLAYERCOLLISION = 1457529962U;
-        static const AkUniqueID PLAYERENEMYCOLLISION = 4081918166U;
         static const AkUniqueID PLAYERHAZARDCOLLISION = 2167524234U;
         static const AkUniqueID PLAYERLOCOMOTION = 2343802269U;
         static const AkUniqueID PLAYERMASTER = 3538689948U;
         static const AkUniqueID PLAYERPICKUPCOLLISION = 2699039134U;
+        static const AkUniqueID PLAYERPROGRESS = 3508446603U;
         static const AkUniqueID SCENEUIMASTER = 1646606939U;
-        static const AkUniqueID SCORE = 2398231425U;
         static const AkUniqueID SOUNDTRACKMASTER = 2408165297U;
-        static const AkUniqueID SPAWNMASTER = 3613176568U;
-        static const AkUniqueID TIMER = 3920142940U;
-        static const AkUniqueID WINGFLAPS = 753391680U;
+        static const AkUniqueID STAGECLEARED = 1582988071U;
+        static const AkUniqueID STATUEFREED = 3424670137U;
+        static const AkUniqueID VORTEX = 1511565765U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

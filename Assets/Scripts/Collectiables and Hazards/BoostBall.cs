@@ -21,7 +21,10 @@ public class BoostBall : MonoBehaviour
         if (playerTag == "Player")
         {
             Debug.Log("Boosst");
+            AudioManager.instance.BoostSFX();
             player.GetComponent<Movement>().ActivateBoostBall = true;
+            StartCoroutine(player.GetComponent<Movement>().MoveForward());
+
         }
     }
 }
