@@ -110,8 +110,6 @@ public class Movement : MonoBehaviour
                 Debug.Log("We're going left");
                 distanceTravelled -= Speed * Time.deltaTime;
             }
-
-            PlayerSpeedUp();
             MoveForward();
 
 
