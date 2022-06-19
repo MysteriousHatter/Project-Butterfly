@@ -20,7 +20,8 @@ public class Movement : MonoBehaviour
     public EndOfPathInstruction endOfPathInstruction;
     float distanceTravelled;
     [SerializeField] Paraloop_Mechanic paraloop;
-    [SerializeField] float knockback = 1;
+    [SerializeField] float knockback = 0.3f;
+    [SerializeField] Animator playerAnimation;
 
     // User this to lerp later
     private float currentRotationAngle = 0;
@@ -40,10 +41,11 @@ public class Movement : MonoBehaviour
     // isVulnerable can be referenced by skill component to make player immune to damage and instead destroy other object
     public bool isInvulnerable;
     //Boost Mechanic Variables
-    [SerializeField] [Range(1.0f, 5.0f)] private float _shiftSpeedBoost = 3.5f;
+    [SerializeField][Range(1.0f, 50.0f)] private float _shiftSpeedBoost = 50f;
     private float startSpeedValue;
     private bool isSpeedBoostActive = false;
     [SerializeField] private float speedGauge;
+    [SerializeField] BoostGauge boostGauge;
 
     //Boost Ball
     public bool ActivateBoostBall { get; set; }
@@ -64,9 +66,10 @@ public class Movement : MonoBehaviour
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
+            boostGauge.SetMaxBoost(speedGauge);
         }
 
-        if(knockback == 0)
+        if (knockback == 0)
         {
             //Since default knock back value should never be 0
             knockback = 0.3f;
@@ -94,7 +97,8 @@ public class Movement : MonoBehaviour
                 //if (PlayerMovementInput.y > 0f) { yValue += Speed * Time.deltaTime; }
                 //else if (PlayerMovementInput.y < 0f) { yValue -= Speed * Time.deltaTime; }
             }
-
+            if (stunTime > 0)
+                return;
             if (PlayerMovementInput.x > 0f)
             {
 
@@ -107,7 +111,8 @@ public class Movement : MonoBehaviour
                 distanceTravelled -= Speed * Time.deltaTime;
             }
 
-          
+            PlayerSpeedUp();
+            MoveForward();
 
 
         }
@@ -117,8 +122,16 @@ public class Movement : MonoBehaviour
     {
         MovePlayer();
         RotatePlayer();
+        AnimationUpdate();
     }
 
+    private void AnimationUpdate()
+    {
+        playerAnimation.SetBool("Moving", PlayerMovementInput.sqrMagnitude != 0);
+
+        playerAnimation.SetBool("Drilling", Input.GetMouseButton(0) && speedGauge > 0);
+
+    }
     private void CheckIfPlayerIsInvinisable()
     {
         if (playerBody.gameObject.tag == "Drill")
@@ -150,6 +163,7 @@ public class Movement : MonoBehaviour
         if (Input.GetMouseButton(0) && speedGauge > 0)
         {
             speedGauge--;
+            boostGauge.SetBoost(speedGauge);
             //this.gameObject.tag = "Drill";
             playerBody.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
@@ -163,14 +177,14 @@ public class Movement : MonoBehaviour
                 Speed = 20f;
             }
         }
-        else if (Input.GetMouseButtonUp(0) && !ActivateBoostBall)
+        else if (Input.GetMouseButtonUp(0))
         {
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
             playerBody.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
-        else if(!ActivateBoostBall)
+        else
         {
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
@@ -180,13 +194,36 @@ public class Movement : MonoBehaviour
     }
 
 
+    private float idleWaitLength = 0f;
     private void RotatePlayer()
     {
-        if (PlayerRotation.sqrMagnitude != 0)
+
+           float rotateSpeed = 360f;
+        Vector2 localPlayerRotation = PlayerRotation;
+        if (currentRotationAngle < 90f && currentRotationAngle > 0f)
         {
-            float playerInputAngle = Mathf.Atan2(PlayerRotation.y, PlayerRotation.x) * Mathf.Rad2Deg;
- 
-            // Set player rotation along with the path rotation
+            Debug.Log("Bad Area");
+        }
+
+        float idleAngleOffset = 0f;
+            if(PlayerRotation.sqrMagnitude  == 0  && stunTime <= 0 )
+            {
+            //Pretend moving up straight so kaya is upright
+            localPlayerRotation.y = 1;
+            localPlayerRotation.x = 0;
+            // this offset is needed since the idle animation has a 90 degree offset comparing to other
+                idleAngleOffset = +Mathf.Lerp(0, 90, 1f);
+                rotateSpeed = 360f;
+                idleWaitLength += Time.deltaTime;
+        }
+        else
+        {
+            //reset idle timer when player presses anything
+            idleWaitLength = 0f;
+        }
+            float playerInputAngle = Mathf.Atan2(localPlayerRotation.y, localPlayerRotation.x) * Mathf.Rad2Deg;
+
+                // Set player rotation along with the path rotation
             Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
             Vector3 angle = rotation.eulerAngles;
             // clear z to 0 since we don't need roll angles 
@@ -194,11 +231,10 @@ public class Movement : MonoBehaviour
             rotation.eulerAngles = angle;
             playerBody.transform.rotation = rotation;
 
-             float rotateSpeed = 360f;
             float angleSnapAtDegree = rotateSpeed * Time.deltaTime;
 
             float AngleDifference = 0f;
-            if (playerInputAngle * currentRotationAngle < 0 && Mathf.Abs(playerInputAngle - currentRotationAngle) != 180f)
+            if (playerInputAngle * (currentRotationAngle ) < 0 && Mathf.Abs(playerInputAngle - (currentRotationAngle ) )!= 180f)
             {
                 if (Mathf.Abs(playerInputAngle - currentRotationAngle) > 180f)
                 {
@@ -208,7 +244,7 @@ public class Movement : MonoBehaviour
                     }
                     else
                     {
-                        AngleDifference = playerInputAngle + currentRotationAngle + 90f;
+                        AngleDifference = playerInputAngle + currentRotationAngle + 180f;
                     }
                 }
             }
@@ -220,7 +256,7 @@ public class Movement : MonoBehaviour
             {
                 currentRotationAngle = playerInputAngle;
             }else
-            if (ShouldTurnLeft(playerInputAngle, currentRotationAngle))
+            if (ShouldTurnLeft(playerInputAngle, currentRotationAngle ))
             {
                 currentRotationAngle += rotateSpeed * Time.deltaTime;
 
@@ -240,8 +276,13 @@ public class Movement : MonoBehaviour
             // Use this to update angle around player models x (right) axis
             Vector3 right = playerBody.transform.right;
             right.y = 0;
-            playerBody.transform.Rotate(new Vector3(-1, 0, 0), currentRotationAngle - 90);
-        }
+            if (playerAnimation.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("injured"))
+            {
+                currentRotationAngle = 0f;
+            }
+
+        playerBody.transform.Rotate(new Vector3(-1, 0, 0), currentRotationAngle - 90 - idleAngleOffset);
+        
     }
 
 
@@ -265,6 +306,11 @@ public class Movement : MonoBehaviour
     {
         //TODO: Stop delay with spawning points
 
+        if(stunTime > 0)
+        {
+            stunTime -= Time.deltaTime;
+            return;
+        }
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
         //paraloop.InstantiateTransformations()
         if (MoveVector.sqrMagnitude != 0)
@@ -294,21 +340,26 @@ public class Movement : MonoBehaviour
     }
 
     public float getBoostRefill() { return speedGauge; }
-    public void setBoostRefill(float boostRefill) 
+    public void setBoostRefill(float boostRefill)
     {
-        if(speedGauge < 90)
+        if (speedGauge < 90)
         {
             speedGauge += boostRefill;
+            boostGauge.SetBoost(speedGauge);
         }
         else
         {
             speedGauge = 90f;
+            boostGauge.SetBoost(speedGauge);
         }
 
-    } 
+    }
 
+    float stunTime = 0f;
     public void MoveBack(Vector3 moveDirection)
     {
+       // Stun animation plays for 1,16 seconds so we don't let player move in that duration
+        stunTime = 1.16f;
         float pushedBackDistance =Vector3.Dot( pathCreator.path.GetDirectionAtDistance(distanceTravelled), moveDirection);
         if (pushedBackDistance < 0)
         {
@@ -323,6 +374,8 @@ public class Movement : MonoBehaviour
             playerBody.transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
             playerBody.transform.position = new Vector3(playerBody.transform.position.x, deltaY, playerBody.transform.position.z);
         }
+        playerAnimation.SetTrigger("Damage");
+        currentRotationAngle = 0f;
     }
 
     //TODO: Fix Roation to face right when dashing
