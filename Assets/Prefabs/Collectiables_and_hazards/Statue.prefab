@@ -131,6 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statueHealth: 5
+  FX: {fileID: 1469142659871422, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
+  parent: {fileID: 7170099281129279375}
+  statueSignal: {fileID: 6655956845954783166}
+  freeStatue: {fileID: 2100000, guid: 6bec134228a1c524caedc7b662f17423, type: 2}
 --- !u!1 &7028177971560195562
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,5 +290,10 @@ PrefabInstance:
 --- !u!4 &5789499976262976049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cb7806a46c15864db02fbdcc5b34563, type: 3}
+  m_PrefabInstance: {fileID: 6328356755222095322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6655956845954783166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 8cb7806a46c15864db02fbdcc5b34563, type: 3}
   m_PrefabInstance: {fileID: 6328356755222095322}
   m_PrefabAsset: {fileID: 0}

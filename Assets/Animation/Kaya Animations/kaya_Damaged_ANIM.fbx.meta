@@ -147,7 +147,7 @@ ModelImporter:
       name: Drill
       takeName: Character1_Reference|kaya_Drill
       internalID: 0
-      firstFrame: 0
+      firstFrame: 8
       lastFrame: 76
       wrapMode: 0
       orientationOffsetY: 0
@@ -176,7 +176,7 @@ ModelImporter:
       name: Flight
       takeName: Character1_Reference|kaya_Flight
       internalID: 0
-      firstFrame: 0
+      firstFrame: 30
       lastFrame: 149
       wrapMode: 0
       orientationOffsetY: 0

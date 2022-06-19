@@ -7,6 +7,9 @@ public class Enemy_Collider : MonoBehaviour
     public GameObject playerCollider;
     public GameObject player;
     [SerializeField] float timePenalty;
+    [SerializeField] GameObject FX;
+
+    [SerializeField] Transform parent;
 
     void Start()
     {
@@ -30,10 +33,14 @@ public class Enemy_Collider : MonoBehaviour
         else if(playerTag == "Drill")
         {
             Debug.Log("Destroy enemy");
+            GameObject fx = Instantiate(FX, transform.position, Quaternion.identity);
+            fx.transform.parent = parent;
             Destroy(this.gameObject);
         }
         else if(playerTag == "Vortex")
         {
+            GameObject fx = Instantiate(FX, transform.position, Quaternion.identity);
+            fx.transform.parent = parent;
             Destroy(this.gameObject);
         }
     }
