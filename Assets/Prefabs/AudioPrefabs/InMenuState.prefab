@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5625793405388405210}
-  - component: {fileID: 9044772775739979892}
+  - component: {fileID: 6565275937638638286}
   m_Layer: 0
   m_Name: InMenuState
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9044772775739979892
+--- !u!114 &6565275937638638286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,17 +41,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5625793405388405211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39778a7cebb59744b9e5e8e34f913ddf, type: 3}
+  m_Script: {fileID: 11500000, guid: b7615c8250e914b49b04d2aa564bb711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: f7e1664c
+  triggerList: ae8d9d44
   useOtherObject: 0
   data:
     idInternal: 0
     valueGuidInternal: 
     groupIdInternal: 0
     groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: bc0c1e598dbb5fa4d8aea59ceec939ee, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 274d1d892cecf0045865ae6824589bdb, type: 2}
   valueIdInternal: 0
   groupIdInternal: 0
   valueGuidInternal: 
