@@ -42,7 +42,7 @@ public class Statue : MonoBehaviour
                     ChangeStatueColor();
                     GameObject fx = Instantiate(FX, transform.position, Quaternion.identity);
                     fx.transform.parent = parent; 
-                    //AudioManager.instance.StatueSFX();
+                    AudioManager.instance.StatueSFX();
                 }
                 GameplayManager.Instance.resetOrbCount();
             }

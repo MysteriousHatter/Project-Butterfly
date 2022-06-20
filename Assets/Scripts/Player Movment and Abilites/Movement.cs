@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour
             playerBody = GetComponentInChildren<Rigidbody>();
             isInvulnerable = false;
             OnPathChanged();
-            setBoostRefill(300f);
+            setBoostRefill(90f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
@@ -342,14 +342,14 @@ public class Movement : MonoBehaviour
     public float getBoostRefill() { return speedGauge; }
     public void setBoostRefill(float boostRefill)
     {
-        if (speedGauge < 300f)
+        if (speedGauge < 90)
         {
             speedGauge += boostRefill;
             boostGauge.SetBoost(speedGauge);
         }
         else
         {
-            speedGauge = 300f;
+            speedGauge = 90f;
             boostGauge.SetBoost(speedGauge);
         }
 
