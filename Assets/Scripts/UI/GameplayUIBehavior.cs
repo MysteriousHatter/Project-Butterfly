@@ -23,8 +23,14 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The temp text that pops up when the player wins. Will change later")]
     [SerializeField] private GameObject winText;
 
+
     [Tooltip("Shows how much time the player has lost.")]
     [SerializeField] private GameObject timeLossDisplay;
+
+    [Tooltip("The temp text that pops up when the player collects a collectiable")]
+    [SerializeField] private GameObject linkNumText;
+    [SerializeField] private GameObject linkText;
+
 
     [SerializeField]
     private GameObject fractionSlider;
@@ -93,6 +99,8 @@ public class GameplayUIBehavior : MonoBehaviour
         timeText = "Time: " + timeTotal;
         timerPanel.GetComponentInChildren<TMP_Text>().text = timeText;
         fractionSlider.GetComponent<Slider>().value = 0;
+        linkText.SetActive(false);
+        linkNumText.SetActive(false);
         if(Time.timeScale == 0)
         {
             //Fix BUG: Start of the game is always playing
@@ -126,6 +134,21 @@ public class GameplayUIBehavior : MonoBehaviour
     public void OnSamePathRepeated()
     {
         gameStarted = true;
+    }
+
+    public void showLinkNumber(bool show)
+    {
+        if (show)
+        {
+            linkNumText.SetActive(true);
+            linkText.SetActive(true);
+            linkNumText.GetComponent<TMP_Text>().text = GameplayManager.Instance.LinkCount.ToString();
+        }
+        else
+        {
+            linkNumText.SetActive(false);
+            linkText.SetActive(false);
+        }
     }
 
 

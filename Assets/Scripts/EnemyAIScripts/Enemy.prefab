@@ -191,6 +191,8 @@ MonoBehaviour:
   playerCollider: {fileID: 0}
   player: {fileID: 0}
   timePenalty: 10
+  FX: {fileID: 1469142659871422, guid: d0df95b94e509cd4b87f1614ead068fc, type: 3}
+  parent: {fileID: 4941164502317322138}
 --- !u!1 &1894206136057353302
 GameObject:
   m_ObjectHideFlags: 0

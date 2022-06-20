@@ -7,6 +7,11 @@ public class Statue : MonoBehaviour
 {
     [SerializeField] int statueHealth = 20;
     private bool statueFree = false;
+    [SerializeField] GameObject FX;
+    [SerializeField] Transform parent;
+
+    [SerializeField] GameObject statueSignal;
+    [SerializeField] Material freeStatue;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +40,8 @@ public class Statue : MonoBehaviour
                     statueFree = true;
                     GameplayManager.Instance.setStatueIsFree(statueFree);
                     ChangeStatueColor();
+                    GameObject fx = Instantiate(FX, transform.position, Quaternion.identity);
+                    fx.transform.parent = parent; 
                     AudioManager.instance.StatueSFX();
                 }
                 GameplayManager.Instance.resetOrbCount();
@@ -44,5 +51,7 @@ public class Statue : MonoBehaviour
     private void ChangeStatueColor()
     {
         //CHANGE COLOR OF STATUE
+        statueSignal.GetComponent<MeshRenderer>().material = freeStatue;
+        
     }
 }

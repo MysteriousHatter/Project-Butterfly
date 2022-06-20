@@ -10,7 +10,8 @@ public class ScoreManager : MonoBehaviour
         ORBS,
         RING,
         JEWELRY,
-        STATUE
+        STATUE,
+        LINKS
     }
 
     static Dictionary<COLLECTIBLE_TYPE, int> SCORE_VALUE = new Dictionary<COLLECTIBLE_TYPE, int>()
@@ -20,6 +21,7 @@ public class ScoreManager : MonoBehaviour
         [COLLECTIBLE_TYPE.ORBS] = 100,
         [COLLECTIBLE_TYPE.JEWELRY] = 200,
         [COLLECTIBLE_TYPE.STATUE] = 500,
+        [COLLECTIBLE_TYPE.LINKS] = 10,
 
     };
     public struct PathCompletionRecord
@@ -28,6 +30,7 @@ public class ScoreManager : MonoBehaviour
         public int remainingTime  ;
         public int bobaTeaCollected ;
         public int ringCollected  ;
+        public int linksCollected;
         public int jewelryCollected ;
         public int StateUnlocked ;
 
@@ -38,6 +41,7 @@ public class ScoreManager : MonoBehaviour
             result += bobaTeaCollected * SCORE_VALUE[COLLECTIBLE_TYPE.BOBA];
             result += ringCollected * SCORE_VALUE[COLLECTIBLE_TYPE.RING];
             result += jewelryCollected * SCORE_VALUE[COLLECTIBLE_TYPE.JEWELRY];
+            result += linksCollected * SCORE_VALUE[COLLECTIBLE_TYPE.LINKS];
             result += GetTimeBonus();
             return result;
         }
@@ -49,6 +53,7 @@ public class ScoreManager : MonoBehaviour
             result += bobaTeaCollected * SCORE_VALUE[COLLECTIBLE_TYPE.BOBA];
             result += ringCollected * SCORE_VALUE[COLLECTIBLE_TYPE.RING];
             result += jewelryCollected * SCORE_VALUE[COLLECTIBLE_TYPE.JEWELRY];
+            result += linksCollected * SCORE_VALUE[COLLECTIBLE_TYPE.LINKS];
             return result;
         }
 
@@ -62,7 +67,7 @@ public class ScoreManager : MonoBehaviour
     {
         get
         {
-            instance = GameObject.FindObjectOfType<ScoreManager>();
+            //instance = GameObject.FindObjectOfType<ScoreManager>();
             if (instance == null)
             {
 
@@ -71,6 +76,7 @@ public class ScoreManager : MonoBehaviour
                 instance = a.GetComponent<ScoreManager>();
 
             }
+            Debug.Log("The Score Manager");
             return instance;
         }
     }
@@ -80,6 +86,10 @@ public class ScoreManager : MonoBehaviour
     private PathCompletionRecord currentRunRecord;
     List<PathCompletionRecord> allRunRecords = new List<PathCompletionRecord>();
 
+    void Awake()
+    {
+        instance = this;
+    }
 
     public void Start()
     {
@@ -127,6 +137,11 @@ public class ScoreManager : MonoBehaviour
 
         }
     }
+    
+    public void OnLinkCollected(int totalLinks)
+    {
+        currentRunRecord.linksCollected = totalLinks;
+    }
 
     public PathCompletionRecord GetSumary()
     {
@@ -141,6 +156,7 @@ public class ScoreManager : MonoBehaviour
             record.jewelryCollected += allRunRecords[i].jewelryCollected;
             record.StateUnlocked += allRunRecords[i].StateUnlocked;
             record.bobaTeaCollected += allRunRecords[i].bobaTeaCollected;
+            record.linksCollected += allRunRecords[i].linksCollected;
 
             if (i == allRunRecords.Count - 1)
             {
