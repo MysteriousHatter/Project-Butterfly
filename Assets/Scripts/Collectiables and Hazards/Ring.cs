@@ -53,7 +53,6 @@ public class Ring : MonoBehaviour
             GameplayManager.Instance.OnLinkCollected();
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
             IncreaseBoostGauge(boostValue);
-            Destroy(this.gameObject);
         }
     }
 
@@ -68,7 +67,6 @@ public class Ring : MonoBehaviour
             GameplayManager.Instance.OnLinkCollected();
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.RING);
             IncreaseBoostGauge(boostValue);
-            Destroy(this.gameObject);
         }
     }
 
