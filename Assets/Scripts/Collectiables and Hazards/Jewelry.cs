@@ -14,7 +14,6 @@ public class Jewelry : MonoBehaviour
             Debug.Log("Collected Jewelry");
             //TODO: insert Jewelry functionality here
             AudioManager.instance.PickupSFX();
-            GameplayManager.Instance.OnLinkCollected();
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.JEWELRY);
             Destroy(this.gameObject);
         }
