@@ -67,7 +67,7 @@ public class ScoreManager : MonoBehaviour
     {
         get
         {
-            instance = GameObject.FindObjectOfType<ScoreManager>();
+            //instance = GameObject.FindObjectOfType<ScoreManager>();
             if (instance == null)
             {
 
@@ -76,6 +76,7 @@ public class ScoreManager : MonoBehaviour
                 instance = a.GetComponent<ScoreManager>();
 
             }
+            Debug.Log("The Score Manager");
             return instance;
         }
     }
@@ -85,6 +86,10 @@ public class ScoreManager : MonoBehaviour
     private PathCompletionRecord currentRunRecord;
     List<PathCompletionRecord> allRunRecords = new List<PathCompletionRecord>();
 
+    void Awake()
+    {
+        instance = this;
+    }
 
     public void Start()
     {

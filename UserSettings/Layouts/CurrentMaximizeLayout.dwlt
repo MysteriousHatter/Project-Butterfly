@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 290.4
     height: 432.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -223,24 +223,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4e7c0100
+      scrollPos: {x: 0, y: 249.20001}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6ad8feff84dcfeff3ae6feff88f1feff5ef8feff5cc7ffff32cefffffed9ffff0cfbfffff4ffffffda8900008691000088a30000fea40000
+      m_ExpandedIDs: 8a52fdffa48dfdff0ebffdff2cd5fdff5897feff6ca4feff76a4feff8ea7feff30d1feff6ad8feff84dcfeff3ae6feff88f1feff5ef8feff5cc7ffff32cefffffed9ffff0cfbfffff4ffffffda8900008691000088a30000fea400004ccb02003ce9020008f10200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Orb (48)
-        m_OriginalName: Orb (48)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -54774
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -310,8 +310,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -100, y: -25.600006}
+      snapOffset: {x: -100, y: -25.600006}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -354,7 +354,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -535,9 +535,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 572.7519, y: 162.08664, z: 1233.7524}
+    m_Target: {x: 429.9024, y: 0.26761627, z: 830.8143}
     speed: 2
-    m_Value: {x: 572.7519, y: 162.08664, z: 1233.7524}
+    m_Value: {x: 429.9024, y: 0.26761627, z: 830.8143}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,13 +584,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.30617553, y: 0.1336448, z: -0.043459106, w: 0.94154584}
+    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: 0.30617526, y: 0.1336447, z: -0.04345907, w: 0.94154507}
+    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_Size:
-    m_Target: 512.71246
+    m_Target: 25.400616
     speed: 2
-    m_Value: 512.71246
+    m_Value: 25.400616
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -608,7 +608,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: 0.30617553, y: 0.1336448, z: -0.043459106, w: 0.94154584}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -634,8 +634,8 @@ MonoBehaviour:
     y: 432.8
     width: 1172.8
     height: 298
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 10}
@@ -683,22 +683,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/Menus
+    - Assets/Prefabs/Collectiables_and_hazards
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/Menus
+  - Assets/Prefabs/Collectiables_and_hazards
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\anime\OneDrive\Desktop\Game Development\3D\Project-Butterfly
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 360}
-    m_SelectedIDs: b8840000
-    m_LastClickedID: 33976
-    m_ExpandedIDs: 000000001e7f0000207f0000327f0000387f00003c7f00006a84000000ca9a3b
+    scrollPos: {x: 0, y: 159}
+    m_SelectedIDs: 547f0000
+    m_LastClickedID: 32596
+    m_ExpandedIDs: 000000001e7f0000207f0000387f00003e7f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -726,7 +726,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e7f0000207f0000
+    m_ExpandedIDs: 000000001e7f0000207f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -751,8 +751,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 4e7c0100
-    m_LastClickedInstanceID: 97358
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
