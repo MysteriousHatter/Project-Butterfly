@@ -14,7 +14,7 @@ public class GameplayManager : MonoBehaviour
             if (instance == null)
             {
                 
-                GameObject a = new GameObject("a");
+                GameObject a = new GameObject("Game&ScoreManager");
                 a.AddComponent<GameplayManager>();
                 instance = a.GetComponent<GameplayManager>();
 

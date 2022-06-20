@@ -70,8 +70,8 @@ public class ScoreManager : MonoBehaviour
             instance = GameObject.FindObjectOfType<ScoreManager>();
             if (instance == null)
             {
-
-                GameObject a = new GameObject("a");
+                Debug.Log("FOund it");
+                GameObject a = new GameObject("Game&ScoreManager");
                 a.AddComponent<ScoreManager>();
                 instance = a.GetComponent<ScoreManager>();
 
