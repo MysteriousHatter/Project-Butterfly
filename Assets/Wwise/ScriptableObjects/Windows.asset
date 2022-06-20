@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aaca1a281418174a92d2c66dccc3790, type: 3}
+  m_Script: {fileID: 11500000, guid: f76f28b52d58d6742be2e600268c3481, type: 3}
   m_Name: Windows
   m_EditorClassIdentifier: 
   IgnorePropertyNameList: []
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_NumberOfRefillsInVoice: 4
     m_SpatialAudioSettings:
       m_MaxSoundPropagationDepth: 8
-      m_MovementThreshold: 1
+      m_MovementThreshold: 0.1
       m_NumberOfPrimaryRays: 100
       m_MaxReflectionOrder: 1
       m_MaxPathLength: 10000
