@@ -15,6 +15,7 @@ public class ShooterAI : MonoBehaviour
     void Start()
     {
             animator = GetComponentInChildren<Animator>();
+            player = FindObjectOfType<Movement>().gameObject;
     }
 
     // Update is called once per frame

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
+using System;
+
 public class GameplayManager : MonoBehaviour
 {
     public static  GameplayManager Instance
@@ -28,6 +30,10 @@ public class GameplayManager : MonoBehaviour
 
     private int m_orbsNeedToUnlockStatue = 20;
 
+    public int LinkCount { get; set; }
+    [SerializeField] private float linkTimerPlaceholder = 3f;
+     private float linkTimer; 
+
     private int m_unlockedStates = 0;
 
 
@@ -43,14 +49,51 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (LinkCount > 0)
+        {
+            LinkTimeLeft();
+        }
     }
 
+    private void LinkTimeLeft()
+    {
+        linkTimer -= Time.deltaTime;
+        if (linkTimer <= 0)
+        {
+            //1. Turn Of UI for link Counter
+            GameplayUIBehavior.Instance.showLinkNumber(false);
+            //2. Mutiply total linkCountScore by ten
+            int totalLinkCOuntScore = LinkCount;
+            //3. Update to scoreManager
+            ScoreManager.Instance.OnLinkCollected(LinkCount);
+            //4. Return LinkCount to zero
+            LinkCount = 0;
+        }
+    }
 
     public void OnOrbCollected(int orbsCollected = 1)
     {
         m_currentCollectedOrb += orbsCollected;
+
     }
+
+    public void OnLinkCollected(int linkCollected = 1)
+    {
+        LinkCount += linkCollected;
+        if (LinkCount > 0)
+        {
+            linkTimer = linkTimerPlaceholder;
+        }
+        if (LinkCount >= 2)
+        {
+            //Show UI
+            GameplayUIBehavior.Instance.showLinkNumber(true);
+
+        }
+
+    }
+
+
 
     public int getOrbCollected()
     {

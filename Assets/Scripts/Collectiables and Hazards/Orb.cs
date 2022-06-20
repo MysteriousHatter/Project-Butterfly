@@ -13,11 +13,12 @@ public class Orb : MonoBehaviour
         {
             Debug.Log("Collected Orb");
             //TODO: insert Orb functionality here
-            AudioManager.instance.PickupSFX();
+            //AudioManager.instance.PickupSFX();
             GameplayManager.Instance.OnOrbCollected();
             //TODO: Update statue count in UI and gameManager look at chris' code
             ScoreManager.Instance.OnCollectibleCollected(ScoreManager.COLLECTIBLE_TYPE.ORBS);
             GameplayUIBehavior.Instance.SetOrb(ScoreManager.Instance.GetCurrentOrb());
+            GameplayManager.Instance.OnLinkCollected();
             Destroy(this.gameObject);
         }
     }
