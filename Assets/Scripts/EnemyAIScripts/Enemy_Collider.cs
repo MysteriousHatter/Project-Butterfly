@@ -25,7 +25,7 @@ public class Enemy_Collider : MonoBehaviour
         if (playerTag == "Player")
         {
             Debug.Log("Hit Hazard");
-            AudioManager.instance.HazardSFX();
+            //AudioManager.instance.HazardSFX();
             Vector3 pushDirection = other.transform.position - transform.position;
             player.GetComponent<Movement>().MoveBack(pushDirection.normalized);
             FindObjectOfType<GameplayUIBehavior>().setTime(timePenalty);

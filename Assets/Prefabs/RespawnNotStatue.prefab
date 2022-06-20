@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4764669923955748926}
   - component: {fileID: 4764669923955748924}
   - component: {fileID: 4764669923955748923}
-  - component: {fileID: 4764669923955748922}
+  - component: {fileID: 3661103174336589337}
   m_Layer: 0
   m_Name: RespawnNotStatue
   m_TagString: Untagged
@@ -89,7 +89,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 5.28, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4764669923955748922
+--- !u!114 &3661103174336589337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4764669923955748921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 733b20924de913449b1bf10c3f29699a, type: 3}
+  m_Script: {fileID: 11500000, guid: 312d0d38b8009804e87da48c657b9211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
