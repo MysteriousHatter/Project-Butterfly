@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     //Movment variables
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerRotation;
-    float deltaY = 0f;
+    public float deltaY = 0f;
     public float Speed = 5;
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private float Sensitvity;
