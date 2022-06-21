@@ -11,8 +11,8 @@ public class RespawnNotStatue : MonoBehaviour
         spawn = FindObjectOfType<SpawnManager>();
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        spawn.HandleNewLap(false);
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    spawn.HandleNewLap(false);
+    //}
 }
