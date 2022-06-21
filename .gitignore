@@ -67,3 +67,5 @@ ProjectButterflyAudio/.cache/
 *.wsettings
 Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
 UserSettings/Layouts/default-2021.dwlt
+*.dwlt
+*.dwlt
