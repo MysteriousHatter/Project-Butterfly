@@ -126,7 +126,7 @@ public class GameplayManager : MonoBehaviour
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
-            AudioManager.instance.LapClearedSFX();
+            //AudioManager.instance.LapClearedSFX();
         }
         else
         {

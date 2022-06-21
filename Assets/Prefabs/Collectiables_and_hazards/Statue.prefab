@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7170099281129279375}
   - component: {fileID: 1528277873729850074}
+  - component: {fileID: 4536879447228196310}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Untagged
@@ -135,6 +136,19 @@ MonoBehaviour:
   parent: {fileID: 7170099281129279375}
   statueSignal: {fileID: 6655956845954783166}
   freeStatue: {fileID: 2100000, guid: 6bec134228a1c524caedc7b662f17423, type: 2}
+--- !u!65 &4536879447228196310
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5992328490107022092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 4.19, z: 2.02}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7028177971560195562
 GameObject:
   m_ObjectHideFlags: 0
