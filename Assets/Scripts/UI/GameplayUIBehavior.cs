@@ -67,6 +67,8 @@ public class GameplayUIBehavior : MonoBehaviour
     private string scoreText;
 
     private int orb;
+    private int orbMax = 20;
+
     [Tooltip("The amount of time the checkpoint display is up")]
     [SerializeField]private float displayTime;
 
@@ -187,18 +189,23 @@ public class GameplayUIBehavior : MonoBehaviour
 
     private void UpdateOrbUI()
     {
-        string textTemp = "Orbs collected = " + orb + "/20";
-        fractionText.GetComponent<TMP_Text>().text = textTemp;
-        if (orb == 0)
+        string textTemp = "Orbs collected = " + orb + "/" + orbMax;
+        
+        if(orbMax <= 0)
+        {
+            textTemp = "Al; Collected";
+            fractionSlider.GetComponent<Slider>().value = 1;
+        }
+        else if (orb == 0)
         {
             fractionSlider.GetComponent<Slider>().value = 0;
         }
-        else if(orb <= 20)
+        else if(orb <= orbMax)
         {
-            fractionSlider.GetComponent<Slider>().value += 0.05f;
+            fractionSlider.GetComponent<Slider>().value += (1/orbMax);
         }
-        
-        
+
+        fractionText.GetComponent<TMP_Text>().text = textTemp;
     }
 
     public void YouWin()
@@ -228,6 +235,13 @@ public class GameplayUIBehavior : MonoBehaviour
             orb++;
         }
         
+        UpdateOrbUI();
+    }
+
+    public void SetMaxOrb(int current)
+    {
+        orbMax -= current;
+        SetOrb(0);
         UpdateOrbUI();
     }
 

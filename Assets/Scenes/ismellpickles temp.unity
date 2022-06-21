@@ -493,6 +493,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 477417494967782074, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 423281282570140874}
+    - target: {fileID: 477417494967782074, guid: de87beba3706801428b53f437c907155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1413256418877543436, guid: de87beba3706801428b53f437c907155, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -623,3 +631,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de87beba3706801428b53f437c907155, type: 3}
+--- !u!1 &423281282570140874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9141112436531847667, guid: de87beba3706801428b53f437c907155, type: 3}
+  m_PrefabInstance: {fileID: 423281282570140873}
+  m_PrefabAsset: {fileID: 0}
