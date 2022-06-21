@@ -81,11 +81,11 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume(float volLevel)
     {
-        AkSoundEngine.SetRTPCValue("MusicVolume", Mathf.Log10(volLevel) * 20);
+        AkSoundEngine.SetRTPCValue("MusicVolume", volLevel);
     }
 
     public void SetSFXVolume(float sfxLevel)
     {
-        AkSoundEngine.SetRTPCValue("SFXVolume", Mathf.Log10(sfxLevel) * 20);
+        AkSoundEngine.SetRTPCValue("SFXVolume", sfxLevel);
     }
 }

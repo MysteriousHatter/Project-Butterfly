@@ -83,6 +83,18 @@ namespace AK
             } // namespace STATE
         } // namespace ROOMSTATE
 
+        namespace VOLSTATE
+        {
+            static const AkUniqueID GROUP = 979598455U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MUTE = 2974103762U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID UNMUTE = 2156697475U;
+            } // namespace STATE
+        } // namespace VOLSTATE
+
     } // namespace STATES
 
     namespace SWITCHES
