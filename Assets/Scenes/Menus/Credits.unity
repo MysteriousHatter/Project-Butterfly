@@ -333,49 +333,63 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'How To Play Project Butterfly:How To Play Project Butterfly:How To Play
-    Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:How To Play Project Butterfly:How To Play Project Butterfly:How
-    To Play Project Butterfly:'
+  m_text: 'Island Box
+
+
+    Abu - Creative Director, Programmer, Desginer
+
+    Alan
+    - Designer
+
+    Andersen - Programmer, Designer
+
+    Angelica Choi - 3D Artist
+
+    Chris
+    - Lead Programmer
+
+    Chase - Lead Sound Designer
+
+    Elias - Lead Artist,
+    Concept artist
+
+    Darlynn - Lead UI Designer, Programmer
+
+    Gary - Programmer
+
+    Pneuma
+    Cashmer - Programmer
+
+    Shayla - 3D Artist
+
+    Skyler Madigan - Producer,
+    UI Designer
+
+    Vaticori/Victoria Novatska - Concept Artist
+
+
+    Borrowed Assets
+
+
+    Sci-fi
+    GUI Skin by 3d.rina on Unity Asset Store
+
+    Free Stylized Skybox by Yuki2022
+    on Unity Asset Store
+
+    Glitch Inside Font by MaknaStudio on dafont.com
+
+    Mustica
+    Pro Font by Alifinart Studio on dafont.com
+
+
+    Special Thanks
+
+
+    IndieCade
+    Greenlight Jam 2022
+
+    Itch.io'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0c9a59510b725b4f9fba5ba086f4502, type: 2}
   m_sharedMaterial: {fileID: 3331158940331254082, guid: a0c9a59510b725b4f9fba5ba086f4502, type: 2}
@@ -777,7 +791,7 @@ GameObject:
   - component: {fileID: 878403493}
   - component: {fileID: 878403492}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: CreditsTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,7 +1168,7 @@ GameObject:
   - component: {fileID: 1238650128}
   - component: {fileID: 1238650127}
   m_Layer: 0
-  m_Name: Credits
+  m_Name: CreditsList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
