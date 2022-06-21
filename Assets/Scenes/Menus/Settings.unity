@@ -3216,8 +3216,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8348595742707083516, guid: c8a08046ddb000c4fa7aa614be2895bb, type: 3}
-          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+        - m_Target: {fileID: 1652873442227943296, guid: c8a08046ddb000c4fa7aa614be2895bb, type: 3}
+          m_TargetAssemblyTypeName: AkEvent, AK.Wwise.Unity.MonoBehaviour
           m_MethodName: HandleEvent
           m_Mode: 2
           m_Arguments:
@@ -3232,8 +3232,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1762631618662074889, guid: 181ec5f8b5b9f9040b6a7f6678da79cf, type: 3}
-          m_TargetAssemblyTypeName: AkAmbient, AK.Wwise.Unity.MonoBehaviour
+        - m_Target: {fileID: 1321035961140866892, guid: 181ec5f8b5b9f9040b6a7f6678da79cf, type: 3}
+          m_TargetAssemblyTypeName: AkEvent, AK.Wwise.Unity.MonoBehaviour
           m_MethodName: HandleEvent
           m_Mode: 2
           m_Arguments:
