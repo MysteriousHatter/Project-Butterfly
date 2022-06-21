@@ -110,6 +110,7 @@ public class GameplayManager : MonoBehaviour
 
     public void resetOrbCount()
     {
+        GameplayUIBehavior.Instance.SetMaxOrb(m_currentCollectedOrb);
         m_currentCollectedOrb = 0;
     }
 
