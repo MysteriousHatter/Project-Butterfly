@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     //Movment variables
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerRotation;
-    float deltaY = 0f;
+    public float deltaY = 0f;
     public float Speed = 5;
     [SerializeField] private Rigidbody playerBody;
     [SerializeField] private float Sensitvity;
@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour
             playerBody = GetComponentInChildren<Rigidbody>();
             isInvulnerable = false;
             OnPathChanged();
-            setBoostRefill(90f);
+            setBoostRefill(300f);
             paraloop = GetComponentInChildren<Paraloop_Mechanic>();
             myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
@@ -164,6 +164,7 @@ public class Movement : MonoBehaviour
             boostGauge.SetBoost(speedGauge);
             //this.gameObject.tag = "Drill";
             playerBody.gameObject.tag = "Drill";
+            myAnimator.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
             if (Speed < 20f)
             {
@@ -180,6 +181,7 @@ public class Movement : MonoBehaviour
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
             playerBody.gameObject.tag = "Player";
+            myAnimator.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
         else
@@ -187,6 +189,7 @@ public class Movement : MonoBehaviour
             Speed = startSpeedValue;
             //this.gameObject.tag = "Player";
             playerBody.gameObject.tag = "Player";
+            myAnimator.gameObject.tag = "Player";
             paraloop.InstantiateTransformations(true);
         }
     }
@@ -340,14 +343,14 @@ public class Movement : MonoBehaviour
     public float getBoostRefill() { return speedGauge; }
     public void setBoostRefill(float boostRefill)
     {
-        if (speedGauge < 90)
+        if (speedGauge < 300)
         {
             speedGauge += boostRefill;
             boostGauge.SetBoost(speedGauge);
         }
         else
         {
-            speedGauge = 90f;
+            speedGauge = 300f;
             boostGauge.SetBoost(speedGauge);
         }
 

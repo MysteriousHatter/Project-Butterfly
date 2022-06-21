@@ -16,7 +16,7 @@ public class Statue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AddBoxCollider();
+        //AddBoxCollider();
         GameplayManager.Instance.setStatueIsFree(statueFree);
     }
 
@@ -42,7 +42,7 @@ public class Statue : MonoBehaviour
                     ChangeStatueColor();
                     GameObject fx = Instantiate(FX, transform.position, Quaternion.identity);
                     fx.transform.parent = parent; 
-                    AudioManager.instance.StatueSFX();
+                    //AudioManager.instance.StatueSFX();
                 }
                 GameplayManager.Instance.resetOrbCount();
             }

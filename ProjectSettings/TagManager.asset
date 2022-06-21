@@ -10,6 +10,8 @@ TagManager:
   - HideWhenHowToPlay
   - Enemy
   - Vortex
+  - Terrain
+
   layers:
   - Default
   - TransparentFX
