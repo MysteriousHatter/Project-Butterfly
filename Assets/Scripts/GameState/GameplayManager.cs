@@ -6,8 +6,6 @@ using System;
 
 public class GameplayManager : MonoBehaviour
 {
-
-
     public static  GameplayManager Instance
     {
         get
@@ -47,12 +45,6 @@ public class GameplayManager : MonoBehaviour
     {
         
     }
-
-    void Awake()
-    {
-        instance = this;
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -126,7 +118,7 @@ public class GameplayManager : MonoBehaviour
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
-            //AudioManager.instance.LapClearedSFX();
+            AudioManager.instance.LapClearedSFX();
         }
         else
         {

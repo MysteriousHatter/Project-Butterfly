@@ -164,7 +164,7 @@ MonoBehaviour:
   startPath: 0
   timeToAddPoint: 0.3
   timeToDeletePoint: 0.5
-  vortexPrefab: {fileID: 1371944281507883792, guid: 3da15405aa07f8c4380113f280d438e3, type: 3}
+  vortexPrefab: {fileID: 3115127250037394708, guid: 86951a446b17e6249a92aacc610f9f7a, type: 3}
 --- !u!96 &768312726
 TrailRenderer:
   serializedVersion: 2
@@ -792,16 +792,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  playerBody: {fileID: 1404861791517098644}
+  playerBody: {fileID: 0}
   Sensitvity: 0
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  paraloop: {fileID: 1404861791517098642}
+  paraloop: {fileID: 0}
   knockback: 1
   playerAnimation: {fileID: 1622611006}
   isInvulnerable: 0
-  _shiftSpeedBoost: 5.9
-  speedGauge: 500
+  _shiftSpeedBoost: 2.9
+  speedGauge: 90
   boostGauge: {fileID: 0}
   boostBallSpeed: 530
   boostBallTime: 800

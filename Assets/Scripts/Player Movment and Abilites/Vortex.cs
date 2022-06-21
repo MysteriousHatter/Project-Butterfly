@@ -13,7 +13,6 @@ public class Vortex : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.VortexSFX();
         center = GetComponentInChildren<BoxCollider>();
         Destroy(this.gameObject, timeToDestory);   
     }
@@ -29,6 +28,7 @@ public class Vortex : MonoBehaviour
                 //Debug.Log("Object were hitting " + hitColliders[i].gameObject.name);
                 Transform collectiable = hitColliders[i].transform;
                 Debug.Log("We are hitting " + collectiable.gameObject.name);
+                AudioManager.instance.VortexSFX();
                 collectiable.position = Vector3.MoveTowards(collectiable.position, center.transform.position, speed * Time.deltaTime);
             }
         }
