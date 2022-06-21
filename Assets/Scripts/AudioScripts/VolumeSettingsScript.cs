@@ -7,6 +7,7 @@ public class VolumeSettingsScript : MonoBehaviour
     public void SetMusicVolume(float volLevel)
     {
         AkSoundEngine.SetRTPCValue("MusicVolume", volLevel);
+        AkSoundEngine.SetRTPCValue("SFXVolume", volLevel);
     }
 
     public void MuteAllAudio(bool toggleValue)
