@@ -127,6 +127,7 @@ public class GameplayManager : MonoBehaviour
             OnStatuesUnlocked();
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
+            resetOrbCount();
             //AudioManager.instance.LapClearedSFX();
         }
         else
@@ -134,7 +135,7 @@ public class GameplayManager : MonoBehaviour
             spawn.HandleNewLap(false);
             GameplayUIBehavior.Instance.OnSamePathRepeated();
         }
-        resetOrbCount();
+
     }
 
     public void OnStatuesUnlocked()
