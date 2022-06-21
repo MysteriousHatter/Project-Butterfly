@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762631618662074894}
-  - component: {fileID: 1762631618662074888}
-  - component: {fileID: 1762631618662074889}
+  - component: {fileID: 5915955391416911686}
+  - component: {fileID: 1321035961140866892}
   m_Layer: 0
   m_Name: MenuSelectBackSFX
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1762631618662074888
+--- !u!114 &5915955391416911686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762631618662074895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bae24d63809e1d49a61a5470645469e, type: 3}
+  m_Script: {fileID: 11500000, guid: d0d28811a0d38044abd4b056f948da8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_listeners:
@@ -55,7 +55,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &1762631618662074889
+--- !u!114 &1321035961140866892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762631618662074895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0d4d4789ef9574ca06a9463c321675, type: 3}
+  m_Script: {fileID: 11500000, guid: b5984600ff17fa74cb7dafa13500aea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerList: 3b35642d
@@ -75,7 +75,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 65f4a138686cd884ca4799b2a0c23e24, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 9e1fd07d8a4e5c041a1a86db1f1e51d5, type: 2}
   useCallbacks: 0
   Callbacks: []
   playingId: 0
@@ -84,8 +84,3 @@ MonoBehaviour:
   eventIdInternal: 0
   valueGuidInternal: 
   m_callbackDataInternal: {fileID: 0}
-  MultiPositionType: 1
-  multiPositionTypeLabel: 0
-  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
-  LargeModePositions: []
-  multiPositionArray: []
