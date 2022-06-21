@@ -83,6 +83,18 @@ namespace AK
             } // namespace STATE
         } // namespace ROOMSTATE
 
+        namespace VOLSTATE
+        {
+            static const AkUniqueID GROUP = 979598455U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MUTE = 2974103762U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID UNMUTE = 2156697475U;
+            } // namespace STATE
+        } // namespace VOLSTATE
+
     } // namespace STATES
 
     namespace SWITCHES
@@ -116,10 +128,12 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID RTPC_DISTANCE = 262290038U;
         static const AkUniqueID RTPC_PLAYERSPEED = 2653406601U;
+        static const AkUniqueID SFXVOLUME = 988953028U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;
         static const AkUniqueID SS_AIR_FURY = 1029930033U;

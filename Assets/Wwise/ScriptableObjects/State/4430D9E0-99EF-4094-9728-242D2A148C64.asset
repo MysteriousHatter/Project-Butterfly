@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fddf0d0705402ce48b6c76a03af21d61, type: 3}
+  m_Script: {fileID: 11500000, guid: f0f80c4a8211e86489d759d959d909ad, type: 3}
   m_Name: 4430D9E0-99EF-4094-9728-242D2A148C64
   m_EditorClassIdentifier: 
   objectName: InGame
   id: 984691642
   guid: 4430D9E0-99EF-4094-9728-242D2A148C64
-  WwiseStateGroupReference: {fileID: 11400000, guid: 1c93ce25e7cd0f94ab00699660b78400, type: 2}
+  WwiseStateGroupReference: {fileID: 11400000, guid: 77d37611822a7904086bda9e392e0fee, type: 2}

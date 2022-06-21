@@ -78,4 +78,14 @@ public class AudioManager : MonoBehaviour
         // play statue event
         AkSoundEngine.PostEvent("StatueFreed", gameObject);
     }
+
+    public void SetMusicVolume(float volLevel)
+    {
+        AkSoundEngine.SetRTPCValue("MusicVolume", volLevel);
+    }
+
+    public void SetSFXVolume(float sfxLevel)
+    {
+        AkSoundEngine.SetRTPCValue("SFXVolume", sfxLevel);
+    }
 }

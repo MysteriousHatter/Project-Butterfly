@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Vortex
   - Terrain
+
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Collectiable
   - Water
   - UI
-  - 
+  - Post-Processing
   - 
   - 
   - 
