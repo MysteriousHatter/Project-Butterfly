@@ -17,6 +17,7 @@ public class Statue : MonoBehaviour
     void Start()
     {
         //AddBoxCollider();
+        GameplayUIBehavior.Instance.orbMax = statueHealth;
         GameplayManager.Instance.setStatueIsFree(statueFree);
     }
 

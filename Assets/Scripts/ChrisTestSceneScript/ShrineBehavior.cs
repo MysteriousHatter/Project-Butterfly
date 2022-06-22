@@ -4,10 +4,23 @@ using UnityEngine;
 using PathCreation;
 public class ShrineBehavior : MonoBehaviour
 {
+
+    public PathCreator pathCreator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdatePath();
+    }
+
+    public void UpdatePath()
+    {
+        pathCreator.pathUpdated += OnPathChanged;
+        OnPathChanged();
+    }
+
+    public void OnPathChanged()
+    {
+        transform.position = pathCreator.path.GetPoint(5);
     }
 
     // Update is called once per frame

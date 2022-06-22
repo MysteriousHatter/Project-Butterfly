@@ -4930,9 +4930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71e9456f0165a3478ca3d8a9b312669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDestory: 5
+  timeToDestory: 2
   speed: 10
-  magnetDistance: 360
+  magnetDistance: 389.96
 --- !u!1 &2068017282974867837
 GameObject:
   m_ObjectHideFlags: 0

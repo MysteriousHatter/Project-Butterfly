@@ -23,7 +23,7 @@ public class Ring : MonoBehaviour
     {
         if (Collected)
         {
-            lerpValue += Time.deltaTime * 0.1f;
+            lerpValue += Time.deltaTime * 2.0f;
             foreach(GameObject subParticle in subParticles)
             {
                 subParticle.transform.position = Vector3.Lerp(subParticle.transform.position, player.transform.position, lerpValue);

@@ -62,7 +62,7 @@ public class GameplayUIBehavior : MonoBehaviour
     private string scoreText;
 
     private int orb;
-    private int orbMax = 20;
+    public int orbMax { get; set; }
 
     [Tooltip("The amount of time the checkpoint display is up")]
     [SerializeField]private float displayTime;
@@ -314,8 +314,8 @@ public class GameplayUIBehavior : MonoBehaviour
             next += check;
         }
         display += next;
-        previousCheckpointTime.GetComponent<TMP_Text>().text = display;
         previousCheckpointTime.SetActive(true);
+        previousCheckpointTime.GetComponent<TMP_Text>().text = display;
         Invoke("TurnOffCheckPoint", displayTime);
     }
 

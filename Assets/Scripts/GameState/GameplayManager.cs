@@ -37,7 +37,7 @@ public class GameplayManager : MonoBehaviour
      private float linkTimer; 
 
     private int m_unlockedStates = 0;
-
+    public ShrineBehavior shrineBehavior;
 
     private bool nextPath;
 
@@ -128,7 +128,7 @@ public class GameplayManager : MonoBehaviour
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
             resetOrbCount();
-            //AudioManager.instance.LapClearedSFX();
+            AudioManager.instance.LapClearedSFX();
         }
         else
         {
@@ -145,6 +145,9 @@ public class GameplayManager : MonoBehaviour
         m_unlockedStates++;
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
+        shrineBehavior.pathCreator = paths[m_unlockedStates];
+        //shrineBehavior.UpdatePath();
+        GameObject.FindObjectOfType<Movement>().playerBody.transform.position = shrineBehavior.gameObject.transform.position + new Vector3(3f,0, 3f);
         ScoreManager.Instance.PathCompleted ((int)GameplayUIBehavior.Instance.TimeLeft);
         GameplayUIBehavior.Instance.SetOrb(0);
         if (m_unlockedStates >3)

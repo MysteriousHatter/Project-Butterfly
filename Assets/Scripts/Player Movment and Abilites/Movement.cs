@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     private Vector2 PlayerRotation;
     public float deltaY = 0f;
     public float Speed = 5;
-    [SerializeField] private Rigidbody playerBody;
+    [SerializeField] public Rigidbody playerBody;
     [SerializeField] private float Sensitvity;
     [Space]
     //Path variables
@@ -45,6 +45,7 @@ public class Movement : MonoBehaviour
     private float startSpeedValue;
     private bool isSpeedBoostActive = false;
     [SerializeField] private float speedGauge;
+    private float speedGauegeHolder;
     [SerializeField] BoostGauge boostGauge;
 
     //Boost Ball
@@ -67,6 +68,7 @@ public class Movement : MonoBehaviour
             myAnimator = GetComponentInChildren<Animator>();
             ActivateBoostBall = false;
             boostGauge.SetMaxBoost(speedGauge);
+            speedGauegeHolder = speedGauge;
         }
 
         if (knockback == 0)
@@ -151,8 +153,10 @@ public class Movement : MonoBehaviour
         Quaternion rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
         Vector3 angle = rotation.eulerAngles;
         angle.z = 0;
-        rotation.eulerAngles = angle;
+        rotation.eulerAngles = angle;   
+        //Vector3 offset = new Vector3(26f, 25f, 25f);
         playerBody.transform.rotation = rotation;
+        //playerBody.transform.position += offset;
     }
 
 
@@ -166,14 +170,14 @@ public class Movement : MonoBehaviour
             playerBody.gameObject.tag = "Drill";
             myAnimator.gameObject.tag = "Drill";
             paraloop.InstantiateTransformations(false);
-            if (Speed < 20f)
+            if (Speed < 80f)
             {
                 Speed += _shiftSpeedBoost;
                 //Speed = 20f;
             }
             else
             {
-                Speed = 20f;
+                Speed = 80f;
             }
         }
         else if (Input.GetMouseButtonUp(0))
@@ -385,9 +389,9 @@ public class Movement : MonoBehaviour
     {
         while (ActivateBoostBall)
         {
-            Speed = 20f;
+            Speed = boostBallSpeed;
             PlayerMovementInput = Vector3.right;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(boostBallTime);
             ActivateBoostBall = false;
         }
 
