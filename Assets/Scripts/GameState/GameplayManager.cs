@@ -130,8 +130,9 @@ public class GameplayManager : MonoBehaviour
             resetOrbCount();
             AudioManager.instance.LapClearedSFX();
         }
-        else
+        else if(!getStatueIsFree())
         {
+            Debug.Log("Don't handle a new lap");
             spawn.HandleNewLap(false);
             GameplayUIBehavior.Instance.OnSamePathRepeated();
         }
@@ -146,8 +147,7 @@ public class GameplayManager : MonoBehaviour
         if(m_unlockedStates < paths.Length)
         GameObject.FindObjectOfType<Movement>().pathCreator = paths[m_unlockedStates];
         shrineBehavior.pathCreator = paths[m_unlockedStates];
-        //shrineBehavior.UpdatePath();
-        GameObject.FindObjectOfType<Movement>().playerBody.transform.position = shrineBehavior.gameObject.transform.position + new Vector3(3f,0, 3f);
+        shrineBehavior.UpdatePath();
         ScoreManager.Instance.PathCompleted ((int)GameplayUIBehavior.Instance.TimeLeft);
         GameplayUIBehavior.Instance.SetOrb(0);
         if (m_unlockedStates >3)
