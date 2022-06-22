@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
         if (sceneList.Length == 0)
             return;
         currentScene = sceneList[0];
-        SceneManager.LoadScene("BaseLevel", LoadSceneMode.Additive);
+        SceneManager.LoadScene(currentScene.name, LoadSceneMode.Additive);
         checkpointHandler = FindObjectOfType<CheckpointHandler>();
     }
 
