@@ -5,20 +5,39 @@ using UnityEngine;
 
 public class Statue : MonoBehaviour
 {
-    [SerializeField] int statueHealth = 20;
+    int statueHealth;
     private bool statueFree = false;
     [SerializeField] GameObject FX;
     [SerializeField] Transform parent;
 
     [SerializeField] GameObject statueSignal;
     [SerializeField] Material freeStatue;
+    [SerializeField] Material lockedStatue;
+
+    [SerializeField] public StatueBehaviorConfig[] config;
+    int lapCount = -1;
 
     // Start is called before the first frame update
     void Start()
     {
         //AddBoxCollider();
-        GameplayUIBehavior.Instance.orbMax = statueHealth;
-        GameplayManager.Instance.setStatueIsFree(statueFree);
+        InstantiateToANewPostion();
+        //GameplayUIBehavior.Instance.orbMax = statueHealth;
+        //GameplayManager.Instance.setStatueIsFree(statueFree);
+    }
+
+    public void InstantiateToANewPostion()
+    {
+        lapCount++;
+        if(lapCount < config.Length)
+        {
+            statueHealth = config[lapCount].health;
+            GameplayUIBehavior.Instance.orbMax = statueHealth;
+            GameplayManager.Instance.setStatueIsFree(false);
+            this.gameObject.transform.position = config[lapCount].SpawnLocation.transform.position;
+            this.gameObject.transform.rotation = config[lapCount].SpawnLocation.transform.rotation;
+            statueSignal.GetComponent<MeshRenderer>().material = lockedStatue;
+        }
     }
 
     private void AddBoxCollider()
@@ -39,7 +58,7 @@ public class Statue : MonoBehaviour
                 if(statueHealth <= 0)
                 {
                     statueFree = true;
-                    GameplayManager.Instance.setStatueIsFree(statueFree);
+                    GameplayManager.Instance.setStatueIsFree(true);
                     ChangeStatueColor();
                     GameObject fx = Instantiate(FX, transform.position, Quaternion.identity);
                     fx.transform.parent = parent; 

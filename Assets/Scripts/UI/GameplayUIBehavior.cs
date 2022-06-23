@@ -188,7 +188,7 @@ public class GameplayUIBehavior : MonoBehaviour
         
         if(orbMax <= 0)
         {
-            textTemp = "Al; Collected";
+            textTemp = "Statue Is Free";
             fractionSlider.GetComponent<Slider>().value = 1;
         }
         else if (orb == 0)

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5804515646184401080}
   - component: {fileID: 5804515646184401081}
   - component: {fileID: 5804515646184401030}
-  - component: {fileID: 5804515646184401031}
   - component: {fileID: 5804515646184401083}
   - component: {fileID: -5335385018824904521}
+  - component: {fileID: 6064191480098026082}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Hazard
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5804515646184401028}
   m_LocalRotation: {x: -0, y: 0.99912286, z: -0, w: -0.041875716}
   m_LocalPosition: {x: -1.17, y: -0.118, z: 3.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2766583411614218408}
@@ -87,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5804515646184401031
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5804515646184401028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.17
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5804515646184401083
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,6 +118,19 @@ MonoBehaviour:
   playerCollider: {fileID: 0}
   player: {fileID: 0}
   timePenalty: -15
+--- !u!65 &6064191480098026082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804515646184401028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.31, y: 1.06, z: 1.43}
+  m_Center: {x: 0, y: 0.48, z: 0}
 --- !u!1001 &2444990092863708995
 PrefabInstance:
   m_ObjectHideFlags: 0

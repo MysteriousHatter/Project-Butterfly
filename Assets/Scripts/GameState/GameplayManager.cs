@@ -31,6 +31,7 @@ public class GameplayManager : MonoBehaviour
     private int m_currentCollectedOrb = 0;
 
     private int m_orbsNeedToUnlockStatue = 20;
+    [SerializeField] private Statue statueConfig;
 
     public int LinkCount { get; set; }
     [SerializeField] private float linkTimerPlaceholder = 3f;
@@ -128,6 +129,7 @@ public class GameplayManager : MonoBehaviour
             spawn.HandleNewLap(true);
             GameplayUIBehavior.Instance.StartTheGame();
             resetOrbCount();
+            statueConfig.InstantiateToANewPostion();
             AudioManager.instance.LapClearedSFX();
         }
         else if(!getStatueIsFree())

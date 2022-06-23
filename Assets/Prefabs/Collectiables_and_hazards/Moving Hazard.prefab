@@ -64,6 +64,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2766583411614218408, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5804515646184401028, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
       propertyPath: m_Name
       value: Moving Hazard
@@ -79,6 +83,18 @@ PrefabInstance:
     - target: {fileID: 5804515646184401080, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804515646184401080, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804515646184401080, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804515646184401080, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5804515646184401080, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -120,7 +136,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6064191480098026082, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}
 --- !u!1 &2010540715347276436 stripped
 GameObject:
@@ -142,6 +159,19 @@ MonoBehaviour:
   movementVector: {x: 0, y: 4, z: 0}
   movementFactor: 0.428
   period: -20
+--- !u!135 &6026105291372410007
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010540715347276436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.56
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2010540715347276456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5804515646184401080, guid: 71224f7354da7c94a8b282a4d8f262f0, type: 3}

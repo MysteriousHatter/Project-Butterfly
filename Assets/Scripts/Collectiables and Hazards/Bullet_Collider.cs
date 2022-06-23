@@ -22,7 +22,7 @@ public class Bullet_Collider : MonoBehaviour
         // the following two lines calculate if the other object is in front or behind the player
         // ensures that the other object is a hazard
         var playerTag = other.gameObject.tag;
-        if (playerTag == "Player")
+        if (playerTag == "Player" || playerTag == "Drill")
         {
             Debug.Log("Hit Hazard");
             AudioManager.instance.HazardSFX();
