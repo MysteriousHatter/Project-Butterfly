@@ -28,7 +28,6 @@ public class PlayerCollision : MonoBehaviour
 
     private void HurtPlayer(Collision other, Vector3 heading, float dot)
     {
-        Debug.Log("Collision detected, hazard hit");
         AudioManager.instance.HazardSFX();
         if (playerMovement.isInvulnerable)
         {

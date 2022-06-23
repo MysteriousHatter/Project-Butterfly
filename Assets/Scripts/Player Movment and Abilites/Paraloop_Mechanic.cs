@@ -52,7 +52,6 @@ public class Paraloop_Mechanic : MonoBehaviour
                 {
                     currentNode = new Node(this.transform.localPosition);
                     neighbors.Add(currentNode);
-                    Debug.Log("Start Prinitng 1");
                     //Debug.Log("Current position " + neighbors[currentIndex].coordinates + "The total count: " + neighbors.Count);
                     currentIndex++;
                     timeToAddPoint = timeToAddPointPlaceholder;
@@ -61,7 +60,6 @@ public class Paraloop_Mechanic : MonoBehaviour
                 {
                     startCoordinates = this.transform.localPosition;
                     startNode = new Node(startCoordinates);
-                    Debug.Log("Start Prinitng 2");
                     neighbors.Add(startNode);
                     //Debug.Log("The Start Position " + neighbors[currentIndex]);
                     currentIndex++;
@@ -105,22 +103,14 @@ public class Paraloop_Mechanic : MonoBehaviour
                          && (intersection - neighbors[j].coordinates).sqrMagnitude <= bSqrMagnitude
                          && (intersection - neighbors[j + 1].coordinates).sqrMagnitude <= bSqrMagnitude)
                         {
-                            Debug.Log("Point for a1 " + neighbors[i].coordinates);
-                            Debug.Log("Point for a2 " + neighbors[i + 1].coordinates);
-                            Debug.Log("Point for b1 " + neighbors[j].coordinates);
-                            Debug.Log("Point for b2 " + neighbors[j + 1].coordinates);
-
-                            Debug.Log("We found a point that intersected");
-                            Debug.Log("We found the intersection at " + intersection);
+  
 
                            // yield return new WaitForSeconds(0.1f);
                             List<Node> connectedCoord = ConnectTheNodes(new Node(intersection),neighbors[i], neighbors[j + 1]);
                             Node intersectionNode = new Node(intersection);
                             connectedCoord[j].connectedTo = intersectionNode;
-                            Debug.Log("The final index is " + connectedCoord[j].coordinates + " is connected to " + connectedCoord[j].connectedTo.coordinates);
 
                             float sqrArea = FindVortexArea(connectedCoord, intersectionNode);
-                            Debug.Log("the sqrArea " + sqrArea);
                             if(sqrArea >= 0.1f && sqrArea <= 200f)
                             {
                                 GameObject instance = Instantiate(vortexPrefab, Vector3.zero, Quaternion.identity) as GameObject;
@@ -167,7 +157,6 @@ public class Paraloop_Mechanic : MonoBehaviour
         }
 
         area /= 2f;
-        Debug.Log("The surface area " + area);
         return Math.Abs(area);
         
     }
@@ -177,17 +166,13 @@ public class Paraloop_Mechanic : MonoBehaviour
         List<Node> placeholder = neighbors;
 
         int count = 0;
-        Debug.Log("Before " + currentIndex);
         for (int i = 0; placeholder[i].connectedTo != null; i++)
         {
             count++;
-            Debug.Log("The count " + i + "The total count " + placeholder.Count);
             //TODO: Check if connected nodes are similar to each other
             if (placeholder[i].connectedTo != placeholder[i + 1])
             {
                 placeholder[i].connectedTo = placeholder[i + 1];
-                Debug.Log("The current node " + neighbors[i].coordinates + " is connected to " + neighbors[i].connectedTo.coordinates);
-                Debug.Log("After " + currentIndex);
             }
         }
 
@@ -227,12 +212,8 @@ public class Paraloop_Mechanic : MonoBehaviour
     private static bool IsOutOfBounds(int firstPoint, int secondPoint, int listCount)
     {
 
-        Debug.Log("the first point " + firstPoint);
-        Debug.Log("The second point " + secondPoint);
-        Debug.Log("The list count " + listCount);
         if (firstPoint >= listCount || secondPoint >= listCount)
         {
-            Debug.Log("tRUE");
             return true;
         }
         else
@@ -247,22 +228,16 @@ public class Paraloop_Mechanic : MonoBehaviour
 
 
 
-        Debug.Log("Line Point 1 " + linePoint1 + "and Line Point 2" + linePoint2);
         Vector3 lineVec3 = linePoint2 - linePoint1;
-        Debug.Log("lineVec3 " + lineVec3);
         Vector3 crossVec1and2 = Vector3.Cross(lineVec1, lineVec2);
-        Debug.Log("crossVec1and2 " + crossVec1and2 + "is made out of lineVec1 " + lineVec1 + "and " + lineVec2);
         Vector3 crossVec3and2 = Vector3.Cross(lineVec3, lineVec2);
-        Debug.Log("crossVec3and2 " + crossVec3and2 + "is made out of lineVec1 " + lineVec3 + "and " + lineVec2);
 
         float planarFactor = Vector3.Dot(lineVec3, crossVec1and2);
-        Debug.Log("PlaneFactor " + planarFactor);
 
         //is coplanar, and not parallel
         if (Mathf.Abs(planarFactor) < 0.5f
                 && crossVec1and2.sqrMagnitude > 0.5f)
         {
-            Debug.Log("An Intersection");
             float s = Vector3.Dot(crossVec3and2, crossVec1and2)
                     / crossVec1and2.sqrMagnitude;
             intersection = linePoint1 + (lineVec1 * s);
@@ -270,7 +245,6 @@ public class Paraloop_Mechanic : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Intersection");
             intersection = Vector3.zero;
             return Tuple.Create(false, intersection);
         }
