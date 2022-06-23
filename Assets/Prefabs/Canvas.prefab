@@ -4881,6 +4881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1667086916272220511}
   timerPanel: {fileID: 3062318573277748060}
+  lostTimePanel: {fileID: 3822905249617388801}
   scorePanel: {fileID: 9141112436742361409}
   loseText: {fileID: 9141112435344040169}
   winText: {fileID: 9141112436494819932}
