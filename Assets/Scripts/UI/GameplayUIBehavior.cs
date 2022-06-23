@@ -14,6 +14,8 @@ public class GameplayUIBehavior : MonoBehaviour
     [Tooltip("The main panel for the timer.")]
     [SerializeField] private GameObject timerPanel;
 
+    [SerializeField] private GameObject lostTimePanel;
+
     [Tooltip("The main panel for the timer.")]
     [SerializeField] private GameObject scorePanel;
 
@@ -246,6 +248,18 @@ public class GameplayUIBehavior : MonoBehaviour
         return timeLeft;
     }
 
+    public void SetLostTime(float t)
+    {
+        lostTimePanel.SetActive(true);
+        lostTimePanel.GetComponentInChildren<TMP_Text>().text = t + " secs";
+        setTime(t);
+        Invoke("HideLostTime", 2);
+    }
+
+    private void HideLostTime()
+    {
+        lostTimePanel.SetActive(false);
+    }
     public void setTime(float time)
     {
         this.timeLeft += time;

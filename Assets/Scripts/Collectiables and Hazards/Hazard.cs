@@ -25,7 +25,7 @@ public class Hazard : MonoBehaviour
             AudioManager.instance.HazardSFX();
             Vector3 pushDirection =  other.transform.position - transform.position;
             player.GetComponent<Movement>().MoveBack(pushDirection.normalized);
-            FindObjectOfType<GameplayUIBehavior>().setTime(timePenalty);
+            FindObjectOfType<GameplayUIBehavior>().SetLostTime(timePenalty);
         }
     }
 }
