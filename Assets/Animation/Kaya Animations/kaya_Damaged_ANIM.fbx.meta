@@ -47,7 +47,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Skirt_lyr1.004
-    second: {fileID: 4480999043382331366, guid: 788a92887c6d64432b3c4b7763eea567, type: 3}
+    second: {fileID: 2100000, guid: edc6106c915984de2b613a68e4945671, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

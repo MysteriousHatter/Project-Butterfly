@@ -177,7 +177,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                Speed = 80f;
+                Speed = 150f;
             }
         }
         else if (Input.GetMouseButtonUp(0))
