@@ -12,7 +12,7 @@ public class FadeScript : MonoBehaviour
     private GameplayManager gameplayManager => FindObjectOfType<GameplayManager>();
 
 
-    private void Awake()
+    private void Start()
     {
         ShowUI();
         fadeOut = true;
